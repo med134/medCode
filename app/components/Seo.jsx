@@ -26,7 +26,7 @@ const Seo = () => {
       {HackerArt.map((ask, index) =>
         index < 1 ? (
           <div
-            key={ask.id}
+            key={ask.author}
             className="relative bg-gradient-to-r from-purple-400 to-blue-500 p-8 rounded-lg"
           >
             <Link

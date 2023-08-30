@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { getData } from "./FetchData";
-import Layout from "./Layout";
+
 
 const Blogs = async () => {
   const data = await getData();

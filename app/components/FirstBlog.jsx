@@ -1,4 +1,3 @@
-
 /* eslint-disable @next/next/no-img-element */
 import pro from "../images/postera.png";
 import Image from "next/image";
@@ -6,9 +5,6 @@ import { AiOutlineHeart, AiOutlineComment } from "react-icons/ai";
 import Link from "next/link";
 import { getData } from "./FetchData";
 import Seo from "./Seo";
-
-
-
 
 export async function FirstBlog() {
   const data = await getData();
@@ -115,7 +111,7 @@ export async function FirstBlog() {
                 </div>
               ) : null
             )}
-            <Seo/>
+            <Seo />
           </div>
         </div>
       </div>
