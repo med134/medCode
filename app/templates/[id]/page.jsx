@@ -5,7 +5,7 @@ import { BsArrowLeftCircleFill } from "react-icons/bs";
 import ClipBoard from "@/app/components/ClipBorad";
 
 async function getData(id) {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+  const res = await fetch(`https://medcode.dev/api/posts/${id}`, {
     cache: "no-store",
   });
   if (!res.ok) {
@@ -14,7 +14,7 @@ async function getData(id) {
   return res.json();
 }
 async function getTemplates() {
-  const res = await fetch(`http://localhost:3000/api/posts`, {
+  const res = await fetch(`https://medcode.dev/api/posts`, {
     cache: "no-store",
   });
   if (!res.ok) {
