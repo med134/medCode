@@ -111,12 +111,12 @@ const NavBar = () => {
           <Logo />
         </div>
         <nav className="flex items-center justify-between flex-wrap">
-       {/*    <CustomLink
+           <CustomLink
             href="/templates"
             title="Templates"
             className="mx-4 uppercase"
             target="_blank"
-          /> */}
+          /> 
       
           <CustomLink
             href="/dashboard"
@@ -196,12 +196,12 @@ const NavBar = () => {
               toggle={handleClick}
             />
 
-         {/*    <CustomMobileLink
+           <CustomMobileLink
               href="/templates"
               title="Template"
               className="templates"
               toggle={handleClick}
-            /> */}
+            />
          
             <CustomMobileLink
               href="/dashboard"

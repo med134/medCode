@@ -2,9 +2,9 @@ import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GithubProvider from "next-auth/providers/github";
-import Users from "@/app/modules/User";
 import connect from "@/app/utils/db";
 import bcrypt from "bcryptjs";
+import User from "@/app/modules/User";
 
 const handler = NextAuth({
   providers: [
@@ -41,17 +41,16 @@ const handler = NextAuth({
     }),
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
     GithubProvider({
       clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET, 
+      clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
   pages: {
     error: "/dashboard/login",
   },
-
 });
 
 export { handler as GET, handler as POST };

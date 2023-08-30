@@ -32,6 +32,7 @@ export async function FirstBlog() {
                   className="w-full object-cover opacity-10 transition-all duration-300 ease-in-out group-hover:opacity-80"
                   src={pro}
                   alt="hello"
+                  priority
                 />
               </div>
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">

@@ -16,7 +16,6 @@ const StackOverFlow = async () => {
       }
       const data = await res.json();
       setAsk(data.items);
-      console.log(data.items);
     };
     fetchSeoData();
   }, []);
