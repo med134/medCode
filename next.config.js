@@ -1,4 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-module.exports = nextConfig
+const nextConfig = {
+    reactStrictMode: true,
+    optimizeFonts: true,
+    images: {
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "i.ibb.co",
+        },
+      ],
+      minimumCacheTTL: 1500000,
+    },
+  };
+  
+  module.exports = nextConfig;
+  
