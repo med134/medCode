@@ -13,7 +13,7 @@ export const GET = async (request) => {
     return new NextResponse("Error database", { status: 500 });
   }
 };
-/* export const POST = async (request) => {
+ export const POST = async (request) => {
   const body = await request.json();
   const newPost = new Posts(body);
   try {
@@ -23,4 +23,4 @@ export const GET = async (request) => {
   } catch (err) {
     return new NextResponse("Error database", { status: 500 });
   }
-}; */
+}; 
