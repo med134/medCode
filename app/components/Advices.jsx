@@ -6,12 +6,13 @@ const Advices = () => {
   const [add, setAdd] = useState([]);
 
   const getAdvice = () => {
-    fetch(`https://api.adviceslip.com/advice/${randomNumber}`)
+    fetch(`https://api.adviceslip.com/advice/5`)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
         setAdd(data.slip);
+      
       });
     const random = Math.floor(Math.random() * 30) + 1; // Generates a random number between 1 and 100
     setRandomNumber(random);
