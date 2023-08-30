@@ -12,7 +12,7 @@ export const GET = async (request, { params }) => {
     return new NextResponse("Error database", { status: 500 });
   }
 };
-export const DELETE = async (request, { params }) => {
+/* export const DELETE = async (request, { params }) => {
   const { id } = params;
   try {
     await connect();
@@ -21,4 +21,4 @@ export const DELETE = async (request, { params }) => {
   } catch (err) {
     return new NextResponse("Error database", { status: 500 });
   }
-};
+}; */
