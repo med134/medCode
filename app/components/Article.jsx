@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import StackOverFlow from "./StackOverFlow";
 import Youtube from "./Youtube";
 
+
 const Article = async () => {
   const [news, setNews] = useState([]);
   useEffect(() => {
@@ -97,7 +98,7 @@ const Article = async () => {
             </div>
           </div>
           <StackOverFlow />
-          <Youtube/>
+          <Youtube />
         </div>
       </article>{" "}
     </>
