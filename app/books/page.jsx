@@ -32,7 +32,7 @@ export const metadata = {
 const Books = () => {
   return (
     <section className="dark:bg-dark">
-      <div className="p-20 lg:py-16 bg-gradient-to-r from-slate-950 via-slate-700 to-slate-600">
+      <div className="p-20 lg:py-16 bg-gradient-to-r from-slate-950 via-slate-700 to-slate-600 xs:p-4">
         <AnimatedText
           text="Today a reader, tomorrow a leader..."
           className="text-3xl py-2 text-light lg:text-3xl"

@@ -1,24 +1,21 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const Advices = () => {
-  const [randomNumber, setRandomNumber] = useState(null);
-  const [add, setAdd] = useState([]);
+  const [randomNumber, setRandomNumber] = useState(1);
+  const [add, setAdd] = useState("");
 
   const getAdvice = () => {
-    fetch(`https://api.adviceslip.com/advice/5`)
+    fetch(`https://api.adviceslip.com/advice/${randomNumber}`)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        setAdd(data.slip);
+        setAdd(data.slip.advice);
       });
     const random = Math.floor(Math.random() * 30) + 1; // Generates a random number between 1 and 100
     setRandomNumber(random);
   };
-  useEffect(() => {
-    getAdvice();
-  });
 
   return (
     <div className="inline-block justify-center items-center text-center w-full p-4">
@@ -28,7 +25,7 @@ const Advices = () => {
           onClick={getAdvice}
           className="group font-medium text-base mb-6 relative inline-flex items-center justify-center cursor-pointer h-12 border-2 border-solid py-4 px-6 rounded-md overflow-hidden z-10 transition-all duration-300 ease-in-out outline-0 bg-light text-purple-800 border-purple-500 hover:text-dark focus:text-dark"
         >
-          <strong className="font-medium">Click for Advices</strong>
+          <span className="font-medium">Click for Advices</span>
           <svg
             className="ml-1 rotate-180 fill-white group-hover:fill-purple-400"
             width={27}
@@ -51,7 +48,7 @@ const Advices = () => {
         aria-disabled={randomNumber === null}
         className="font-dance text-3xl font-bold text-light text-center items-center"
       >
-        {add.advice}
+        <p>{add} </p>
       </div>
     </div>
   );
