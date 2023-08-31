@@ -1,32 +1,25 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
-import { signIn } from "next-auth/react";
-import React, { useEffect ,useState} from "react";
-import { useSession } from "next-auth/react";
+import React, { useEffect, useState } from "react";
+import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-  const [error, setError] = useState("");
   const session = useSession();
-  console.log(session);
   const router = useRouter();
-
+  console.log(session);
   useEffect(() => {
-    if (session.status === "authenticated") {
+    if (session.status === "authenticated"){
       router?.push("/dashboard");
     }
   });
-  const MyLoader = ({ src }) => {
-    return `https://img.freepik.com/free-vector/organic-flat-blog-post-illustration-with-people_23-2148955260.jpg?w=740&t=st=1692306911~exp=1692307511~hmac=934f6612ddfadbc6609f4eb967ba1f967be7adb40fe57751209a33792fcabc86`;
-  };
   return (
     <>
-      <div className="flex  min-h-0 w-full items-center justify-center bg-gray-100 p-28 lg:p-16 md:p-8 sm:p-4 sm:block">
+     <div className="flex min-h-0 w-full items-center justify-center bg-gray-100 p-28 lg:p-16 md:p-8 sm:p-4 sm:block">
         <div className="m-2 w-full rounded-2xl bg-gray-400 bg-cover bg-center text-white sm:hidden">
-          <Image
-            loader={MyLoader}
+          <img
             height={400}
             width={400}
             className="w-full h-full object-fill rounded-2xl"
@@ -44,14 +37,16 @@ const Login = () => {
               <span className="font-bold text-blue-500 text-xl">
                 MedCode Community !
               </span>
-              <p className="ml-1">to publish blogs.</p>
             </p>
+            
             <button
-              onClick={() => signIn("google")}
+              onClick={() => {
+                signIn('google');
+              }}
               className="w-full mt-4 text-center px-6 py-2 border flex justify-center items-center gap-2 border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150"
             >
-              <FcGoogle className="w-6 h-6" />
-              <span className="font-semibold">Login with Google</span>
+            <FcGoogle className='h-6 w-6'/>
+              <span>Login with Google</span>
             </button>
             <button
               onClick={() => {
@@ -61,7 +56,7 @@ const Login = () => {
               className="text-white w-full mt-4  bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex justify-center items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
             >
               <svg
-                className="w-6 h-6 mr-2"
+                className="w-4 h-4 mr-2"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -78,7 +73,7 @@ const Login = () => {
 
             <div className="mt-4 text-center">
               <p className="text-sm text-gray-600">
-                Dont have an account ?
+                 Dont have an account ?
                 <Link
                   href="/dashboard/register"
                   className="font-bold text-blue-600 no-underline hover:text-blue-400"
@@ -90,6 +85,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+
     </>
   );
 };
