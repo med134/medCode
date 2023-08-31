@@ -1,14 +1,13 @@
 "use client";
-/* eslint-disable @next/next/no-img-element */
 import { signIn } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-  const [error, setError] = useState("");
   const session = useSession();
   const router = useRouter();
 
@@ -22,7 +21,7 @@ const Login = () => {
   };
   return (
     <>
-      <div className="flex min-h-0 w-full items-center justify-center bg-gray-100 p-28 lg:p-16 md:p-8 sm:p-4 sm:block">
+      <div className="flex  min-h-0 w-full items-center justify-center bg-gray-100 p-28 lg:p-16 md:p-8 sm:p-4 sm:block">
         <div className="m-2 w-full rounded-2xl bg-gray-400 bg-cover bg-center text-white sm:hidden">
           <Image
             loader={MyLoader}
@@ -43,6 +42,7 @@ const Login = () => {
               <span className="font-bold text-blue-500 text-xl">
                 MedCode Community !
               </span>
+              <p className="ml-2">to publish blogs.</p>
             </p>
             <button
               onClick={() => {
@@ -50,13 +50,8 @@ const Login = () => {
               }}
               className="w-full mt-4 text-center px-6 py-2 border flex justify-center items-center gap-2 border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150"
             >
-              <img
-                className="w-6 h-6 text-center"
-                src="https://www.svgrepo.com/show/475656/google-color.svg"
-                loading="lazy"
-                alt="google logo"
-              />
-              <span>Login with Google</span>
+              <FcGoogle className="w-6 h-6" />
+              <span className='font-semibold'>Login with Google</span>
             </button>
             <button
               onClick={() => {
@@ -83,7 +78,7 @@ const Login = () => {
 
             <div className="mt-4 text-center">
               <p className="text-sm text-gray-600">
-                 Dont have an account ?
+                Dont have an account ?
                 <Link
                   href="/dashboard/register"
                   className="font-bold text-blue-600 no-underline hover:text-blue-400"

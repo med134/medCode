@@ -1,21 +1,24 @@
 "use client";
-/* eslint-disable @next/next/no-img-element */
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
-  const [error, setError] = useState(false);
-  const route = useRouter();
-
+  const MyLoader = ({ src }) => {
+    return `https://img.freepik.com/free-vector/organic-flat-blog-post-illustration-with-people_23-2148955260.jpg?w=740&t=st=1692306911~exp=1692307511~hmac=934f6612ddfadbc6609f4eb967ba1f967be7adb40fe57751209a33792fcabc86`;
+  };
   return (
     <>
       <div className="flex h-screen w-full items-center justify-center bg-gray-100">
         <div className="flex w-full max-w-3xl overflow-hidden rounded-lg bg-white shadow-lg sm:flex">
           <div className="m-2 w-full rounded-2xl bg-gray-400 bg-cover bg-center text-white sm:w-2/5 sm:hidden">
-            <img
-              className="w-full h-full object-fill"
+            <Image
+              loader={MyLoader}
+              height={400}
+              width={400}
+              className="w-full h-full object-fill rounded-2xl"
               alt="image_blog"
               src={
                 "https://img.freepik.com/free-vector/organic-flat-blog-post-illustration-with-people_23-2148955260.jpg?w=740&t=st=1692306911~exp=1692307511~hmac=934f6612ddfadbc6609f4eb967ba1f967be7adb40fe57751209a33792fcabc86"
@@ -29,7 +32,8 @@ const Register = () => {
                 Create an account in{" "}
                 <span className="font-bold text-blue-500 text-xl">
                   MedCode Community !
-                </span>
+                </span>{" "}
+                to publish blogs.
               </p>
               <button
                 onClick={() => {
@@ -37,13 +41,8 @@ const Register = () => {
                 }}
                 className="w-full mt-4 text-center px-6 py-2 border flex justify-center items-center gap-2 border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150"
               >
-                <img
-                  className="w-6 h-6 text-center"
-                  src="https://www.svgrepo.com/show/475656/google-color.svg"
-                  loading="lazy"
-                  alt="google logo"
-                />
-                <span>Login with Google</span>
+                <FcGoogle className="w-6 h-6" />
+                <span className="font-semibold">Login with Google</span>
               </button>
               <button
                 onClick={() => {
