@@ -1,6 +1,6 @@
 "use client";
 import { signIn } from "next-auth/react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect ,useState} from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -8,7 +8,9 @@ import Image from "next/image";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
+  const [error, setError] = useState("");
   const session = useSession();
+  console.log(session);
   const router = useRouter();
 
   useEffect(() => {
@@ -42,16 +44,14 @@ const Login = () => {
               <span className="font-bold text-blue-500 text-xl">
                 MedCode Community !
               </span>
-              <p className="ml-2">to publish blogs.</p>
+              <p className="ml-1">to publish blogs.</p>
             </p>
             <button
-              onClick={() => {
-                signIn("google");
-              }}
+              onClick={() => signIn("google")}
               className="w-full mt-4 text-center px-6 py-2 border flex justify-center items-center gap-2 border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150"
             >
               <FcGoogle className="w-6 h-6" />
-              <span className='font-semibold'>Login with Google</span>
+              <span className="font-semibold">Login with Google</span>
             </button>
             <button
               onClick={() => {
@@ -61,7 +61,7 @@ const Login = () => {
               className="text-white w-full mt-4  bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex justify-center items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
             >
               <svg
-                className="w-4 h-4 mr-2"
+                className="w-6 h-6 mr-2"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"

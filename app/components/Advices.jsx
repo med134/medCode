@@ -23,7 +23,7 @@ const Advices = () => {
         <button
           target="_blank"
           onClick={getAdvice}
-          className="group font-medium text-base mb-6 relative inline-flex items-center justify-center cursor-pointer h-12 border-2 border-solid py-4 px-6 rounded-md overflow-hidden z-10 transition-all duration-300 ease-in-out outline-0 bg-light text-purple-800 border-purple-500 hover:text-dark focus:text-dark"
+          className="group font-medium text-base mb-6 relative inline-flex items-center justify-center cursor-pointer h-12 border-2 border-solid py-4 px-6 rounded-md transition-all duration-300 ease-in-out bg-light text-purple-800 border-purple-500 hover:text-dark focus:text-dark"
         >
           <span className="font-medium">Click for Advices</span>
           <svg
