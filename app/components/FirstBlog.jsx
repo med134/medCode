@@ -6,6 +6,7 @@ import Link from "next/link";
 import { getData } from "./FetchData";
 import Seo from "./Seo";
 
+
 export async function FirstBlog() {
   const data = await getData();
   return (
@@ -36,27 +37,7 @@ export async function FirstBlog() {
                 />
               </div>
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <a
-                  href="#"
-                  title=""
-                  className="inline-flex cursor-pointer items-center justify-center rounded-md border-2 border-white px-1 text-xs font-semibold text-white transition-all duration-200 ease-in-out hover:bg-white hover:text-black focus:shadow-md sm:py-2 sm:px-5 sm:text-sm"
-                  role="button"
-                >
-                  <svg
-                    className="mr-2 h-6 w-6 "
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M8.0416 4.9192C7.37507 4.51928 6.5271 4.99939 6.5271 5.77669L6.5271 18.2232C6.5271 19.0005 7.37507 19.4806 8.0416 19.0807L18.4137 12.8574C19.061 12.469 19.061 11.5308 18.4137 11.1424L8.0416 4.9192Z"
-                      className=""
-                    />
-                  </svg>
-                  Watch Intro
-                </a>
+                
               </div>
             </div>
           </div>

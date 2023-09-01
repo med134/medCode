@@ -5,19 +5,22 @@ import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
+import Loading from "@/app/loading";
 
 const Login = () => {
   const session = useSession();
   const router = useRouter();
   console.log(session);
   useEffect(() => {
-    if (session.status === "authenticated"){
+    if (session.status === "authenticated") {
       router?.push("/dashboard");
+    } else if (session.status === "loading") {
+      <Loading />;
     }
   });
   return (
     <>
-     <div className="flex min-h-0 w-full items-center justify-center bg-gray-100 p-28 lg:p-16 md:p-8 sm:p-4 sm:block">
+      <div className="flex min-h-0 w-full items-center justify-center bg-gray-100 p-28 lg:p-16 md:p-8 sm:p-4 sm:block">
         <div className="m-2 w-full rounded-2xl bg-gray-400 bg-cover bg-center text-white sm:hidden">
           <img
             height={400}
@@ -38,14 +41,14 @@ const Login = () => {
                 MedCode Community !
               </span>
             </p>
-            
+
             <button
               onClick={() => {
-                signIn('google');
+                signIn("google");
               }}
               className="w-full mt-4 text-center px-6 py-2 border flex justify-center items-center gap-2 border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150"
             >
-            <FcGoogle className='h-6 w-6'/>
+              <FcGoogle className="h-6 w-6" />
               <span>Login with Google</span>
             </button>
             <button
@@ -73,7 +76,7 @@ const Login = () => {
 
             <div className="mt-4 text-center">
               <p className="text-sm text-gray-600">
-                 Dont have an account ?
+                Dont have an account ?
                 <Link
                   href="/dashboard/register"
                   className="font-bold text-blue-600 no-underline hover:text-blue-400"
@@ -85,7 +88,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-
     </>
   );
 };

@@ -14,3 +14,14 @@ export const GET = async (request) => {
   }
 };
 
+export const POST = async (request) => {
+  const body = await request.json();
+  const newPost = new Posts(body);
+  try {
+    await connect();
+    await newPost.save();
+    return new NextResponse("post has been created", { status: 201 });
+  } catch (err) {
+    return new NextResponse("Error database", { status: 500 });
+  }
+};
