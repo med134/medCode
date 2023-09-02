@@ -10,10 +10,7 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
-    username: {
-      type: String,
-      required: true,
-    },
+ 
     image: {
       type: String,
       required: true,
@@ -29,6 +26,10 @@ const postSchema = new Schema(
     code: {
       type: String,
       require: false,
+    },
+    username: {
+      type: String,
+      required: true,
     },
   },
   { timestamps: true }

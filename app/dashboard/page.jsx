@@ -21,23 +21,22 @@ const Dashboard = () => {
     e.preventDefault();
     const title = e.target[0].value;
     const description = e.target[1].value;
-    const username = e.target[2].value;
-    const image = e.target[3].value;
-    const link = e.target[4].value;
-    const category = e.target[5].value;
-    const code = e.target[6].value;
+    const image = e.target[2].value;
+    const link = e.target[3].value;
+    const category = e.target[4].value;
+    const code = e.target[5].value;
 
     try {
       await fetch("/api/posts", {
         method: "POST",
         body: JSON.stringify({
           title,
-          description,
-          username: session.data.user.name,
+          description, 
           image,
           link,
           category,
           code,
+          username: session.data.user.name,
         }),
       });
       mutate();
@@ -75,11 +74,6 @@ const Dashboard = () => {
           <input
             type="text"
             placeholder="Desc"
-            className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
-          />
-          <input
-            type="text"
-            placeholder="username"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
           <input
