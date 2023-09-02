@@ -53,6 +53,7 @@ const Dashboard = () => {
     `/api/posts?username=${session?.data?.user.name}`,
     fetcher
   );
+  console.log(data)
   if (session.status === "loading") {
     return <Loading />;
   }
