@@ -10,21 +10,21 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
-    image: {
-      type: String,
-      required: true,
-    },
     username: {
       type: String,
       required: true,
     },
-    category: {
+    image: {
       type: String,
       required: true,
     },
     link: {
       type: String,
       required: false,
+    },
+    category: {
+      type: String,
+      required: true,
     },
     code: {
       type: String,
