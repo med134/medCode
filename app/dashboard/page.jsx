@@ -6,11 +6,10 @@ import useSWR from "swr";
 import Loading from "../loading";
 import { useRouter } from "next/navigation";
 
-
 const Dashboard = () => {
   const handleDelete = async (id) => {
     try {
-      await fetch(`/api/posts/${id}`, {
+      await fetch(`https://www.medcode.dev/api/posts/${id}`, {
         method: "DELETE",
       });
       mutate();
@@ -29,12 +28,12 @@ const Dashboard = () => {
     const code = e.target[6].value;
 
     try {
-      await fetch("/api/posts", {
+      await fetch("https://www.medcode.dev/api/posts", {
         method: "POST",
         body: JSON.stringify({
           title,
           description,
-          username,
+          username: session.data.user.name,
           image,
           link,
           category,
@@ -50,7 +49,11 @@ const Dashboard = () => {
   const session = useSession();
   const route = useRouter();
   console.log(session);
-
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const { data, error, isLoading, mutate } = useSWR(
+    `https://www.medcode.dev/api/posts?username=${session?.data?.user.name}`,
+    fetcher
+  );
   if (session.status === "loading") {
     return <Loading />;
   }
@@ -103,30 +106,34 @@ const Dashboard = () => {
           </button>
         </form>
         <div className="w-full p-6 rounded-lg">
-          {data?.map((post) => (
-            <div key={post._id}>
-              <div className="">
-                <img
-                  className="rounded-md"
-                  src={post.image}
-                  alt="image_post"
-                  width={350}
-                  height={80}
-                />
+          {isLoading ? (
+            <Loading />
+          ) : (
+            data?.map((post) => (
+              <div key={post._id}>
+                <div className="">
+                  <img
+                    className="rounded-md"
+                    src={post.image}
+                    alt="image_post"
+                    width={350}
+                    height={80}
+                  />
+                </div>
+                <div className="inline-flex justify-between">
+                  <h2 className="text-xl p-3 px-2 sm:text-sm font-lexend py-3">
+                    {post.title}
+                  </h2>
+                  <span
+                    onClick={() => handleDelete(post._id)}
+                    className="p-1 bg-red-400 text-light m-3 font-semibold rounded-md cursor-pointer hover:bg-red-500 bottom-1"
+                  >
+                    delete
+                  </span>
+                </div>
               </div>
-              <div className="inline-flex justify-between">
-                <h2 className="text-xl p-3 px-2 sm:text-sm font-lexend py-3">
-                  {post.title}
-                </h2>
-                <span
-                  onClick={() => handleDelete(post._id)}
-                  className="p-1 bg-red-400 text-light m-3 font-semibold rounded-md cursor-pointer hover:bg-red-500 bottom-1"
-                >
-                  delete
-                </span>
-              </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
     );
