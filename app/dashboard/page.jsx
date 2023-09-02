@@ -38,12 +38,11 @@ const Dashboard = () => {
         body: JSON.stringify({
           title,
           description,
-          username: session.data.user.name,
+          username,
           image,
           link,
           category,
           code,
-          
         }),
       });
       mutate();
@@ -85,8 +84,7 @@ const Dashboard = () => {
           />
           <input
             type="text"
-            value={session?.data?.user.name}
-            defaultValue={session?.data?.user.name}
+            placeholder="username"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
           <input
