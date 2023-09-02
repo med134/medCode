@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 const Dashboard = () => {
   const handleDelete = async (id) => {
     try {
-      await fetch(`https://www.medcode.dev/api/posts/${id}`, {
+      await fetch(`/api/posts/${id}`, {
         method: "DELETE",
       });
       mutate();
@@ -28,7 +28,7 @@ const Dashboard = () => {
     const code = e.target[6].value;
 
     try {
-      await fetch("https://www.medcode.dev/api/posts", {
+      await fetch("/api/posts", {
         method: "POST",
         body: JSON.stringify({
           title,
@@ -51,7 +51,7 @@ const Dashboard = () => {
   console.log(session);
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading, mutate } = useSWR(
-    `https://www.medcode.dev/api/posts?username=${session?.data?.user.name}`,
+    `/api/posts?username=${session?.data?.user.name}`,
     fetcher
   );
   if (session.status === "loading") {
