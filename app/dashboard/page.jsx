@@ -14,7 +14,7 @@ export const metadata = {
 const Dashboard = () => {
   const handleDelete = async (id) => {
     try {
-      await fetch(`https://www.medcode.dev/api/posts/${id}`, {
+      await fetch(`/api/posts/${id}`, {
         method: "DELETE",
       });
       mutate();
@@ -33,7 +33,7 @@ const Dashboard = () => {
     const code = e.target[6].value;
 
     try {
-      await fetch("https://www.medcode.dev/api/posts", {
+      await fetch("/api/posts", {
         method: "POST",
         body: JSON.stringify({
           title,
