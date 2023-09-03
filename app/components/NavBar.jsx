@@ -10,7 +10,7 @@ import {
 } from "./Icons";
 import logo from "../images/logo3.png";
 import { AiFillYoutube } from "react-icons/ai";
-import { BsWhatsapp, BsInstagram } from "react-icons/bs";
+import {BsInstagram } from "react-icons/bs";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
@@ -156,12 +156,12 @@ const NavBar = () => {
         <motion.div
           initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
           animate={{ scale: 1, opacity: 1 }}
-          className="min-w-[60vw] sm:min-w-[70vw] sm:h-max flex flex-col justify-between z-30 items-center fixed top-1/2 left-2/4 -translate-x-1/2 -translate-y-1/2
-    bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-20
+          className="min-w-[60vw] sm:min-w-[70vw] sm:h-min flex flex-col justify-between z-30 items-center fixed top-1/2 left-2/4 -translate-x-1/2 -translate-y-1/2
+    bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-8
     "
         >
           <nav className="flex items-center flex-col justify-center">
-            <div className="flex items-center justify-center xs:w-full mb-4">
+            <div className="flex items-center justify-center xs:w-full mb-1">
               <Image
                 src={logo}
                 alt="logo_website"
@@ -233,13 +233,13 @@ const NavBar = () => {
 
           <nav className="flex items-center justify-center flex-wrap mt-2">
             <motion.a
-              href="https://twitter.com/SimoDakir5"
+              href="https://www.linkedin.com/in/mohammed-dakir/"
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
               className="w-6 ml-4 sm:mx-1"
             >
-              <TwitterIcon />
+             <LinkedInIcon/>
             </motion.a>
             <motion.a
               href="https://www.youtube.com/@VivaCode99"
@@ -260,7 +260,7 @@ const NavBar = () => {
               <BsInstagram size={24} className="fill-pink-600" />
             </motion.a>
             <motion.a
-              href="https://www.linkedin.com/in/mohammed-dakir/"
+              href="https://github.com/med134"
               target={"_blank"}
               className="w-6 mx-3 bg-light rounded-full dark:bg-dark sm:mx-1"
               whileHover={{ y: -2 }}

@@ -7,6 +7,7 @@ import { getData } from "./FetchData";
 import Seo from "./Seo";
 
 
+
 export async function FirstBlog() {
   const data = await getData();
   return (
@@ -37,7 +38,7 @@ export async function FirstBlog() {
                 />
               </div>
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                
+                {/* <video src='/app/images/intro.mp4' autoPlay loop muted/> */}
               </div>
             </div>
           </div>
