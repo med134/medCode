@@ -7,3 +7,4 @@ export async function getData() {
   }
   return res.json();
 }
+

@@ -8,27 +8,7 @@ import Youtube from "./Youtube";
 
 const Article = async () => {
   const [news, setNews] = useState([]);
-
-  const getData = async () => {
-    
-    const url = 'https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0';
-    const options = {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': '1813cb997bmsh2a47f326c30f6a0p166fd4jsnd62e31fba852',
-        'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
-      }
-    };
-
-      try {
-        const response = await fetch(url, options);
-        const result = await response.json();
-        console.log(result);
-      } catch (error) {
-        console.error(error);
-      }
-  };
-
+  
   useEffect(() => {
     const fetchSeoData = async () => {
       const res = await fetch(
@@ -43,8 +23,6 @@ const Article = async () => {
       const data = await res.json();
       setNews(data.hits);
     };
-
-    getData();
     fetchSeoData();
   }, []);
   return (
@@ -85,7 +63,7 @@ const Article = async () => {
             ) : null
           )}
         </div>
-        <div className="slider">
+        <div className="slider xs:w-full">
           <div className="max-w-md mb-8 rounded-xl border bg-white p-6 pb-10 text-gray-900 dark:bg-dark dark:text-light">
             <p className="text-md text-blue-900 font-medium dark:text-gray-400">
               Trending Languages and frameworks

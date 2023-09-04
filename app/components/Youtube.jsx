@@ -9,7 +9,7 @@ import Profile from '../images/bg.png'
 const Youtube = ({ sub, video }) => {
   let channelid = "UC1dm-Rczjp52egzJTL__s8A";
   return (
-    <div className="rounded-lg border min-w-full border-red-500 bg-white px-4 pt-8 pb-10 dark:bg-dark shadow-lg md:w-96">
+    <div className="rounded-lg border min-w-full border-red-500 bg-white px-4 pt-8 pb-10 dark:bg-dark shadow-lg md:w-96 xs:w-full">
       <div className="relative mx-auto w-36 rounded-full">
         <span className="absolute right-0 m-3 h-3 w-3 rounded-full bg-red-500 ring-2 ring-red-300 ring-offset-2" />
         <Image

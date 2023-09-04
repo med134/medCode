@@ -1,15 +1,15 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
-import pro from "../images/postera.png";
-import Image from "next/image";
 import { AiOutlineHeart, AiOutlineComment } from "react-icons/ai";
 import Link from "next/link";
-import { getData } from "./FetchData";
 import Seo from "./Seo";
-
-
+import { getData } from "./FetchData";
+import NewsArticles from "./NewsArticles";
 
 export async function FirstBlog() {
   const data = await getData();
+ 
+
   return (
     <section className="py-2 text-black dark:bg-dark">
       <div className="w-full px-6 lg:px-12 md:px-0 xs:px-1">
@@ -29,22 +29,12 @@ export async function FirstBlog() {
               </p>
             </div>
             <div className="relative mt-8 w-full overflow-hidden rounded-xl">
-              <div className="inset-0 bg-purple-300 sm:h-44">
-                <Image
-                  className="w-full object-cover opacity-10 transition-all duration-300 ease-in-out group-hover:opacity-80"
-                  src={pro}
-                  alt="hello"
-                  priority
-                />
-              </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                {/* <video src='/app/images/intro.mp4' autoPlay loop muted/> */}
-              </div>
+               <NewsArticles/>
             </div>
           </div>
 
           <div className="mt-10 p-8 md:flex-col sm:p-0 sm:w-full">
-            {data.map((res) =>
+            {data?.map((res) =>
               res.id === 1486106 ? (
                 <div
                   key={res.id}

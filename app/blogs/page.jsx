@@ -36,7 +36,7 @@ export const metadata = {
   openGraph: {
     title: "medCode|Blogs",
     description: `Browse through MedCode collection of software engineering articles blogs and 
-      tutorials.`, 
+      tutorials.`,
     images: [
       {
         url: "/app/images/postera.png",
