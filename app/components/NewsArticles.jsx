@@ -2,7 +2,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+
 
 const NewsArticles = async () => {
   const [news, setNews] = useState();
@@ -46,7 +46,11 @@ const NewsArticles = async () => {
                   : "flex justify-between p-4 w-full rounded-lg sm:p-4"
               }`}
             >
-              <div className="inline-flex items-center justify-center">
+              <Link
+                href={post.coinrankingUrl}
+                target="_blank"
+                className="inline-flex items-center justify-center"
+              >
                 <span className="px-3 text-xl font-bold sm:text-sm">
                   {index + 1}
                 </span>
@@ -58,10 +62,10 @@ const NewsArticles = async () => {
                 <h2 className="text-[13px] font-semibold text-gray-900 px-8 uppercase xl:text-sm xl:px-4 xs:px-2">
                   {post.name}
                 </h2>
-              </div>
+              </Link>
               <p className="text-[13px] font-semibold p-1 flex">
-                <span className="text-yellow-400">$ </span>{" "}
-                {post.price.slice(0, 10)}
+                {post.price.slice(0, 10)}{" "}
+                <span className="text-yellow-400">$ </span>
               </p>
               <p
                 className={`${
@@ -70,7 +74,7 @@ const NewsArticles = async () => {
                     : "text-green-500 font-semibold text-[13px]"
                 }`}
               >
-                {post.change}
+                {post.change} %
               </p>
             </div>
           ) : null
