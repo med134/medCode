@@ -38,8 +38,8 @@ const Login = () => {
             <p className="mt-2 mb-5 text-base leading-tight text-gray-600">
               Create an account in{" "}
               <span className="font-bold text-blue-500 text-xl">
-                MedCode Community !
-              </span>
+                MedCode Community ! 
+              </span> to publish blogs.
             </p>
 
             <button

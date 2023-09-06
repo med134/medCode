@@ -65,13 +65,13 @@ const page = () => {
           <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0 xs:inline-block">
             <div className="col-span-12 xs:mb-4">
               <FeaturedProject
-                type="store web app"
-                title="Modern Ecommerce website"
-                summary="an innovative and user-friendly e-commerce store that offers a wide range of trendy and fashionable clothing for men and women. Our store aims to provide customers with a seamless online shopping experience
-                using typeScript with Next.js and tailwind css"
-                img={project1}
-                link="https://med-stores.vercel.app/"
-                github="https://github.com/med134/stote-ecommerce-nextjs"
+                type="Website"
+                title="Next.js Blogging Website with Sanity"
+                summary="Discover a world of diverse voices as passionate bloggers share their unique experiences, knowledge, and creativity. From travel adventures to personal growth,
+                using Next.js with Sanity V3 and Tailwind css"
+                img={project3}
+                link="https://stote-ecommerce-nextjs-gezn.vercel.app/"
+                github="https://github.com/med134/blog-with-nextjs-sanity"
               />
             </div>
             <div className="col-span-6 sm:col-span-12 xs:mb-4">
@@ -95,13 +95,13 @@ const page = () => {
 
             <div className="col-span-12 xs:mb-4">
               <FeaturedProject
-                type="Website"
-                title="Next.js Blogging Website with Sanity"
-                summary="Discover a world of diverse voices as passionate bloggers share their unique experiences, knowledge, and creativity. From travel adventures to personal growth,
-                using Next.js with Sanity V3 and Tailwind css"
-                img={project3}
-                link="https://stote-ecommerce-nextjs-gezn.vercel.app/"
-                github="https://github.com/med134/blog-with-nextjs-sanity"
+                type="store web app"
+                title="Modern Ecommerce website"
+                summary="an innovative and user-friendly e-commerce store that offers a wide range of trendy and fashionable clothing for men and women. Our store aims to provide customers with a seamless online shopping experience
+                using typeScript with Next.js and tailwind css"
+                img={project1}
+                link="https://med-stores.vercel.app/"
+                github="https://github.com/med134/stote-ecommerce-nextjs"
               />
             </div>
             <div className="col-span-6 sm:col-span-12 xs:mb-4">
