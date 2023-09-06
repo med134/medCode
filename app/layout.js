@@ -16,6 +16,7 @@ export const metadata = {
   keywords: [
     "programming",
     "freelance",
+    "frontend developer",
     "online jobs",
     "work online",
     "make money online",

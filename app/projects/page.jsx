@@ -65,12 +65,12 @@ const page = () => {
           <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0 xs:inline-block">
             <div className="col-span-12 xs:mb-4">
               <FeaturedProject
-                type="Featured Project"
+                type="store web app"
                 title="Modern Ecommerce website"
                 summary="an innovative and user-friendly e-commerce store that offers a wide range of trendy and fashionable clothing for men and women. Our store aims to provide customers with a seamless online shopping experience
                 using typeScript with Next.js and tailwind css"
                 img={project1}
-                link="https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css"
+                link="https://med-stores.vercel.app/"
                 github="https://github.com/med134/stote-ecommerce-nextjs"
               />
             </div>
@@ -88,8 +88,8 @@ const page = () => {
                 type="Website"
                 title="Example portfolio of designer"
                 img={project4}
-                link="https://devdreaming.com/videos/build-stunning-fashion-studio-website-with-reactJS-locomotive-scroll-gsap"
-                github="https://github.com/med134/Designer-portfolio"
+                link="https://my-portfolio-topaz-gamma.vercel.app/"
+                github=""
               />
             </div>
 
@@ -100,17 +100,17 @@ const page = () => {
                 summary="Discover a world of diverse voices as passionate bloggers share their unique experiences, knowledge, and creativity. From travel adventures to personal growth,
                 using Next.js with Sanity V3 and Tailwind css"
                 img={project3}
-                link="https://devdreaming.com/videos/build-stunning-portfolio-website-react-js-framer-motion"
+                link="https://stote-ecommerce-nextjs-gezn.vercel.app/"
                 github="https://github.com/med134/blog-with-nextjs-sanity"
               />
             </div>
             <div className="col-span-6 sm:col-span-12 xs:mb-4">
               <Project
-                type="Web App"
-                img={project5}
-                title="Modern Real Estate App"
-                link="https://github.com/med134/estate-app-web"
-                github="https://github.com/codebucks27/wibe-studio"
+                type="Featured Project"
+                title="Authentication with Next.js"
+                img={project7}
+                link="https://vercel.com/med134/auth-weith-nextjs"
+                github="https://github.com/med134/auth-weith-nextjs"
               />
             </div>
             <div className="col-span-6 sm:col-span-12 xs:mb-4">
@@ -124,12 +124,12 @@ const page = () => {
             </div>
             <div className="col-span-12 xs:mb-4">
               <FeaturedProject
-                type="Featured Project"
-                title="Authentication with Next.js and tailwind css"
-                summary="Discover a authentication with next.js using middleware in next js 13 and NextAuth package,well also update the session on the client side using sever action"
-                img={project7}
-                link=""
-                github="https://github.com/med134/auth-weith-nextjs"
+                type="Web App"
+                img={project5}
+                title="Modern Real Estate App"
+                link="https://estate-app-web.vercel.app/"
+                github="https://github.com/codebucks27/wibe-studio"
+                summary="Discover a Modern Real Estate App programming with React js and tailwind css with modern Design frontend"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
@@ -137,7 +137,7 @@ const page = () => {
                 type="SaaS project"
                 img={project8}
                 title="Screenshot App responsive"
-                link="https://github.com/med134/screeshotApp"
+                link="https://screen-woad.vercel.app/"
                 github="https://github.com/med134/screeshotApp"
               />
             </div>

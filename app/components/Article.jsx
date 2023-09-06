@@ -8,11 +8,11 @@ import Youtube from "./Youtube";
 
 const Article = async () => {
   const [news, setNews] = useState([]);
-  
+
   useEffect(() => {
     const fetchSeoData = async () => {
       const res = await fetch(
-        `https://hn.algolia.com/api/v1/search?query=programming_languages`,
+        `https://hn.algolia.com/api/v1/search?query=software_developments`,
         {
           cache: "no-store",
         }
@@ -22,6 +22,7 @@ const Article = async () => {
       }
       const data = await res.json();
       setNews(data.hits);
+      console.log(data.hits);
     };
     fetchSeoData();
   }, []);
@@ -35,34 +36,36 @@ const Article = async () => {
           {news.map((item, index) =>
             index <= 4 ? (
               <div
+                className="grid gap-6 p-4 overflow-hidden shadow-xl shadow-gray-600"
                 key={item.objectID}
-                className="flex flex-col p-6 shadow-xl bg-slate-50 mb-4 rounded-lg border dark:border-light dark:bg-dark dark:text-light"
               >
-                <div className="flex flex-1 flex-col justify-between px-2">
+                <div className="flex flex-1 flex-col justify-between bg-white p-6 lg:py-8 lg:px-7">
                   <div className="flex-1">
-                    <p className="text-base font-bold underline ml-3">
-                      {item.author}
-                    </p>
-                    <blockquote className="mt-4 flex-1">
-                      <h2 className="text-2xl font-lexend text-blue-900 font-semibold sm:text-xl dark:text-gray-300">
-                        {item.title}...
-                      </h2>
-                    </blockquote>
-                  </div>
-                  <div className="-mx-5 mt-6">
+                    <p className="text-2xl font-bold">News-Articles</p>
                     <Link
-                      href={`${item.url}`}
+                      href={item.url}
                       target="_blank"
-                      className="font-lexend ml-4 p-2 text-light rounded-md text-sm hover:text-dark hover:underline bg-borderColor"
+                      className="mt-8 flex-1"
                     >
-                      read more ...
+                      <h3 className="leading-relaxed text-blue-900 text-xl font-lexend font-semibold">
+                        {item.title}
+                      </h3>
                     </Link>
+                  </div>
+                  <div className="mt-8 border px-8 inline-flex items-center rounded-md shadow-md text-gray-600 py-1 g-blue-400 ">
+                    <div className="">
+                      <p className="text-base font-bold ">
+                        {item.author}/{item.relevancy_score}
+                      </p>
+                      <p className="mt-0.5 text-sm">{item.created_at}</p>
+                    </div>
                   </div>
                 </div>
               </div>
             ) : null
           )}
         </div>
+
         <div className="slider xs:w-full">
           <div className="max-w-md mb-8 rounded-xl border bg-white p-6 pb-10 text-gray-900 dark:bg-dark dark:text-light">
             <p className="text-md text-blue-900 font-medium dark:text-gray-400">

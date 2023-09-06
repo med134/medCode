@@ -4,12 +4,10 @@ import React from "react";
 import Link from "next/link";
 import { getData } from "./FetchData";
 
-
 const Blogs = async () => {
   const data = await getData();
   return (
     <>
- 
       <h1 className="text-3xl font-lexend text-start mt-10 font-bold underline px-12 dark:text-light">
         Recent Articles :
       </h1>
@@ -18,16 +16,13 @@ const Blogs = async () => {
           index <= 7 ? (
             <article
               key={item.id}
-              className="w-72 lg:w-64 h-auto overflow-hidden rounded-lg border-2 border-orange-400 border-opacity-60 shadow-lg sm:w-96 xs:w-80 dark:text-light"
+              className="w-72 lg:w-64 h-auto overflow-hidden rounded-lg border-2 border-gray-400 border-opacity-60 shadow-lg sm:w-96 xs:w-80 dark:text-light"
             >
               <img
                 className="w-92 h-auto transform object-contain transition duration-500 ease-in-out group-hover:scale-105 md:h-36"
                 src={item.cover_image}
                 alt="blog"
               />
-              <h2 className="title-font inline-block cursor-pointer px-6 pt-4 pb-1 text-xs font-semibold uppercase tracking-widest text-orange-600 hover:font-bold">
-                Article
-              </h2>
               <div className="py-1 px-6">
                 <Link
                   href={item.url}

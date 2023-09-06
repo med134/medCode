@@ -7,7 +7,7 @@ import profilePic from "../app/images/med12.png";
 import TransitionEffect from "./components/TransitionEffect";
 
 export const metadata = {
-  title: "medCode|web developer",
+  title: "medCode|freelance web developer",
   description: `Explore my world of web development through
    my dynamic portfolio website. Discover a showcase 
    of meticulously crafted websites and web applications,

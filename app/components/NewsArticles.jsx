@@ -22,12 +22,12 @@ const NewsArticles = async () => {
         const response = await fetch(url, options);
         const result = await response.json();
         setNews(result.data.coins);
-        console.log(result.data.coins);
       } catch (error) {
         console.error(error);
       }
     };
     fetchSeoData();
+    
   }, []);
 
   return (
@@ -71,7 +71,7 @@ const NewsArticles = async () => {
                 className={`${
                   post.change < 0
                     ? "text-red-500 font-semibold text-[13px]"
-                    : "text-green-500 font-semibold text-[13px]"
+                    : `text-green-500 font-semibold text-[13px]`
                 }`}
               >
                 {post.change} %
