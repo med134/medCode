@@ -8,16 +8,36 @@ import TransitionEffect from "./components/TransitionEffect";
 
 export const metadata = {
   title: "medCode|freelance web developer",
-  description: `Explore my world of web development through
-   my dynamic portfolio website. Discover a showcase 
-   of meticulously crafted websites and web applications,
-    highlighting my expertise in HTML, CSS, JavaScript, with new frameworks,
-     React.js ,Next.js, Vue.js, Angular and responsive UX Design. Immerse yourself
-      in a collection of innovative projects, from e-commerce platforms and 
-      interactive interfaces to sleek personal blogs. Experience the seamless
-       fusion of creativity and functionality as you browse through my diverse
-        range of projects and free code source and templates & components.
-         Join me on this journey of code, UI ,UX design, and innovation`,
+  description: `Learning programming is accessible for beginners through software programming
+   courses. These courses introduce essential programming languages, such as Python and JavaScript,
+    teaching coding fundamentals and providing hands-on
+   experience with computer programming software. Start your coding journey today`,
+  keywords: [
+    "Web Development",
+    "how to learn programming",
+    "computer programming",
+    "computer programming software",
+    "programming languages for beginners",
+    "software programming courses",
+    "python programming",
+    "Artificial Intelligence",
+    "best programming languages",
+    "rust programming language",
+    " Programming Languages",
+    "best laptop for programming",
+    "Software Engineering",
+    "programming wallpaper",
+    "swift programming language ",
+    "Front-end",
+    "UI/UX Design",
+    "Frameworks",
+    "Best Practices",
+    "Web Design",
+    "Mobile Development",
+    "Learning Resources",
+    "Problem Solving",
+    "Code Snippets",
+  ],
   alternates: {
     canonical: `/`,
     languages: {
@@ -60,22 +80,20 @@ export default function Home() {
                 <span className="design"> Design.</span>
               </h5>
               <p className="my-4 text-base font-lexend md:text-sm sm:text-sm xs:text-sm">
-                As a skilled web developer, I am dedicated to turning
-                ideas into innovative web applications. Explore my latest
-                projects and blogs and free templates & components, showcasing my expertise in web
-                development and mobile application.
+                As a skilled web developer, I am dedicated to turning ideas into
+                innovative web applications. Explore my latest projects and
+                blogs and free templates & components, showcasing my expertise
+                in web development and mobile application.
               </p>
               <div className="flex items-center self-start mt-2 lg:self-center">
                 <Link
-                  href="/dummy.pdf"
-                  target={"_blank"}
+                  href="/about"
                   className="flex items-center bg-dark text-light p-2.5 px-6
                   rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
                   border-2 border-solid border-transparent hover:border-dark
                   dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light
                   hover:dark:border-light md:p-2 md:px-4 md:text-base
                   "
-                  download={true}
                 >
                   Resume <LinkArrow className={"w-6 ml-1"} />
                 </Link>

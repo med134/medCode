@@ -13,11 +13,22 @@ async function getData() {
   return res.json();
 }
 export const metadata = {
-  title: "free templates & components",
-  description: `Browse through MedCode collection of free templates and components for tailwind css and bootstrap
+  title: "medCode | free templates & components",
+  description: `Browse through MedCode collection of free frontend templates and components for tailwind css and bootstrap
   with full free code source`,
   keywords: [
     "Web Development",
+    "tailwind css free components",
+    "tailwind css free components",
+    "frontend templates",
+    "how to learn programming",
+    "free components sketchup ",
+    "python programming",
+    "django frontend templates",
+    "Artificial Intelligence",
+    "best programming languages",
+    "rust programming language",
+    " Programming Languages",
     "Software Engineering",
     "tailwind css",
     "free templates",
@@ -30,7 +41,6 @@ export const metadata = {
     "Best Practices",
     "Web Design",
     "Learning Resources",
-    "IDEs (Integrated Development Environments)",
     "Code Snippets",
   ],
   alternates: {
@@ -64,8 +74,8 @@ const page = async () => {
               Free Templates & components with free code Sources
             </div>
             <h5 className="mb-4 font-sans text-4xl font-bold text-light p-4 px-10 sm:text-2xl xs:px-4">
-              Discover Free & Premium Full Responsive Templates and components for Front-end
-              Developers
+              Discover Free & Premium Full Responsive Templates and components
+              for Front-end Developers
             </h5>
             <p className="text-light text-sm px-10 xs:px-4">
               Open source UI & UX components and templates to bootstrap your new

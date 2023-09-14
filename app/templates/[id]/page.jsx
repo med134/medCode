@@ -53,7 +53,7 @@ const TemplateId = async ({ params }) => {
 
   return (
     <>
-      <div className="showTemp p-16 gap-8 items-center dark:bg-dark md:inline-block xs:p-2">
+      <div className="showTemp p-16 gap-8 dark:bg-dark md:inline-block xs:p-2">
         <div className="preview px-6">
           <Link
             href="/templates"
