@@ -5,6 +5,7 @@ import React from "react";
 import useSWR from "swr";
 import Loading from "../loading";
 import { useRouter } from "next/navigation";
+import Layout from "../components/Layout";
 
 const Dashboard = () => {
   const handleDelete = async (id) => {
@@ -61,7 +62,7 @@ const Dashboard = () => {
   }
   if (session.status === "authenticated") {
     return (
-      <>
+      <Layout className="p-16 py-10">
         <h1 className="text-xl font-lexend text-gray-700 px-5">
           Add New template or component
         </h1>
@@ -131,7 +132,7 @@ const Dashboard = () => {
             )}
           </div>
         </div>
-      </>
+      </Layout>
     );
   }
 };
