@@ -12,7 +12,7 @@ import profilePic from "../images/med.jpg";
 export const metadata = {
   title: "medCode|About Me",
   description:
-    "Med Dakir Software developer UX Designer Resume education career Skills experiences",
+    `Welcome to My Web Developer Portfolio UX Designer Here, you'll find a showcase of my career and educational as a web developer also some of my skills`,
   alternates: {
     canonical: `/about`,
     languages: {
@@ -33,9 +33,9 @@ const Page = () => {
           />
           <div className="grid w-full grid-cols-8 gap-16 sm:gap-8 xs:inline-block">
             <div className="col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8">
-              <h1 className="mb-4 text-lg font-bold underline uppercase text-dark/75 dark:text-light/75">
+              <p className="mb-4 text-lg font-bold underline uppercase text-dark/75 dark:text-light/75">
                 Biography
-              </h1>
+              </p>
               <p className="font-lexend text-xl">
                 Hi, I&apos;m med, a web developer and UI/UX designer with a
                 passion for creating beautiful, functional, and user-centered

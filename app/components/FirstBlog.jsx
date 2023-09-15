@@ -13,11 +13,11 @@ export async function FirstBlog() {
         <div className="row-gap-12 p-10 lg:p-6 lg:gap-2 grid grid-cols-2 gap-10 md:flex md:flex-col sm:p-2">
           <div className="flex flex-col">
             <div className="">
-              <h2 className="font-sans text-4xl font-bold tracking-tighter">
+              <div className="font-sans text-4xl font-bold tracking-tighter">
                 <span className="leading-snug dark:text-light md:text-3xl font-semibold">
                   code chronicles : unveiling the world of programming
                 </span>
-              </h2>
+              </div>
               <p className="mt-6 text-lg text-gray-700 dark:text-light font-lexend xs:text-sm">
                 Explore the latest insights, tutorials,Projects, free code, and
                 expert advice on programming and software development. Elevate

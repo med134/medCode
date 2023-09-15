@@ -72,10 +72,10 @@ const page = async () => {
             <h1 className="mb-3 font-lexend text-xl px-10 text-white xs:text-2xl">
               Free Templates & components with free code Sources
             </h1>
-            <h5 className="mb-4 font-sans text-4xl font-bold text-light p-4 px-10 sm:text-2xl xs:px-4">
+            <p className="mb-4 font-sans text-4xl font-bold text-light p-4 px-10 sm:text-2xl xs:px-4">
               Discover Free & Premium Full Responsive Templates and components
               for Front-end Developers
-            </h5>
+            </p>
             <p className="text-light text-sm px-10 xs:px-4">
               Open source UI & UX components and templates to bootstrap your new
               apps, projects or landing sites!
@@ -113,9 +113,9 @@ const page = async () => {
           </div>
         </div>
         <div className="p-6 px-16 dark:text-light xs:px-8 xs:p-2">
-          <h1 className="text-3xl font-lexend mt-4 sm:text-2xl">
+          <p className="text-3xl font-lexend mt-4 sm:text-2xl">
             Latest components & projects & templates
-          </h1>
+          </p>
           <p className="sm:text-sm mt-2">
             The newest featured & responsive templates and full project with
             different frameworks.

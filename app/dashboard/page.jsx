@@ -1,11 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-"use client"
+"use client";
 import { useSession } from "next-auth/react";
 import React from "react";
 import useSWR from "swr";
 import Loading from "../loading";
 import { useRouter } from "next/navigation";
-
 
 const Dashboard = () => {
   const handleDelete = async (id) => {
@@ -63,10 +62,10 @@ const Dashboard = () => {
   if (session.status === "authenticated") {
     return (
       <div className="p-16 flex justify-between lg:inline-block lg:justify-center lg:items-center sm:p-8">
+        <h1 className="text-xl font-lexend text-gray-700 px-5">
+          Add New template or component
+        </h1>
         <form className="p-4 text-left text-gray-700" onSubmit={handleSubmit}>
-          <h1 className="text-xl font-lexend text-gray-700 px-5">
-            Add New template or component
-          </h1>
           <input
             type="text"
             placeholder="Title"

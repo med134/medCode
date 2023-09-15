@@ -6,9 +6,22 @@ import MyBooks from "../components/MyBooks";
 import Loading from "../loading";
 export const metadata = {
   title: "medCode|Books",
-  description: `Discover a diverse range of titles, spanning from introductory guides for beginners to advanced texts that delve into the intricacies of algorithms, data structures, software development, and more. Our selection includes books on programming languages such as Python, Java, C++, and JavaScript, ensuring there's something for every coding enthusiast, whether you're just starting your journey or seeking to refine your expertise`,
-  keywords: `Algorithm tutorials, Data structures, Python programming, Coding guides, Mathematics books, Programming books
-  Beginner programming , Advanced programming, C++ resources`,
+  description: `Dive into the World of Programming with Our Curated Selection of Books.Whether you're a novice eager to start your coding journey or an experienced developer`,
+  keywords: [
+    "Web Development books",
+    "how to learn programming",
+    "computer programming",
+    "computer programming software",
+    "programming languages for beginners",
+    "software programming courses",
+    "python programming",
+    "Artificial Intelligence",
+    "best programming languages",
+    "rust programming language",
+    " Programming Languages",
+    "best laptop for programming",
+  ],
+
   alternates: {
     canonical: `/books`,
     languages: {

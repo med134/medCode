@@ -70,20 +70,20 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <p
+              <h1
                 className="text-6xl text-left 
                 xl:text-5xl lg:text-center lg:text=6xl md:text-5xl sm:text-3xl"
               >
                 Turning Vision Into Reality With{" "}
                 <span className="code">Code</span> And{" "}
                 <span className="design"> Design.</span>
-              </p>
-              <h1 className="my-4 text-base font-lexend md:text-sm sm:text-sm xs:text-sm">
+              </h1>
+              <p className="my-4 text-base font-lexend md:text-sm sm:text-sm xs:text-sm">
                 As a skilled web developer, I am dedicated to turning ideas into
                 innovative web applications. Explore my latest projects and
                 blogs and free templates & components, showcasing my expertise
                 in web development and mobile application.
-              </h1>
+              </p>
               <div className="flex items-center self-start mt-2 lg:self-center">
                 <Link
                   href="/about"

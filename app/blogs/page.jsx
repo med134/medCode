@@ -6,7 +6,7 @@ import Loading from "../loading";
 import { FirstBlog } from "../components/FirstBlog";
 import Article from "../components/Article";
 import Layout from "../components/Layout";
-import TransitionEffect from "../components/TransitionEffect";
+
 export const metadata = {
   title: "medCode|Blogs & Articles",
   description: `Browse through MedCode collection of software engineering articles blogs and debugging tutorials  Next.js, React.js, javascript html ,css web development`,
