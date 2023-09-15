@@ -52,7 +52,7 @@ const Page = () => {
       <main className="dark:bg-dark">
         <Layout className="p-6 2xl:p-4 lg:p-4 md:p-2 xs:p-0">
           <AnimatedText
-          className='text-[40px] m-6 text-borderColor md:text-4xl xs:text-3xl'
+            className="text-[40px] m-6 text-borderColor md:text-4xl xs:text-3xl"
             text="Software Development Skills:Tips and Tricks for
             Success"
           />
