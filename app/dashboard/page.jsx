@@ -1,11 +1,46 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
 import { useSession } from "next-auth/react";
 import React from "react";
 import useSWR from "swr";
 import Loading from "../loading";
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
+export const metadata = {
+  title: "medCode | Dashboard",
+  description: `add your free templates for help developers, dashboard provides real-time data visualizations, performance metrics, and one-click access to essential tools`,
+  keywords: [
+    "Web Development",
+    "tailwind css free components",
+    "tailwind css free components",
+    "frontend templates",
+    "how to learn programming",
+    "free components sketchup ",
+    "python programming",
+    "django frontend templates",
+    "Artificial Intelligence",
+    "best programming languages",
+    "rust programming language",
+    " Programming Languages",
+    "Software Engineering",
+    "tailwind css",
+    "free templates",
+    "free components",
+    "bootstrap",
+    "free code",
+    "Front-end",
+    "UI/UX Design",
+    "Frameworks",
+    "Best Practices",
+    "Web Design",
+    "Learning Resources",
+    "Code Snippets",
+  ],
+  alternates: {
+    canonical: `/dashboard`,
+    languages: {
+      en: `/en/dashboard`,
+    },
+  }
+};
 const Dashboard = () => {
   const handleDelete = async (id) => {
     try {
@@ -25,13 +60,12 @@ const Dashboard = () => {
     const link = e.target[3].value;
     const category = e.target[4].value;
     const code = e.target[5].value;
-
     try {
       await fetch("/api/posts", {
         method: "POST",
         body: JSON.stringify({
           title,
-          description, 
+          description,
           image,
           link,
           category,
@@ -53,7 +87,7 @@ const Dashboard = () => {
     `/api/posts?username=${session?.data?.user.name}`,
     fetcher
   );
-  console.log(data)
+  console.log(data);
   if (session.status === "loading") {
     return <Loading />;
   }
@@ -65,7 +99,7 @@ const Dashboard = () => {
       <div className="p-16 flex justify-between lg:inline-block lg:justify-center lg:items-center sm:p-8">
         <form className="p-4 text-left text-gray-700" onSubmit={handleSubmit}>
           <h1 className="text-xl font-lexend text-gray-700 px-5">
-            Add New Post
+            Add New template or component
           </h1>
           <input
             type="text"
@@ -107,8 +141,8 @@ const Dashboard = () => {
             data?.map((post) => (
               <div key={post._id}>
                 <div className="">
-                  <img
-                    className="rounded-md"
+                  <Image
+                    className="rounded-md object-cover"
                     src={post.image}
                     alt="image_post"
                     width={350}

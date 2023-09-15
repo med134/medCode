@@ -28,9 +28,9 @@ const Article = async () => {
   }, []);
   return (
     <>
-      <h1 className="text-3xl font-bold px-24 underline xs:text-xl sm:text-center sm:px-0 dark:text-light">
+      <span className="text-3xl font-bold px-24 underline xs:text-xl sm:text-center sm:px-0 dark:text-light">
         Trending News and Articles :
-      </h1>
+      </span>
       <article className="article gap-16 p-20 lg:p-10 lg:gap-8 md:flex md:flex-col md:items-center">
         <div className="art flex-col justify-start">
           {news.map((item, index) =>

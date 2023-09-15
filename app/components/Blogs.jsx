@@ -8,9 +8,9 @@ const Blogs = async () => {
   const data = await getData();
   return (
     <>
-      <h1 className="text-3xl font-lexend text-start mt-10 font-bold underline px-12 dark:text-light">
+      <span className="text-3xl font-lexend text-start mt-10 font-bold underline px-12 dark:text-light">
         Recent Articles :
-      </h1>
+      </span>
       <section className="w-full p-16  py-10 grid grid-cols-4 gap-16 xl:grid-cols-3 xl:gap-10 lg:grid-cols-2 md:flex md:flex-wrap md:justify-center md:p-4 md:py-8 xs:p-2 dark:bg-dark">
         {data.map((item, index) =>
           index <= 7 ? (

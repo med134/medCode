@@ -40,9 +40,9 @@ const Books = () => {
         <Advices />
       </div>
       <div className="dark:bg-dark xs:pt-4">
-        <h1 className="text-3xl text-gray-700 font-sans py-5 px-8 font-bold dark:text-light md:text-2xl xs:text-xl xs:py-2">
+        <p className="text-3xl text-gray-700 font-sans py-5 px-8 font-bold dark:text-light md:text-2xl xs:text-xl xs:py-2">
           Recent Books That Every Programmer Must Read Once:
-        </h1>
+        </p>
         <div className="grid grid-cols-4 p-16 gap-6 py-4 xl:grid-cols-3 xl:p-16 lg:p-4 md:p-10 md:gap-4 sm:block dark:bg-dark">
           <Suspense fallback={<Loading />}>
             <MyBooks />

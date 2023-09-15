@@ -6,11 +6,12 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import Loading from "@/app/loading";
+import Pic from '@/app/images/login.png';
+import Image from "next/image";
 
 const Login = () => {
   const session = useSession();
   const router = useRouter();
-  console.log(session);
   useEffect(() => {
     if (session.status === "authenticated") {
       router?.push("/dashboard");
@@ -22,14 +23,12 @@ const Login = () => {
     <>
       <div className="flex min-h-0 w-full items-center justify-center bg-gray-100 p-28 lg:p-16 md:p-8 sm:p-4 sm:block">
         <div className="m-2 w-full rounded-2xl bg-gray-400 bg-cover bg-center text-white sm:hidden">
-          <img
+          <Image
             height={400}
             width={400}
             className="w-full h-full object-fill rounded-2xl"
             alt="image_blog"
-            src={
-              "https://img.freepik.com/free-vector/organic-flat-blog-post-illustration-with-people_23-2148955260.jpg?w=740&t=st=1692306911~exp=1692307511~hmac=934f6612ddfadbc6609f4eb967ba1f967be7adb40fe57751209a33792fcabc86"
-            }
+            src={Pic}
           />
         </div>
         <div className="w-full sm:w-full">

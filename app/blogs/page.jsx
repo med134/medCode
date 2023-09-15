@@ -49,13 +49,13 @@ export const metadata = {
 const Page = () => {
   return (
     <>
-      <TransitionEffect />
       <main className="dark:bg-dark">
         <Layout className="p-6 2xl:p-4 lg:p-4 md:p-2 xs:p-0">
-          <h1 className="text-4xl font-bold text-center py-8 px-6 font-lexend p-8">
-            Accelerate Your Software Development Skills:Tips and Tricks for
-            Success
-          </h1>
+          <AnimatedText
+          className='text-[40px] m-6 text-borderColor md:text-4xl xs:text-3xl'
+            text="Software Development Skills:Tips and Tricks for
+            Success"
+          />
           <FirstBlog />
           <div className="h-[1px] w-10/12 text-center bg-gray-400 ml-24"></div>
           <Suspense fallback={<Loading />}>
