@@ -14,11 +14,14 @@ import AnimatedText from "../components/AnimatedText";
 import TransitionEffect from "../components/TransitionEffect";
 export const metadata = {
   title: "medCode|Programming Projects",
-  description: `Discover the latest webapp projects created by MedCode,buying code source, sale a Frontend developer with 
-  expertise in Algorithms, React.js Next.js, javascript html, css ,java ,Mobile app development and full-stack development. Browse software engineering articles and tutorials for tips on creating your own portfolio`,
+  description: `Discover the latest web app projects created by MedCode, free and premium code source projects for beginners, React.js Next.js,javascript,HTML CSS`,
   keywords: [
     "Web Development",
-    "Artificial Intelligence",
+    "projects beginners",
+    "projects ideas",
+    "projects github",
+    "free projects",
+    "projects for resume",
     " Programming Languages",
     "Software Engineering",
     "Front-end",
@@ -40,8 +43,7 @@ export const metadata = {
   },
   openGraph: {
     title: "medCode|Projects",
-    description: `Discover the latest webapp projects created by MedCode,buying code source, sale a Frontend developer with 
-    expertise in Algorithms, React.js Next.js, javascript html, css ,java ,Mobile app development and full-stack development. Browse software engineering articles and tutorials for tips on creating your own portfolio`,
+    description: `Discover the latest web app projects created by MedCode, free and premium code source projects for beginners, React.js Next.js,javascript,HTML CSS`,
     images: [
       {
         url: "/app/images/projects/project7.jpg",

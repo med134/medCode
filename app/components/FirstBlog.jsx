@@ -8,16 +8,13 @@ import NewsArticles from "./NewsArticles";
 
 export async function FirstBlog() {
   const data = await getData();
- 
-
   return (
     <section className="py-2 text-black dark:bg-dark">
-      <div className="w-full px-6 lg:px-12 md:px-0 xs:px-1">
         <div className="row-gap-12 p-10 lg:p-6 lg:gap-2 grid grid-cols-2 gap-10 md:flex md:flex-col sm:p-2">
           <div className="flex flex-col">
             <div className="">
               <h2 className="font-sans text-4xl font-bold tracking-tighter">
-                <span className="leading-snug dark:text-light md:text-3xl">
+                <span className="leading-snug dark:text-light md:text-3xl font-semibold">
                   code chronicles : unveiling the world of programming
                 </span>
               </h2>
@@ -87,7 +84,7 @@ export async function FirstBlog() {
             <Seo />
           </div>
         </div>
-      </div>
+ 
     </section>
   );
 }

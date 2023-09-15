@@ -14,8 +14,7 @@ async function getData() {
 }
 export const metadata = {
   title: "medCode | free templates & components",
-  description: `Browse through MedCode collection of free frontend templates and components for tailwind css and bootstrap
-  with full free code source`,
+  description: `Browse through MedCode collection of free frontend templates and components for tailwind css and bootstrap with full free code source and developments kits`,
   keywords: [
     "Web Development",
     "tailwind css free components",
@@ -70,9 +69,9 @@ const page = async () => {
       <div className="bg-white dark:bg-dark dark:text-light">
         <div className="p-16 my-auto w-full py-20 bg-indigo-600 px-6 leading-4 xs:p-8 xs:py-6 shadow-lg xl:w-screen dark:bg-dark dark:text-light ">
           <div className="w-full">
-            <div className="mb-3 font-normal text-xl px-10 text-white xs:text-2xl xs:hidden">
+            <h1 className="mb-3 font-lexend text-xl px-10 text-white xs:text-2xl">
               Free Templates & components with free code Sources
-            </div>
+            </h1>
             <h5 className="mb-4 font-sans text-4xl font-bold text-light p-4 px-10 sm:text-2xl xs:px-4">
               Discover Free & Premium Full Responsive Templates and components
               for Front-end Developers

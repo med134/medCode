@@ -8,10 +8,9 @@ import TransitionEffect from "./components/TransitionEffect";
 
 export const metadata = {
   title: "medCode|freelance web developer",
-  description: `Learning programming is accessible for beginners through software programming
-   courses. These courses introduce essential programming languages, such as Python and JavaScript,
-    teaching coding fundamentals and providing hands-on
-   experience with computer programming software. Start your coding journey today`,
+  description: `Learning programming is accessible for beginners through free software programming
+   courses These courses introduce essential best programming languages,
+    `,
   keywords: [
     "Web Development",
     "how to learn programming",
@@ -64,27 +63,27 @@ export default function Home() {
               <div className="container xs:mb-4">
                 <div className="row">
                   <div className="col-md-12 text-left lg:text-center">
-                    <h3 className="animate-charcter font-dance text-4xl md:text-center font-bold lg:text-center">
+                    <p className="animate-charcter font-dance text-4xl md:text-center font-bold lg:text-center">
                       {" "}
                       Hi My Name is Med
-                    </h3>
+                    </p>
                   </div>
                 </div>
               </div>
-              <h5
+              <p
                 className="text-6xl text-left 
                 xl:text-5xl lg:text-center lg:text=6xl md:text-5xl sm:text-3xl"
               >
                 Turning Vision Into Reality With{" "}
                 <span className="code">Code</span> And{" "}
                 <span className="design"> Design.</span>
-              </h5>
-              <p className="my-4 text-base font-lexend md:text-sm sm:text-sm xs:text-sm">
+              </p>
+              <h1 className="my-4 text-base font-lexend md:text-sm sm:text-sm xs:text-sm">
                 As a skilled web developer, I am dedicated to turning ideas into
                 innovative web applications. Explore my latest projects and
                 blogs and free templates & components, showcasing my expertise
                 in web development and mobile application.
-              </p>
+              </h1>
               <div className="flex items-center self-start mt-2 lg:self-center">
                 <Link
                   href="/about"

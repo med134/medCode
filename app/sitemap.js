@@ -5,6 +5,7 @@ export default function sitemap() {
     return {
       url: `${baseUrl}${route.url}`,
       lastModified: new Date(),
+      changefreq: route.changefreq,
     };
   });
   return [...staticUrls];

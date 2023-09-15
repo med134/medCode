@@ -11,11 +11,12 @@ import profilePic from "../images/med.jpg";
 
 export const metadata = {
   title: "medCode|About Me",
-  description: "Med Dakir Software developer UX Designer Resume education career Skills experiences",
+  description:
+    "Med Dakir Software developer UX Designer Resume education career Skills experiences",
   alternates: {
     canonical: `/about`,
     languages: {
-      'en': `/en/about`,
+      en: `/en/about`,
     },
   },
 };
@@ -32,9 +33,9 @@ const Page = () => {
           />
           <div className="grid w-full grid-cols-8 gap-16 sm:gap-8 xs:inline-block">
             <div className="col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8">
-              <h2 className="mb-4 text-lg font-bold underline uppercase text-dark/75 dark:text-light/75">
+              <h1 className="mb-4 text-lg font-bold underline uppercase text-dark/75 dark:text-light/75">
                 Biography
-              </h2>
+              </h1>
               <p className="font-lexend text-xl">
                 Hi, I&apos;m med, a web developer and UI/UX designer with a
                 passion for creating beautiful, functional, and user-centered
@@ -60,9 +61,7 @@ const Page = () => {
 
             <div
               className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark
-bg-light p-8 dark:bg-dark dark:border-light xl:col-span-4 md:order-1 md:col-span-8
-"
-            >
+              bg-light p-8 dark:bg-dark dark:border-light xl:col-span-4 md:order-1 md:col-span-8" >
               <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light" />
               <Image
                 src={profilePic}
