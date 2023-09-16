@@ -45,12 +45,23 @@ const AddNewPost = () => {
       console.log(err);
     }
   };
+
   const session = useSession();
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading, mutate } = useSWR(
     `/api/posts?username=${session?.data?.user.name}`,
     fetcher
   );
+  const route = useRouter();
+  if (session.status === "loading") {
+    return <Loading />;
+  }
+  if (session.status === "unauthenticated") {
+    route?.push("/dashboard/login");
+  }
+  if (session.status === "authenticated") {
+    route?.push("/dashboard");
+  }
   return (
     <Layout className="p-16 py-10">
       <h1 className="text-xl font-lexend text-gray-700 px-5">
