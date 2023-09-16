@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
-import { BsArrowLeftCircleFill } from "react-icons/bs";
+import { BsArrowLeftCircleFill, BsArrowsFullscreen } from "react-icons/bs";
 import ClipBoard from "@/app/components/ClipBorad";
 
 async function getData(id) {
@@ -74,25 +74,12 @@ const TemplateId = async ({ params }) => {
             <Link
               href={data.link}
               target="_blank"
-              className={`group flex w-48 cursor-pointer select-none items-center justify-center rounded-md bg-gray-50 text-sm px-6 py-2 text-borderColor transition`}
+              className={`flex w-48 mb-2 cursor-pointer select-none items-center justify-center rounded-md bg-purple-500 text-sm px-6 py-1 text-light`}
             >
-              <span className="group flex w-full items-center justify-center rounded py-1 text-center font-bold">
-                Live preview
+              <span className="flex w-full items-center justify-between rounded py-1 text-center font-semibold">
+                Full Screen
+                <BsArrowsFullscreen className="h-4 w-4" />
               </span>
-              <svg
-                className="flex-0 group-hover:w-6 ml-4 h-6 w-0 transition-all"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
             </Link>
           </div>
           <div className="w-full mb-4 xs:w-[350px] xs:mb-4">
@@ -110,21 +97,24 @@ const TemplateId = async ({ params }) => {
           <h4 className="text-xl font-medium text-purple-400 mb-2 underline px-2">
             Recent Templates:
           </h4>
-          {templates.map((item) => (
-            <div
-              key={item._id}
-              className="py-6 border shadow-md rounded-md mb-4 p-4"
-            >
-              <img src={item.image} alt="template_image" className="mb-2" />
-              <Link
-                href={`/templates/${item._id}`}
-                className="font-semibold mb-2 text-gray-600 hover:text-gray-400 hover:underline dark:text-light"
-              >
-                {item.title}
-              </Link>
-              <h6 className="text-xs text-purple-400">{item.category}</h6>
-            </div>
-          ))}
+          {templates.map(
+            (item) =>
+              item._id != params.id && (
+                <div
+                  key={item._id}
+                  className="py-6 border shadow-md rounded-md mb-4 p-4"
+                >
+                  <img src={item.image} alt="template_image" className="mb-2" />
+                  <Link
+                    href={`/templates/${item._id}`}
+                    className="font-semibold mb-2 text-gray-600 hover:text-gray-400 hover:underline dark:text-light"
+                  >
+                    {item.title}
+                  </Link>
+                  <h6 className="text-xs text-purple-400">{item.category}</h6>
+                </div>
+              )
+          )}
         </div>
       </div>
     </>

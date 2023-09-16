@@ -61,9 +61,9 @@ export async function FirstBlog() {
                         {res.comments_count}
                       </p>
                     </div>
-                    <h3 className="text-xs mt-2 uppercase font-bold text-borderColor">
+                    <p className="text-xs mt-2 uppercase font-bold text-borderColor">
                       Article
-                    </h3>
+                    </p>
                     <p className="mt-2 font-sans text-xl font-bold sm:text-[16px]">
                       {res.title}
                     </p>
