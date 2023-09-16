@@ -39,7 +39,14 @@ export const metadata = {
   },
 };
 const Dashboard = () => {
-  return <AddNewPost />;
+  return (
+    <div>
+      <h1 className="text-xl font-lexend text-gray-700 px-5">
+       Programming Templates and Components Dashboard: Streamline Your Development
+      </h1>
+      <AddNewPost />
+    </div>
+  );
 };
 
 export default Dashboard;

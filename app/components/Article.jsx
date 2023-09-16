@@ -47,9 +47,9 @@ const Article = async () => {
                       target="_blank"
                       className="mt-8 flex-1"
                     >
-                      <h3 className="leading-relaxed text-blue-900 text-xl font-lexend font-semibold">
+                      <span className="leading-relaxed text-blue-900 text-xl font-lexend font-semibold">
                         {item.title}
-                      </h3>
+                      </span>
                     </Link>
                   </div>
                   <div className="mt-8 border px-8 inline-flex items-center rounded-md shadow-md text-gray-600 py-1 g-blue-400 ">

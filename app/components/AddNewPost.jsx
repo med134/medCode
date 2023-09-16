@@ -63,10 +63,10 @@ const AddNewPost = () => {
     route?.push("/dashboard");
   }
   return (
-    <Layout className="p-16 py-10">
-      <h1 className="text-xl font-lexend text-gray-700 px-5">
+    <Layout className="p-8 py-8">
+      <p className="text-xl font-lexend text-gray-700 px-5">
         Add New template or component
-      </h1>
+      </p>
       <div className="p-16 flex justify-between lg:inline-block lg:justify-center lg:items-center sm:p-8">
         <form className="p-4 text-left text-gray-700" onSubmit={handleSubmit}>
           <input

@@ -32,9 +32,9 @@ const NewsArticles = async () => {
 
   return (
     <>
-      <h3 className="text-xl font-semibold text-gray-800 font-lexend rounded-lg mb-4 sm:text-sm">
+      <span className="text-xl font-semibold text-gray-800 font-lexend rounded-lg mb-4 sm:text-sm">
         Best Hardware Wallets-Crypto Prices (USD)
-      </h3>
+      </span>
       <div className="bg-white rounded-lg">
         {news?.map((post, index) =>
           index < 6 ? (
@@ -59,9 +59,9 @@ const NewsArticles = async () => {
                   src={post.iconUrl}
                   alt="crypto_icons"
                 />
-                <h2 className="text-[13px] font-semibold text-gray-900 px-8 uppercase xl:text-sm xl:px-4 xs:px-2">
+                <span className="text-[13px] font-semibold text-gray-900 px-8 uppercase xl:text-sm xl:px-4 xs:px-2">
                   {post.name}
-                </h2>
+                </span>
               </Link>
               <p className="text-[13px] font-semibold p-1 flex">
                 {post.price.slice(0, 10)}{" "}
