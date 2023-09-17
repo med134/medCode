@@ -63,11 +63,11 @@ const AddNewPost = () => {
     route?.push("/dashboard");
   }
   return (
-    <Layout className="p-8 py-8 sm:p-2 sm:py-2">
-      <p className="text-xl font-lexend text-gray-700 p-6 sm:p-2 underline sm:text-sm">
+    <div className="inline-block p-8 py-8 sm:p-2 sm:py-2">
+      <p className="text-xl font-lexend text-gray-700 p-6 md:text-medium text-left px-6 sm:p-2 underline sm:text-sm xs:text-center">
         Add New template or component
       </p>
-      <div className="p-8 flex justify-between lg:inline-block lg:justify-center lg:items-center sm:p-1">
+      <div className="p-8 flex justify-between md:inline-block sm:items-center">
         <form className="p-4 text-left text-gray-700" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -102,7 +102,7 @@ const AddNewPost = () => {
             Post Now
           </button>
         </form>
-        <div className="w-full p-6 rounded-lg sm:p-2">
+        <div className="w-full p-6 rounded-lg sm:p-2 items-start">
           {isLoading ? (
             <Loading />
           ) : (
@@ -133,7 +133,7 @@ const AddNewPost = () => {
           )}
         </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 

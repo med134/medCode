@@ -63,6 +63,12 @@ export const metadata = {
   verification: {
     google: "cFXi6ELWEfl4UY9OE5i_S5QFU3LbUvdxGgW6RQgHWw",
   },
+  alternates: {
+    canonical: `/`,
+    languages: {
+      "en-us": `/en`,
+    },
+  },
 };
 export default function RootLayout({ children }) {
   return (

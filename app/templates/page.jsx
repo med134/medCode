@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import TransitionEffect from "../components/TransitionEffect";
 import { BgTemplates } from "../components/Icons";
+import { Poppins } from "next/font/google";
 async function getData() {
   const res = await fetch(`https://medcode.dev/api/posts`, {
     cache: "no-store",
@@ -12,6 +13,7 @@ async function getData() {
   }
   return res.json();
 }
+
 export const metadata = {
   title: "medCode | free templates & components",
   description: `Browse through MedCode collection of free frontend templates and components for tailwind css and bootstrap with full free code source and developments kits`,
@@ -45,7 +47,7 @@ export const metadata = {
   alternates: {
     canonical: `/templates`,
     languages: {
-      "en-US": `/en/templates`,
+      "en-us": `/en/templates`,
     },
   },
   openGraph: {
@@ -69,7 +71,7 @@ const page = async () => {
       <div className="bg-white dark:bg-dark dark:text-light">
         <div className="p-16 my-auto w-full py-20 bg-indigo-600 px-6 leading-4 xs:p-8 xs:py-6 shadow-lg xl:w-screen dark:bg-dark dark:text-light ">
           <div className="w-full">
-            <h1 className="mb-3 font-lexend text-xl px-10 text-white xs:text-2xl">
+            <h1 className="mb-3 font-lexend text-xl px-10 text-white xs:text-2xl sm:hidden">
               Free Templates & components with free code Sources
             </h1>
             <p className="mb-4 font-sans text-4xl font-bold text-light p-4 px-10 sm:text-2xl xs:px-4">
@@ -128,11 +130,7 @@ const page = async () => {
             key={item._id}
             className="max-w-sm rounded overflow-hidden shadow-lg"
           >
-            <img
-              className="w-full"
-              src={item.image}
-              alt="Sunset in the mountains"
-            />
+            <img className="w-full" src={item.image} alt="templates_img" />
             <div className="px-6 py-2">
               <Link
                 href={`/templates/${item._id}`}
@@ -140,7 +138,7 @@ const page = async () => {
               >
                 {item.title}
               </Link>
-              <p className="text-gray-700 text-sm mt-2 dark:text-light">
+              <p className={`text-gray-700 text-sm mt-2 dark:text-light`}>
                 {item.description}
               </p>
             </div>

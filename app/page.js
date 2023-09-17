@@ -5,7 +5,11 @@ import Layout from "./components/Layout";
 import { LinkArrow } from "./components/Icons";
 import profilePic from "../app/images/med12.png";
 import TransitionEffect from "./components/TransitionEffect";
-
+import { Dancing_Script } from "next/font/google";
+const inter = Dancing_Script({
+  subsets: ["latin"],
+  variable: "--dancing",
+});
 export const metadata = {
   title: "medCode|freelance web developer",
   description: `Learning programming is accessible for beginners through free software programming
@@ -40,7 +44,7 @@ export const metadata = {
   alternates: {
     canonical: `/`,
     languages: {
-      "en-US": `/en`,
+      "en-us": `/en`,
     },
   },
 };
@@ -63,7 +67,9 @@ export default function Home() {
               <div className="container xs:mb-4">
                 <div className="row">
                   <div className="col-md-12 text-left lg:text-center">
-                    <p className="animate-charcter font-dance text-4xl md:text-center font-bold lg:text-center">
+                    <p
+                      className={`${inter.variable} animate-charcter font-dance text-4xl md:text-center font-bold lg:text-center`}
+                    >
                       {" "}
                       Hi My Name is Med
                     </p>

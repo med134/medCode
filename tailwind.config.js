@@ -38,13 +38,8 @@ module.exports = {
           "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 4px,#1b1b1b 40px)",
       },
       fontFamily: {
-        mont: ["var(--font-mont)", ...fontFamily.sans],
-        naut: ["The Nautigal"],
-        dance: ["Dancing Script"],
-        lexend: ["Lexend"],
-        Luckiest:["Luckiest Guy"],
-        Yeseva :["Yeseva One"],
-        Changa:["Changa"],
+        dance: ["var(--dancing)", ...fontFamily.sans],
+        poppins: ["var(--poppins)", ...fontFamily.sans],
       },
       colors: {
         dark: "#1b1b1b",

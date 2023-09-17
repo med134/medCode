@@ -30,7 +30,7 @@ export const metadata = {
   alternates: {
     canonical: `/blogs`,
     languages: {
-      "en-US": `/en/blogs`,
+      "en-us": `/en/blogs`,
     },
   },
   openGraph: {
