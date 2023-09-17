@@ -1,5 +1,6 @@
 import React from "react";
 import AddNewPost from "../components/AddNewPost";
+import Layout from "../components/Layout";
 
 export const metadata = {
   title: "medCode | Dashboard",
@@ -34,18 +35,18 @@ export const metadata = {
   alternates: {
     canonical: `/dashboard`,
     languages: {
-      en: `/en/dashboard`,
+      "en-us": `/en/dashboard`,
     },
   },
 };
 const Dashboard = () => {
   return (
-    <div>
-      <h1 className="text-xl font-lexend text-gray-700 px-5">
-       Programming Templates and Components Dashboard: Streamline Your Development
+    <Layout className="p-8 py-8 sm:p-4 sm:py-4">
+      <h1 className="text-xl font-lexend text-gray-700 p-6">
+        Free Templates and Components Dashboard
       </h1>
       <AddNewPost />
-    </div>
+    </Layout>
   );
 };
 

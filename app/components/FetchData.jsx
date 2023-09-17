@@ -7,4 +7,13 @@ export async function getData() {
   }
   return res.json();
 }
+export async function getAll() {
+  const res = await fetch(`https://www.medcode.dev/api/posts`, {
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
 

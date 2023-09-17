@@ -2,31 +2,27 @@
   {
     "name": "home",
     "url": "/",
-    "changefreq":"weekly"
+    "priority": 1
   },
   {
     "name": "about",
     "url": "/about",
-    "changefreq":"yearly"
+    "priority": 4
   },
   {
     "name": "projects",
-    "url": "/projects",
-    "changefreq":"monthly"
+    "url": "/projects"
   },
   {
     "name": "blogs",
-    "url": "/blogs",
-    "changefreq":"weekly"
+    "url": "/blogs"
   },
   {
     "name": "templates",
-    "url": "/templates",
-    "changefreq":"weekly"
+    "url": "/templates"
   },
   {
     "name": "books",
-    "url": "/books",
-    "changefreq":"monthly"
+    "url": "/books"
   }
 ]
