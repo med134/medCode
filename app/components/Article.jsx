@@ -22,7 +22,6 @@ const Article = async () => {
       }
       const data = await res.json();
       setNews(data.hits);
-      console.log(data.hits);
     };
     fetchSeoData();
   }, []);
