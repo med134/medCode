@@ -18,13 +18,13 @@ const Youtube = ({ sub, video }) => {
           alt="icon_youtube_channel"
         />
       </div>
-      <h1 className="items-center text-center text-xl mt-2 font-lexend font-semibold text-gray-900 dark:text-white">
+      <p className="items-center text-center text-xl mt-2 font-lexend font-semibold text-gray-900 dark:text-white">
         <AiFillYoutube
           className="inline-flex items-center  text-red-500 mr-2"
           fontSize={36}
         />{" "}
         Viva Code
-      </h1>
+      </p>
      
       <p className="text-center text-sm leading-6 mt-3 text-gray-500 hover:text-gray-600 dark:text-white">
         Vivacode is a YouTube channel dedicated to coding and programming,{" "}
