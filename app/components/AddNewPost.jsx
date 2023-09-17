@@ -67,7 +67,7 @@ const AddNewPost = () => {
       <p className="text-xl font-lexend text-gray-700 p-6 sm:p-4">
         Add New template or component
       </p>
-      <div className="p-16 flex justify-between items-center lg:inline-block lg:justify-center lg:items-center sm:p-8">
+      <div className="p-8 flex justify-between lg:inline-block lg:justify-center lg:items-center sm:p-8">
         <form className="p-4 text-left text-gray-700" onSubmit={handleSubmit}>
           <input
             type="text"

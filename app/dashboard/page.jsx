@@ -35,15 +35,15 @@ export const metadata = {
   alternates: {
     canonical: `/dashboard`,
     languages: {
-      "en-us": `/en/dashboard`,
+      "en-US": `/en/dashboard`,
     },
   },
 };
 const Dashboard = () => {
   return (
     <Layout className="p-8 py-8 sm:p-4 sm:py-4">
-      <h1 className="text-xl font-lexend text-gray-700 p-6">
-        Free Templates and Components Dashboard
+      <h1 className="text-2xl font-lexend text-gray-700 p-6 text-center">
+         Free Templates and Components Dashboard
       </h1>
       <AddNewPost />
     </Layout>

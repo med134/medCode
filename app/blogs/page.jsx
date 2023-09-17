@@ -30,7 +30,7 @@ export const metadata = {
   alternates: {
     canonical: `/blogs`,
     languages: {
-      "en-us": `/en/blogs`,
+      "en-US": `/en/blogs`,
     },
   },
   openGraph: {
@@ -45,6 +45,7 @@ export const metadata = {
       },
     ],
   },
+
 };
 const Page = () => {
   return (
