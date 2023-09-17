@@ -3,7 +3,6 @@ import React from "react";
 import Link from "next/link";
 import TransitionEffect from "../components/TransitionEffect";
 import { BgTemplates } from "../components/Icons";
-import { Poppins } from "next/font/google";
 async function getData() {
   const res = await fetch(`https://medcode.dev/api/posts`, {
     cache: "no-store",
