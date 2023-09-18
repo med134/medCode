@@ -42,7 +42,7 @@ export const metadata = {
 const Dashboard = () => {
   return (
     <div className="">
-      <h1 className="text-3xl font-lexend text-gray-700 mt-6 md:text-2xl text-center sm:text-sm xs:text-[10px]">
+      <h1 className="text-3xl font-lexend text-gray-700 mt-6 md:text-2xl text-center sm:text-xl">
         Free Templates and Components Dashboard
       </h1>
       <AddNewPost />

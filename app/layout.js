@@ -64,9 +64,12 @@ export const metadata = {
     google: "cFXi6ELWEfl4UY9OE5i_S5QFU3LbUvdxGgW6RQgHWw",
   },
   alternates: {
-    canonical: `/`,
+    canonical: `https://www.medcode.dev`,
     languages: {
-      "en-us": `/en`,
+      "en-us": `https://www.medcode.dev/en-us`,
+    },
+    types: {
+      'application/rss+xml': 'https://www.medcode.dev/rss',
     },
   },
 };
