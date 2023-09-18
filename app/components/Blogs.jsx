@@ -1,8 +1,9 @@
 "use client";
-/* eslint-disable @next/next/no-img-element */
+
 import React from "react";
 import Link from "next/link";
 import { getData } from "./FetchData";
+import Image from "next/image";
 
 const Blogs = async () => {
   const data = await getData();
@@ -18,10 +19,15 @@ const Blogs = async () => {
               key={item.id}
               className="w-72 lg:w-64 h-auto overflow-hidden rounded-lg border-2 border-gray-400 border-opacity-60 shadow-lg sm:w-96 xs:w-80 dark:text-light"
             >
-              <img
+              <Image
                 className="w-92 h-auto transform object-contain transition duration-500 ease-in-out group-hover:scale-105 md:h-36"
                 src={item.cover_image}
-                alt="blog"
+                alt="blog image"
+                priority
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
               />
               <div className="py-1 px-6">
                 <Link

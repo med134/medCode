@@ -1,8 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
+
 import React from "react";
 import Link from "next/link";
 import { BsArrowLeftCircleFill, BsArrowsFullscreen } from "react-icons/bs";
 import ClipBoard from "@/app/components/ClipBorad";
+import Image from "next/image";
 
 async function getData(id) {
   const res = await fetch(`https://medcode.dev/api/posts/${id}`, {
@@ -28,9 +29,12 @@ export async function generateMetadata({ params }) {
     title: post.title,
     description: post.description,
     alternates: {
-      canonical: `/templates/${params.id}`,
+      canonical: `https://www.medcode.dev/templates/${params.id}`,
       languages: {
-        en: `/en/templates/${params.id}`,
+        'en-us': `https://www.medcode.dev/en-us/templates${params.id}`,
+      },
+      types: {
+        'application/rss+xml': 'https://www.medcode.dev/rss',
       },
     },
     openGraph: {
@@ -83,10 +87,15 @@ const TemplateId = async ({ params }) => {
             </Link>
           </div>
           <div className="w-full mb-4 xs:w-[350px] xs:mb-4">
-            <img
+            <Image
               alt="preview"
+              priority
               src={data.image}
               className="h-full w-full border rounded-lg shadow-xl xs:w-[350px]"
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
             />
             <div className="p-2 mt-6 w-full xs:mt-6">
               <ClipBoard data={data} />
@@ -104,7 +113,16 @@ const TemplateId = async ({ params }) => {
                   key={item._id}
                   className="py-6 border shadow-md rounded-md mb-4 p-4"
                 >
-                  <img src={item.image} alt="template_image" className="mb-2" />
+                  <Image
+                    src={item.image}
+                    alt="template_image"
+                    className="mb-2"
+                    priority
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                    }}
+                  />
                   <Link
                     href={`/templates/${item._id}`}
                     className="font-semibold mb-2 text-gray-600 hover:text-gray-400 hover:underline dark:text-light"
