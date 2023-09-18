@@ -36,9 +36,12 @@ export const metadata = {
     "Code Snippets",
   ],
   alternates: {
-    canonical: `/projects`,
+    canonical: `https://www.medcode.dev/projects`,
     languages: {
-      "en-us": `/en/projects`,
+      "en-us": `https://www.medcode.dev/en-us/projects`,
+    },
+    types: {
+      'application/rss+xml': 'https://www.medcode.dev/rss',
     },
   },
   openGraph: {

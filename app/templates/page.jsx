@@ -14,7 +14,7 @@ async function getData() {
 }
 
 export const metadata = {
-  title: "medCode | free templates & components",
+  title: "medCode|free templates & components",
   description: `Browse through MedCode collection of free frontend templates and components for tailwind css and bootstrap with full free code source and developments kits`,
   keywords: [
     "Web Development",
@@ -44,13 +44,16 @@ export const metadata = {
     "Code Snippets",
   ],
   alternates: {
-    canonical: `/templates`,
+    canonical: `https://www.medcode.dev/templates`,
     languages: {
-      "en-us": `/en/templates`,
+      "en-us": `https://www.medcode.dev/en-us/templates`,
+    },
+    types: {
+      'application/rss+xml': 'https://www.medcode.dev/rss',
     },
   },
   openGraph: {
-    title: "Free Templates & Components",
+    title: "medCode|free templates & components",
     description: `Browse through MedCode collection of free templates and components for tailwind css and bootstrap
       with full free code source`,
     images: [

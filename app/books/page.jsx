@@ -23,9 +23,12 @@ export const metadata = {
   ],
 
   alternates: {
-    canonical: `/books`,
+    canonical: `https://www.medcode.dev/books`,
     languages: {
-      "en-us": `/en/books`,
+      "en-us": `https://www.medcode.dev/en-us/books`,
+    },
+    types: {
+      "application/rss+xml": "https://www.medcode.dev/rss",
     },
   },
   openGraph: {

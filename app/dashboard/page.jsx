@@ -33,9 +33,12 @@ export const metadata = {
     "Code Snippets",
   ],
   alternates: {
-    canonical: `/dashboard`,
+    canonical: `https://www.medcode.dev/dashboard`,
     languages: {
-      "en-us": `/en/dashboard`,
+      "en-us": `https://www.medcode.dev/en-us/dashboard`,
+    },
+    types: {
+      'application/rss+xml': 'https://www.medcode.dev/rss',
     },
   },
 };
