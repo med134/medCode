@@ -1,8 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
+
 import React from "react";
 import Link from "next/link";
 import TransitionEffect from "../components/TransitionEffect";
 import { BgTemplates } from "../components/Icons";
+import Image from "next/image";
 async function getData() {
   const res = await fetch(`https://medcode.dev/api/posts`, {
     cache: "no-store",
@@ -49,7 +50,7 @@ export const metadata = {
       "en-us": `https://www.medcode.dev/en-us/templates`,
     },
     types: {
-      'application/rss+xml': 'https://www.medcode.dev/rss',
+      "application/rss+xml": "https://www.medcode.dev/rss",
     },
   },
   openGraph: {
@@ -132,7 +133,16 @@ const page = async () => {
             key={item._id}
             className="max-w-sm rounded overflow-hidden shadow-lg"
           >
-            <img className="w-full" src={item.image} alt="templates_img" />
+            <Image
+              className="w-full"
+              src={item.image}
+              alt="templates image"
+              priority
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+            />
             <div className="px-6 py-2">
               <Link
                 href={`/templates/${item._id}`}

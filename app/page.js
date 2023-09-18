@@ -58,7 +58,7 @@ export default function Home() {
             <div className="w-1/2 md:w-full">
               <Image
                 src={profilePic}
-                alt="med_dakir"
+                alt="developer_image"
                 className="w-[600px] mb-10 h-auto ml-10 md:inline-block md:w-full sm:ml-2"
                 priority
               />
