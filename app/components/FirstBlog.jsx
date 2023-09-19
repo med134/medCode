@@ -43,10 +43,8 @@ export async function FirstBlog() {
                   src={res.cover_image}
                   alt="image articles"
                   priority
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                  }}
+                  width={500}
+                  height={400}
                 />
                 <div className="font-lexend ml-6 py-6">
                   <div className="absolute right-6 flex">

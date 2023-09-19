@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
@@ -31,15 +30,10 @@ const MyBooks = () => {
           className="mx-auto my-4 flex w-full flex-col overflow-hidden rounded-2xl border border-gray-300 bg-white text-gray-900 transition hover:translate-y-2 hover:shadow-lg dark:bg-light dark:border-light"
         >
           <Link href={item.volumeInfo.previewLink} target="_blank">
-            <Image
+            <img
               src={item.volumeInfo.imageLinks.thumbnail}
               className="h-56 w-full object-contain overflow-hidden p-2 rounded-lg"
-              alt="books image"
-              priority
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              alt="book_image"
             />
             <div className="flex-auto px-6 py-5">
               <span className="mb-2 flex items-center text-sm font-semibold">

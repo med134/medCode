@@ -24,10 +24,8 @@ const Blogs = async () => {
                 src={item.cover_image}
                 alt="blog image"
                 priority
-                style={{
-                  width: "100%",
-                  height: "auto",
-                }}
+                 width={300}
+                 height={200}
               />
               <div className="py-1 px-6">
                 <Link
