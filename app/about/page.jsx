@@ -10,7 +10,7 @@ import React from "react";
 import profilePic from "../images/med.jpg";
 
 export const metadata = {
-  title: "medCode|About Me",
+  title: "medCode-About us",
   description:
     `Welcome to My Web Developer Portfolio UX Designer Here, you'll find a showcase of my career and educational as a web developer also some of my skills`,
   alternates: {

@@ -5,7 +5,7 @@ import React, { Suspense } from "react";
 import MyBooks from "../components/MyBooks";
 import Loading from "../loading";
 export const metadata = {
-  title: "medCode|Books",
+  title: "medCode-Books",
   description: `Dive into the World of Programming with Our Curated Selection of Books.Whether you're a novice eager to start your coding journey or an experienced developer`,
   keywords: [
     "Web Development books",

@@ -7,9 +7,9 @@ import AuthProvider from "./components/authProvider/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   metadataBase: new URL("https://www.medcode.dev"),
-  title: "medCode|web developer freelance",
-  description: `
- `,
+  title: "medCode-Web Developer Freelance",
+  description: `Learning programming is accessible for beginners through free software programming
+  courses These courses introduce essential best programming languages`,
   generator: "Next.js",
   applicationName: "MedCode",
   referrer: "origin-when-cross-origin",

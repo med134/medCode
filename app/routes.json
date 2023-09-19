@@ -1,13 +1,11 @@
 [
   {
     "name": "home",
-    "url": "/",
-    "priority": 1
+    "url": "/"
   },
   {
     "name": "about",
-    "url": "/about",
-    "priority": 4
+    "url": "/about"
   },
   {
     "name": "projects",
@@ -24,5 +22,9 @@
   {
     "name": "books",
     "url": "/books"
+  },
+  {
+    "name": "dashboard",
+    "url": "/dashboard"
   }
 ]

@@ -11,9 +11,8 @@ const inter = Dancing_Script({
   variable: "--dancing",
 });
 export const metadata = {
-  title: "medCode|freelance web developer",
-  description: `Learning programming is accessible for beginners through free software programming
-   courses These courses introduce essential best programming languages,
+  title: "medCode-Web Development Company",
+  description: `Learning programming is accessible for beginners through free web design and web development services. These courses introduce essential front-end developer skills and programming languages,
     `,
   keywords: [
     "Web Development",
@@ -85,10 +84,11 @@ export default function Home() {
                 <span className="design"> Design.</span>
               </h1>
               <p className="my-4 text-base font-lexend md:text-sm sm:text-sm xs:text-sm">
-                As a skilled web developer, I am dedicated to turning ideas into
-                innovative web applications. Explore my latest projects and
-                blogs and free templates & components, showcasing my expertise
-                in web development and mobile application.
+                As a skilled freelance web developer, I am dedicated to turning
+                ideas into innovative web applications, specializing in web
+                design and e-commerce website development. Explore my latest
+                projects, blogs, and free templates & components, showcasing my
+                expertise in web development and mobile applications
               </p>
               <div className="flex items-center self-start mt-2 lg:self-center">
                 <Link

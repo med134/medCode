@@ -1,4 +1,3 @@
-
 import React from "react";
 import Link from "next/link";
 import TransitionEffect from "../components/TransitionEffect";
@@ -15,7 +14,7 @@ async function getData() {
 }
 
 export const metadata = {
-  title: "medCode|free templates & components",
+  title: `10+ Free Templates & Resources Examples for frontend developers-medCode`,
   description: `Browse through MedCode collection of free frontend templates and components for tailwind css and bootstrap with full free code source and developments kits`,
   keywords: [
     "Web Development",
@@ -74,16 +73,13 @@ const page = async () => {
       <div className="bg-white dark:bg-dark dark:text-light">
         <div className="p-16 my-auto w-full py-20 bg-indigo-600 px-6 leading-4 xs:p-8 xs:py-6 shadow-lg xl:w-screen dark:bg-dark dark:text-light ">
           <div className="w-full">
-            <h1 className="mb-3 font-lexend text-xl px-10 text-white xs:text-2xl sm:hidden">
+            <h1 className="mb-3 font-lexend text-3xl px-10 text-white xs:text-xl xs:px-4">
               Free Templates & components with free code Sources
             </h1>
-            <p className="mb-4 font-sans text-4xl font-bold text-light p-4 px-10 sm:text-2xl xs:px-4">
-              Discover Free & Premium Full Responsive Templates and components
-              for Front-end Developers
-            </p>
-            <p className="text-light text-sm px-10 xs:px-4">
+            <p className="text-light text-xl px-10 xs:px-4 sm:text-sm">
               Open source UI & UX components and templates to bootstrap your new
-              apps, projects or landing sites!
+              apps, projects or landing sites, Crafting Unique Web Experiences:
+              Explore My Portfolio and Free Templates & Components
             </p>
 
             <div className="flex mt-8 px-10 sm:text-xs sm:px-4">
@@ -138,10 +134,8 @@ const page = async () => {
               src={item.image}
               alt="templates image"
               priority
-              style={{
-                width: "100%",
-                height: "auto",
-              }}
+              width={500}
+              height={300}
             />
             <div className="px-6 py-2">
               <Link
