@@ -13,7 +13,7 @@ export function middleware(request) {
     }
   } else {
     if (!authToken) {
-      return NextResponse.redirect(new URL("/", request.url));
+      return NextResponse.redirect(new URL("https://www.medcode.dev", request.url));
     }
   }
   console.log(authToken);
