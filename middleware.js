@@ -4,9 +4,6 @@ import { NextResponse } from "next/server";
 export function middleware(request) {
   console.log("middleware excuter");
   const authToken = request.cookies.get("authToken")?.value;
-  if (request.nextUrl.pathname === "/api/login") {
-    return;
-  }
   const logInUserNotAccessPaths =
     request.pathname === "/dashboard/login" ||
     request.pathname === "/dashboard/register";
@@ -16,7 +13,7 @@ export function middleware(request) {
     }
   } else {
     if (!authToken) {
-      return NextResponse.redirect(new URL("/dashboard/login", request.url));
+      return NextResponse.redirect(new URL("/", request.url));
     }
   }
   console.log(authToken);
