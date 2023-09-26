@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 
-const NewsArticles = async () => {
+const Crypto = async () => {
   const [news, setNews] = useState();
   useEffect(() => {
     const fetchSeoData = async () => {
@@ -32,7 +32,7 @@ const NewsArticles = async () => {
 
   return (
     <>
-      <span className="text-xl font-semibold text-gray-800 font-lexend rounded-lg mb-4 sm:text-sm">
+      <span className="text-xl font-semibold text-gray-800 font-lexend rounded-lg mb-4 sm:text-sm xl:text:sm">
         Best Hardware Wallets-Crypto Prices (USD)
       </span>
       <div className="bg-white rounded-lg">
@@ -43,7 +43,7 @@ const NewsArticles = async () => {
               className={`${
                 index === 0
                   ? "bg-yellow-400 flex justify-between items-center p-4 w-full rounded-lg sm:p-4"
-                  : "flex justify-between p-4 w-full rounded-lg sm:p-4"
+                  : "flex justify-between p-4 w-full xl:p-4 rounded-lg sm:p-4"
               }`}
             >
               <Link
@@ -51,7 +51,7 @@ const NewsArticles = async () => {
                 target="_blank"
                 className="inline-flex items-center justify-center"
               >
-                <span className="px-3 text-xl font-bold sm:text-sm">
+                <span className="px-3 text-xl font-bold sm:text-sm xl:px-1 xl:text-xs">
                   {index + 1}
                 </span>
                 <img
@@ -59,19 +59,19 @@ const NewsArticles = async () => {
                   src={post.iconUrl}
                   alt="crypto_icons"
                 />
-                <span className="text-[13px] font-semibold text-gray-900 px-8 uppercase xl:text-sm xl:px-4 xs:px-2">
+                <span className="text-[13px] font-semibold text-gray-900 px-8 uppercase xl:text-xs xl:px-1 xs:px-2">
                   {post.name}
                 </span>
               </Link>
-              <p className="text-[13px] font-semibold p-1 flex">
+              <p className="text-[13px] font-semibold p-1 flex xl:text-xs">
                 {post.price.slice(0, 10)}{" "}
                 <span className="text-yellow-400">$ </span>
               </p>
               <p
                 className={`${
                   post.change < 0
-                    ? "text-red-500 font-semibold text-[13px]"
-                    : `text-green-500 font-semibold text-[13px]`
+                    ? "text-red-500 font-semibold text-[13px] xl:text-xs"
+                    : `text-green-500 font-semibold text-[13px] xl:text-xs`
                 }`}
               >
                 {post.change} %
@@ -84,4 +84,4 @@ const NewsArticles = async () => {
   );
 };
 
-export default NewsArticles;
+export default Crypto;

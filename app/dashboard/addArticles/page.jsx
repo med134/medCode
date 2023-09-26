@@ -1,9 +1,8 @@
 import React from "react";
-import Layout from "../components/Layout";
-import PostPage from "@/app/dashboard/addTemplates/page";
 
+import AddNewArticle from "@/app/components/AddNewArticle";
 export const metadata = {
-  title: "medCode | Dashboard",
+  title: "medCode | Dashboard-Articles & blogs",
   description: `Elevate Your Web Development with Free Tailwind CSS Templates & Components & code source Our meticulously designed frontend dashboard templates and components`,
   keywords: [
     "Web Development",
@@ -33,19 +32,19 @@ export const metadata = {
     "Code Snippets",
   ],
   alternates: {
-    canonical: `https://www.medcode.dev/dashboard`,
+    canonical: `https://www.medcode.dev/dashboard/addArticles`,
     languages: {
-      "en-us": `https://www.medcode.dev/en-us/dashboard`,
+      "en-us": `https://www.medcode.dev/en-us/dashboard/addArticles`,
     },
     types: {
       "application/rss+xml": "https://www.medcode.dev/rss",
     },
   },
 };
-export default function DashBoard() {
+export default function Page() {
   return (
-    <Layout className="p-8 w-full py-8 lg:p-4 xl:p-6 md:p-4 md:py-2 sm:p-1 sm:py-2">
-      <PostPage />
-    </Layout>
+    <div>
+      <AddNewArticle />
+    </div>
   );
 }

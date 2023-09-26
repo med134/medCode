@@ -1,16 +1,16 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Loading from "../loading";
 import useSWR from "swr";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import Image from "next/image";
 
-const AddNewPost = () => {
+const AddNewArticle = () => {
   const route = useRouter();
   const handleDelete = async (id) => {
     try {
-      await fetch(`/api/posts/${id}`, {
+      await fetch(`/api/articles/${id}`, {
         method: "DELETE",
       });
       mutate();
@@ -21,21 +21,25 @@ const AddNewPost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const title = e.target[0].value;
-    const description = e.target[1].value;
+    const tags = e.target[1].value;
     const image = e.target[2].value;
-    const link = e.target[3].value;
-    const category = e.target[4].value;
-    const code = e.target[5].value;
+    const category = e.target[3].value;
+    const shortDescription = e.target[4].value;
+    const contentOne = e.target[5].value;
+    const contentTwo = e.target[6].value;
+    const contentThree = e.target[7].value;
     try {
-      await fetch("/api/posts", {
+      await fetch("/api/articles", {
         method: "POST",
         body: JSON.stringify({
           title,
-          description,
+          tags,
           image,
-          link,
           category,
-          code,
+          shortDescription,
+          contentOne,
+          contentTwo,
+          contentThree,
           username: session.data.user.name,
         }),
       });
@@ -49,21 +53,20 @@ const AddNewPost = () => {
   const session = useSession();
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading, mutate } = useSWR(
-    `/api/posts?username=${session?.data?.user.name}`,
+    `/api/articles?username=${session?.data?.user.name}`,
     fetcher
   );
-
+  
   if (session.status === "loading") {
     return <Loading />;
   }
-
   if (session.status === "unauthenticated") {
     route?.push("/dashboard/login");
   }
 
   return (
-    <div className="inline-block p-8 py-8 sm:p-2 sm:py-2 md:p-2 md:py-2 lg:p-2 lg:py-2">
-      <div className="p-8 flex justify-between md:inline-block sm:items-center sm:p-1">
+    <div className="inline-block p-8 py-8 sm:p-2 sm:py-2">
+      <div className="p-8 flex justify-between md:inline-block sm:items-center">
         <form className="p-4 text-left text-gray-700" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -72,7 +75,7 @@ const AddNewPost = () => {
           />
           <input
             type="text"
-            placeholder="Desc"
+            placeholder="tags"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
           <input
@@ -82,16 +85,24 @@ const AddNewPost = () => {
           />
           <input
             type="text"
-            placeholder="Link"
+            placeholder="category"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
           <input
             type="text"
-            placeholder="category"
+            placeholder="shortDescription"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
           <textarea
-            placeholder="put your code here"
+            placeholder="put your content one here"
+            className="h-44 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
+          />
+            <textarea
+            placeholder="put your content two here"
+            className="h-44 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
+          />
+            <textarea
+            placeholder="put your content three here"
             className="h-44 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
           <button className="rounded-md font-semibold py-2 w-full bg-violet-600 text-light ml-4 hover:bg-purple-400">
@@ -105,13 +116,12 @@ const AddNewPost = () => {
             data?.map((post) => (
               <div key={post._id}>
                 <div className="">
-                  <Image
+                  <img
                     className="rounded-md object-cover"
                     src={post.image}
                     alt="image_post"
                     width={350}
                     height={80}
-                    property
                   />
                 </div>
                 <div className="inline-flex justify-between items-center">
@@ -134,4 +144,4 @@ const AddNewPost = () => {
   );
 };
 
-export default AddNewPost;
+export default AddNewArticle;

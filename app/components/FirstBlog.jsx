@@ -2,9 +2,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { AiOutlineHeart, AiOutlineComment } from "react-icons/ai";
 import Link from "next/link";
-import Seo from "./Seo";
+import Seo from "./Card";
 import { getData } from "./FetchData";
-import NewsArticles from "./NewsArticles";
+import NewsArticles from "./Crytpo";
 import Image from "next/image";
 
 export async function FirstBlog() {

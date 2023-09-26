@@ -1,4 +1,3 @@
-
 import React from "react";
 import Link from "next/link";
 import { BsArrowLeftCircleFill, BsArrowsFullscreen } from "react-icons/bs";
@@ -31,10 +30,10 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `https://www.medcode.dev/templates/${params.id}`,
       languages: {
-        'en-us': `https://www.medcode.dev/en-us/templates${params.id}`,
+        "en-us": `https://www.medcode.dev/en-us/templates${params.id}`,
       },
       types: {
-        'application/rss+xml': 'https://www.medcode.dev/rss',
+        "application/rss+xml": "https://www.medcode.dev/rss",
       },
     },
     openGraph: {
@@ -92,10 +91,8 @@ const TemplateId = async ({ params }) => {
               priority
               src={data.image}
               className="h-full w-full border rounded-lg shadow-xl xs:w-[350px]"
-              style={{
-                width: "100%",
-                height: "auto",
-              }}
+              width={500}
+              height={500}
             />
             <div className="p-2 mt-6 w-full xs:mt-6">
               <ClipBoard data={data} />

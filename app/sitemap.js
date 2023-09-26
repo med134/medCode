@@ -1,8 +1,10 @@
 import routes from "./routes.json";
 import { getAll } from "./components/FetchData";
- 
+import { getArticles } from "./components/FetchData";
+
 export default async function sitemap() {
-  const posts=await getAll();
+  const posts = await getAll();
+  const blogs = await getArticles();
   const baseUrl = "https://medcode.dev";
   const staticUrls = routes.map((route) => {
     return {
@@ -16,6 +18,12 @@ export default async function sitemap() {
       lastModified: new Date().toISOString(),
     };
   });
-  return [...staticUrls,...AllPosts];
-}
+  const AllBlogs = blogs.map((item) => {
+    return {
+      url: `${baseUrl}/blogs/${item._id}`,
+      lastModified: new Date().toISOString(),
+    };
+  });
 
+  return [...staticUrls, ...AllPosts, ...AllBlogs];
+}

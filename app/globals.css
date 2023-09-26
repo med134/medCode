@@ -184,3 +184,15 @@
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
+.containerBlog{
+   display:grid;
+   grid-template-columns: auto 450px;
+   column-gap: 10px;
+}
+@media only screen and (max-width: 1115px) {
+  /* place here CSS for when the screen is less than 1000px wide */
+  .containerBlog {
+    grid-template-columns: auto 300px;
+    column-gap: 6px;
+  }
+}

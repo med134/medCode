@@ -3,6 +3,7 @@ import Link from "next/link";
 import TransitionEffect from "../components/TransitionEffect";
 import { BgTemplates } from "../components/Icons";
 import Image from "next/image";
+
 async function getData() {
   const res = await fetch(`https://medcode.dev/api/posts`, {
     cache: "no-store",
@@ -67,6 +68,7 @@ export const metadata = {
 };
 const page = async () => {
   const data = await getData();
+  console.log(data)
   return (
     <>
       <TransitionEffect />

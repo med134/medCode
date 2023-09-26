@@ -1,14 +1,12 @@
 import React from "react";
-import { Suspense } from "react";
 import AnimatedText from "../components/AnimatedText";
-import Blogs from "../components/Blogs";
-import Loading from "../loading";
-import { FirstBlog } from "../components/FirstBlog";
-import Article from "../components/Article";
 import Layout from "../components/Layout";
+import CardList from "../components/CardList";
+import Card from "../components/Hero";
+import FreeTemplates from "../components/FreeTemplates";
 
 export const metadata = {
-  title: "medCode|Blogs & Articles",
+  title: "medCode-Blogs & Articles",
   description: `Browse through MedCode collection of software engineering articles blogs and debugging tutorials  Next.js, React.js, javascript html ,css web development`,
   keywords: [
     "best programming blogs",
@@ -45,27 +43,29 @@ export const metadata = {
       },
     ],
   },
-
 };
-const Page = () => {
+export async function getArticles() {
+  const res = await fetch(`http://localhost:3000/api/articles`, {
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+const Page = async () => {
+  const art = await getArticles();
   return (
-    <>
-      <main className="dark:bg-dark">
-        <Layout className="p-6 2xl:p-4 lg:p-4 md:p-2 xs:p-0">
-          <AnimatedText
-            className="text-[40px] m-6 text-borderColor md:text-4xl xs:text-3xl"
-            text="Software Development Skills:Tips and Tricks for
+    <Layout className="p-6 2xl:p-4 lg:p-4 md:p-2 xs:p-0">
+      <AnimatedText
+        className="text-[40px] m-6 text-borderColor md:text-4xl xs:text-2xl"
+        text="Software Development Skills:Tips and Tricks for
             Success"
-          />
-          <FirstBlog />
-          <div className="h-[1px] w-10/12 text-center bg-gray-400 ml-24"></div>
-          <Suspense fallback={<Loading />}>
-            <Blogs />
-            <Article />
-          </Suspense>
-        </Layout>
-      </main>
-    </>
+      />
+      <Card />
+      <CardList />
+      <FreeTemplates />
+    </Layout>
   );
 };
 
