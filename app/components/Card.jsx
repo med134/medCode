@@ -38,7 +38,9 @@ const Card = async () => {
                 {item.title}
               </Link>
             </h2>
-            <p className="text-gray-500 sm:text-xs">{item.shortDescription}...</p>
+            <p className="text-gray-500 sm:text-xs">
+              {item.shortDescription.slice(0,70)}...
+            </p>
             <div>
               <Link
                 href={`/blogs/${item._id}`}
