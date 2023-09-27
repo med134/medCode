@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import PostPage from "@/app/dashboard/addTemplates/page";
+import NavigationBar from "../components/NavigationBar";
 
 export const metadata = {
   title: "medCode | Dashboard",
@@ -45,6 +46,7 @@ export const metadata = {
 export default function DashBoard() {
   return (
     <Layout className="p-8 w-full py-8 lg:p-4 xl:p-6 md:p-4 md:py-2 sm:p-1 sm:py-2">
+      <NavigationBar/>
       <PostPage />
     </Layout>
   );
