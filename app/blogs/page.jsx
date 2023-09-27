@@ -44,17 +44,9 @@ export const metadata = {
     ],
   },
 };
-export async function getArticles() {
-  const res = await fetch(`https://www.medcode.dev/api/articles`, {
-    cache: "no-store",
-  });
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return res.json();
-}
+
 const Page = async () => {
-  const art = await getArticles();
+  
   return (
     <Layout className="p-6 2xl:p-4 lg:p-4 md:p-2 xs:p-0">
       <AnimatedText
