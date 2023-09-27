@@ -66,13 +66,15 @@ const BlogPage = async ({ params }) => {
             <p className={`text-gray-700 py-2 font-semibold`}>
               {blog.contentOne}
             </p>
-             <ClipBoard data={blog}/>
-            <p className="text-gray-700 py-2 mt-2 font-semibold">
-              {blog.contentTwo}
-            </p>
-            <p className="text-gray-700 py-2 mt-2 font-semibold">
-              {blog.contentThree}
-            </p>
+            <div>
+              <ClipBoard data={blog} />
+              <p className="text-gray-700 py-2 mt-2 font-semibold">
+                {blog.contentTwo}
+              </p>
+              <p className="text-gray-700 py-2 mt-2 font-semibold">
+                {blog.contentThree}
+              </p>
+            </div>
           </div>
         </div>
         <div className="lg:grid grid-cols-2 gap-6 lg:p-14 md:block">

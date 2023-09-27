@@ -2,7 +2,7 @@ import React from "react";
 import { getArticles } from "./FetchData";
 import Link from "next/link";
 
-const SidBar = async () => {
+const SidBar = async ({ params }) => {
   const dev = await getArticles();
   return (
     <>
@@ -13,14 +13,13 @@ const SidBar = async () => {
               {item.title}
             </h3>
             <p className="mt-1 text-sm mb-2 text-gray-500">
-              {item.shortDescription.slice(0,50)}...
+              {item.shortDescription.slice(0, 50)}...
               <p className="mt-1 text-sm underline text-gray-900 font-semibold">
                 {item.tags}
               </p>
             </p>
             <Link
               href={`/blogs/${item._id}`}
-              target="_blank"
               className="font-semibold text-rose-500 transition duration-100 hover:text-rose-600 hover:underline active:text-rose-700"
             >
               Read more...
