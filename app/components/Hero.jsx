@@ -1,13 +1,11 @@
-"use client";
-import React from "react";
 import { getArticles } from "./FetchData";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "./Layout";
+import React from "react";
 
 const Card = async () => {
   const articles = await getArticles();
-
   return (
     <>
       <Layout className="p-10 py-4 xl:p-4 xl:px-6 md:items-center sm:p-1 sm:py-1 sm:px-1">
@@ -26,7 +24,7 @@ const Card = async () => {
                 </div>
                 <div className="md:w-full mb-8 md:mb-0 text-gray-800 p-8 mt-2 sm:mt-0">
                   <span className="text-gray-500">
-                    {item.createdAt.slice(0, 10)}
+                    {/* {item.createdAt.slice(0, 10)} */}
                   </span>
                   <h1 className="font-bold text-3xl leading-tight mb-4 sm:text-xl">
                     {item.title}
@@ -35,7 +33,7 @@ const Card = async () => {
                     {item.shortDescription}
                   </p>
                   <Link
-                    href={`/blogs/${item._id}`}
+                    href={`/`}
                     className="font-semibold text-rose-500 transition duration-100 hover:text-rose-600 hover:underline active:text-rose-700"
                   >
                     Read more...

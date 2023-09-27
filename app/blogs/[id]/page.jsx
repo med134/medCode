@@ -5,7 +5,7 @@ import Category from "@/app/components/Category";
 import SidBar from "@/app/components/SidBar";
 
 async function getData(id) {
-  const res = await fetch(`https://www.medcode.dev/api/articles/${id}`, {
+  const res = await fetch(`https://www.medcode.dev/api/articles${id}`, {
     cache: "no-store",
   });
   if (!res.ok) {
