@@ -17,7 +17,7 @@ export async function getAll() {
   return res.json();
 }
 export async function getArticles() {
-  const res = await fetch(`http://localhost:3000/api/articles`, {
+  const res = await fetch(`https://www.medcode.dev/api/articles`, {
     cache: "no-store",
   });
   if (!res.ok) {
