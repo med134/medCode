@@ -115,10 +115,8 @@ const TemplateId = async ({ params }) => {
                     alt="template_image"
                     className="mb-2"
                     priority
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                    }}
+                    width={300}
+                    height={300}
                   />
                   <Link
                     href={`/templates/${item._id}`}

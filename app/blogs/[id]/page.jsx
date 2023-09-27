@@ -3,9 +3,10 @@ import Image from "next/image";
 import Layout from "@/app/components/Layout";
 import Category from "@/app/components/Category";
 import SidBar from "@/app/components/SidBar";
+import ClipBoard from "@/app/components/ClipBorad";
 
 async function getData(id) {
-  const res = await fetch(`https://www.medcode.dev/api/articles${id}`, {
+  const res = await fetch(`https://www.medcode.dev/api/articles/${id}`, {
     cache: "no-store",
   });
   if (!res.ok) {
@@ -65,6 +66,7 @@ const BlogPage = async ({ params }) => {
             <p className={`text-gray-700 py-2 font-semibold`}>
               {blog.contentOne}
             </p>
+             <ClipBoard data={blog}/>
             <p className="text-gray-700 py-2 mt-2 font-semibold">
               {blog.contentTwo}
             </p>
@@ -77,7 +79,7 @@ const BlogPage = async ({ params }) => {
           <Category />
           <div>
             <span className="text-xl text-gray-800 font-semibold mt-7">
-              More From titles{" "}
+              More titles From{" "}
               <b className="text-2xl text-red-500">MedCode...</b>{" "}
             </span>
             <SidBar />

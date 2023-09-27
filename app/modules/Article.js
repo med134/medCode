@@ -26,11 +26,15 @@ const articleSchema = new Schema(
       type: String,
       require: true,
     },
-      contentTwo: {
+    contentTwo: {
       type: String,
       require: false,
     },
-      contentThree: {
+    code: {
+      type: String,
+      require: false,
+    },
+    contentThree: {
       type: String,
       require: false,
     },
@@ -41,5 +45,6 @@ const articleSchema = new Schema(
   },
   { timestamps: true }
 );
-const Article = mongoose.models.articles || mongoose.model("articles", articleSchema);
+const Article =
+  mongoose.models.articles || mongoose.model("articles", articleSchema);
 export default Article;

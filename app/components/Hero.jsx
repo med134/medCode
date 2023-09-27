@@ -23,19 +23,20 @@ const Card = async () => {
                       height={500}
                     />
                   </div>
-                  <div className="md:w-full mb-8 md:mb-0 text-gray-800 p-8 mt-2 sm:mt-0">
+                  <div className="md:w-full mb-8 md:mb-0 text-gray-800 p-6 sm:mt-0">
                     <span className="text-gray-500">
                       {item.createdAt.slice(0, 10)}
                     </span>
                     <h1 className="font-bold text-3xl leading-tight mb-4 sm:text-xl">
                       {item.title}
                     </h1>
-                    <p className="text-medium text-gray-700 lg:text-sm mb-4">
+                    <p className="text-medium text-gray-700 lg:text-sm mb-2">
                       {item.shortDescription.slice(0,80)}...
                     </p>
+                    <span className="font-bold text-sm mb-5">{item.tags}</span>
                     <Link
                       href={`/blogs/${item._id}`}
-                      className="font-semibold text-rose-500 transition duration-100 hover:text-rose-600 hover:underline active:text-rose-700"
+                      className="block font-semibold mt-4 text-rose-500 transition duration-100 hover:text-rose-600 hover:underline active:text-rose-700"
                     >
                       Read more...
                     </Link>
