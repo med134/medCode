@@ -49,28 +49,30 @@ const BlogPage = async ({ params }) => {
       <main className="containerBlog mx-auto mt-2 lg:block ">
         <div className="flex flex-wrap justify-around">
           <div className="w-full px-4 mb-8">
-            <Image
-              src={blog.image}
-              alt="Featured Image"
-              className="w-full object-cover rounded"
-              width={500}
-              height={500}
-            />
-            <h2 className="text-4xl font-bold mt-2 py-1">{blog.title}</h2>
-            <span className="flex justify-start items-start py-6 ml-2 mt-1 font-bolder">
-              {blog.tags}
-            </span>
-            <p className={`text-gray-700 py-2 mt-2 font-semibold`}>
-              {blog.shortDescription}
-            </p>
-            <p className={`text-gray-700 py-2 font-semibold`}>
-              {blog.contentOne}
-            </p>
+            <div>
+              <Image
+                src={blog.image}
+                alt="Featured Image"
+                className="w-full object-cover rounded"
+                width={500}
+                height={500}
+              />
+              <h2 className="text-4xl font-bold mt-2 py-1">{blog.title}</h2>
+              <span className="flex justify-start items-start py-6 ml-2 mt-1 font-bolder">
+                {blog.tags}
+              </span>
+              <p className={`text-gray-700 py-2 mt-2 font-semibold`}>
+                {blog.shortDescription}
+              </p>
+              <span className={`text-gray-700 py-2 font-semibold`}>
+                {blog.contentOne}
+              </span>
+            </div>
             <div>
               <ClipBoard data={blog} />
-              <p className="text-gray-700 py-2 mt-2 font-semibold">
+              <span className="text-gray-700 py-2 mt-2 font-semibold">
                 {blog.contentTwo}
-              </p>
+              </span>
               <p className="text-gray-700 py-2 mt-2 font-semibold">
                 {blog.contentThree}
               </p>
