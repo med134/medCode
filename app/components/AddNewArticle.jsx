@@ -26,8 +26,9 @@ const AddNewArticle = () => {
     const category = e.target[3].value;
     const shortDescription = e.target[4].value;
     const contentOne = e.target[5].value;
-    const contentTwo = e.target[6].value;
-    const contentThree = e.target[7].value;
+    const code = e.target[6].value;
+    const contentTwo = e.target[7].value;
+    const contentThree = e.target[8].value;
     try {
       await fetch("/api/articles", {
         method: "POST",
@@ -38,6 +39,7 @@ const AddNewArticle = () => {
           category,
           shortDescription,
           contentOne,
+          code,
           contentTwo,
           contentThree,
           username: session.data.user.name,
@@ -56,7 +58,7 @@ const AddNewArticle = () => {
     `/api/articles?username=${session?.data?.user.name}`,
     fetcher
   );
-  
+
   if (session.status === "loading") {
     return <Loading />;
   }
@@ -98,10 +100,14 @@ const AddNewArticle = () => {
             className="h-44 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
             <textarea
+              placeholder="put your code here"
+              className="h-44 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
+            />
+          <textarea
             placeholder="put your content two here"
             className="h-44 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
-            <textarea
+          <textarea
             placeholder="put your content three here"
             className="h-44 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />

@@ -13,7 +13,7 @@ const Register = () => {
    const router = useRouter();
   useEffect(() => {
     if (session.status === "authenticated") {
-      router?.push("/dashboard");
+      router?.push("/dashboard/addTemplates");
     }
   });
   const MyLoader = ({ src }) => {

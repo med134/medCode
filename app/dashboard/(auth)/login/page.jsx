@@ -13,7 +13,7 @@ const Login = () => {
   console.log(session);
   useEffect(() => {
     if (session.status === "authenticated") {
-      router?.push("/dashboard");
+      router?.push("/dashboard/addTemplates");
     } else if (session.status === "loading") {
       <Loading />;
     }

@@ -15,7 +15,7 @@ async function getData() {
 }
 
 export const metadata = {
-  title: `10+ Free Templates & Resources Examples for frontend developers-medCode`,
+  title: `10+ Free Templates & Resources Examples`,
   description: `Browse through MedCode collection of free frontend templates and components for tailwind css and bootstrap with full free code source and developments kits`,
   keywords: [
     "Web Development",
