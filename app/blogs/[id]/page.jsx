@@ -62,7 +62,10 @@ const BlogPage = async ({ params }) => {
                 {blog.tags}
               </span>
             </div>
-            <div className="p-6 py-2 font-normal" dangerouslySetInnerHTML={{__html:blog.content}}/>
+            <div
+              className="p-6 py-2 font-normal"
+              dangerouslySetInnerHTML={{ __html: blog.content }}
+            />
           </div>
         </div>
         <div className="lg:grid grid-cols-2 gap-6 lg:p-14 md:block">

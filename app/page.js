@@ -60,6 +60,8 @@ export default function Home() {
                 alt="developer_image"
                 className="w-[600px] mb-10 h-auto ml-10 md:inline-block md:w-full sm:ml-2"
                 priority
+                width={500}
+                height={300}
               />
             </div>
             <div className="w-1/2 flex flex-col self-center lg:w-full lg:text-center sm:mt-[-50px]">
