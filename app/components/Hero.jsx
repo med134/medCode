@@ -30,9 +30,9 @@ const Card = async () => {
                     <h1 className="font-bold text-3xl leading-tight mb-4 sm:text-xl">
                       {item.title}
                     </h1>
-                    <p className="text-medium text-gray-700 lg:text-sm mb-2">
+                 {/*    <p className="text-medium text-gray-700 lg:text-sm mb-2">
                       {item.shortDescription.slice(0,80)}...
-                    </p>
+                    </p> */}
                     <span className="font-bold text-sm mb-5">{item.tags}</span>
                     <Link
                       href={`/blogs/${item._id}`}

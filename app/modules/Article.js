@@ -18,25 +18,13 @@ const articleSchema = new Schema(
       type: String,
       required: true,
     },
-    shortDescription: {
+    description: {
       type: String,
-      require: true,
+      required: true,
     },
-    contentOne: {
+    content: {
       type: String,
-      require: true,
-    },
-    contentTwo: {
-      type: String,
-      require: false,
-    },
-    code: {
-      type: String,
-      require: false,
-    },
-    contentThree: {
-      type: String,
-      require: false,
+      required: true,
     },
     username: {
       type: String,

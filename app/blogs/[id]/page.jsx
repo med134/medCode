@@ -3,7 +3,6 @@ import Image from "next/image";
 import Layout from "@/app/components/Layout";
 import Category from "@/app/components/Category";
 import SidBar from "@/app/components/SidBar";
-import ClipBoard from "@/app/components/ClipBorad";
 
 async function getData(id) {
   const res = await fetch(`https://www.medcode.dev/api/articles/${id}`, {
@@ -44,6 +43,7 @@ export async function generateMetadata({ params }) {
 const BlogPage = async ({ params }) => {
   const { id } = params;
   const blog = await getData(id);
+
   return (
     <Layout className="p-8 by-1 xl:p-4 lg:p-4 md:p-2 sm:p-8">
       <main className="containerBlog mx-auto mt-2 lg:block ">
@@ -61,22 +61,8 @@ const BlogPage = async ({ params }) => {
               <span className="flex justify-start items-start py-6 ml-2 mt-1 font-bolder">
                 {blog.tags}
               </span>
-              <p className={`text-gray-700 py-2 mt-2 font-semibold`}>
-                {blog.shortDescription}
-              </p>
-              <span className={`text-gray-700 py-2 font-semibold`}>
-                {blog.contentOne}
-              </span>
             </div>
-            <div>
-              <ClipBoard data={blog} />
-              <span className="text-gray-700 py-2 mt-2 font-semibold">
-                {blog.contentTwo}
-              </span>
-              <p className="text-gray-700 py-2 mt-2 font-semibold">
-                {blog.contentThree}
-              </p>
-            </div>
+            <div className="p-6 py-2 font-normal" dangerouslySetInnerHTML={{__html:blog.content}}/>
           </div>
         </div>
         <div className="lg:grid grid-cols-2 gap-6 lg:p-14 md:block">
@@ -84,7 +70,7 @@ const BlogPage = async ({ params }) => {
           <div>
             <span className="text-xl text-gray-800 font-semibold mt-7">
               More titles From{" "}
-              <b className="text-2xl text-red-500">MedCode...</b>{" "}
+              <span className="text-2xl text-red-500">MedCode...</span>{" "}
             </span>
             <SidBar />
           </div>

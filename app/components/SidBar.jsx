@@ -13,7 +13,7 @@ const SidBar = async ({ params }) => {
               {item.title}
             </h3>
             <p className="mt-1 text-sm mb-2 text-gray-500">
-              {item.shortDescription.slice(0, 50)}...
+              {/* {item.shortDescription.slice(0, 50)}... */}
               <p className="mt-1 text-sm underline text-gray-900 font-semibold">
                 {item.tags}
               </p>

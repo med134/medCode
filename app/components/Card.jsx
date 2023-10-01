@@ -28,7 +28,7 @@ const Card = async () => {
           </Link>
           <div className="flex flex-col gap-2 px-4 lg:mt-4">
             <span className="text-sm text-gray-400">
-              {/* {item.createdAt.slice(0, 10)} */}
+             {item?.createdAt.slice(0, 10)} 
             </span>
             <h2 className="text-xl font-bold text-gray-800">
               <Link
@@ -38,8 +38,8 @@ const Card = async () => {
                 {item.title}
               </Link>
             </h2>
-            <p className="text-gray-500 sm:text-xs">
-              {item.shortDescription.slice(0,70)}...
+             <p className="text-gray-500 sm:text-xs">
+              {item?.description}...
             </p>
             <div>
               <Link

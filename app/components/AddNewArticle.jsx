@@ -1,13 +1,46 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Loading from "../loading";
 import useSWR from "swr";
 import { useRouter } from "next/navigation";
+import Quill from "quill";
 import { useSession } from "next-auth/react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import ImageResize from "quill-image-resize-module-react";
+ImageResize.whitelist = ["http://", "https://"];
+Quill.register("modules/imageResize", ImageResize);
 
+const modules = {
+  toolbar: [
+    [{ header: [1, 2, 3, 4, 5, 6, false] }],
+    [{ font: [] }],
+    [{ size: [] }],
+    [{ color: [] }],
+    ["code-block"],
+    ["bold", "italic", "underline", "strike", "blockquote"],
+    [
+      { list: "ordered" },
+      { list: "bullet" },
+      { indent: "-1" },
+      { indent: "+1" },
+    ],
+    ["link", "image", "video"],
+    ["clean"],
+  ],
+  imageResize: {
+    parchment: Quill.import("parchment"),
+    displayStyles: {
+      innerWidth: "200px",
+      innerHeight: "100px",
+      // other camelCase styles for size display
+    },
+  },
+};
 const AddNewArticle = () => {
   const route = useRouter();
+  const [value, setValue] = useState("");
   const handleDelete = async (id) => {
     try {
       await fetch(`/api/articles/${id}`, {
@@ -24,11 +57,14 @@ const AddNewArticle = () => {
     const tags = e.target[1].value;
     const image = e.target[2].value;
     const category = e.target[3].value;
-    const shortDescription = e.target[4].value;
+    const description = e.target[4].value;
+    const content = value;
+
+    /* const shortDescription = e.target[4].value;
     const contentOne = e.target[5].value;
     const code = e.target[6].value;
     const contentTwo = e.target[7].value;
-    const contentThree = e.target[8].value;
+    const contentThree = e.target[8].value; */
     try {
       await fetch("/api/articles", {
         method: "POST",
@@ -37,11 +73,7 @@ const AddNewArticle = () => {
           tags,
           image,
           category,
-          shortDescription,
-          contentOne,
-          code,
-          contentTwo,
-          contentThree,
+          content,
           username: session.data.user.name,
         }),
       });
@@ -92,30 +124,23 @@ const AddNewArticle = () => {
           />
           <input
             type="text"
-            placeholder="shortDescription"
+            placeholder="description"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
-          <textarea
-            placeholder="put your content one here"
-            className="h-44 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
-          />
-            <textarea
-              placeholder="put your code here"
-              className="h-44 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
+          <div className="w-full h-[500px] text-center py-12 p-8">
+            <ReactQuill
+              className="h-[400px] w-full"
+              theme="snow"
+              value={value}
+              onChange={setValue}
+              modules={modules}
             />
-          <textarea
-            placeholder="put your content two here"
-            className="h-44 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
-          />
-          <textarea
-            placeholder="put your content three here"
-            className="h-44 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
-          />
+          </div>
           <button className="rounded-md font-semibold py-2 w-full bg-violet-600 text-light ml-4 hover:bg-purple-400">
             Post Now
           </button>
         </form>
-        <div className="w-full p-6 rounded-lg sm:p-2 items-start">
+        {/* <div className="w-full p-6 rounded-lg sm:p-2 items-start">
           {isLoading ? (
             <Loading />
           ) : (
@@ -144,7 +169,7 @@ const AddNewArticle = () => {
               </div>
             ))
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
