@@ -1,9 +1,9 @@
 import React from "react";
 import AnimatedText from "../components/AnimatedText";
 import Layout from "../components/Layout";
-import CardList from "../components/CardList";
-import Card from "../components/Hero";
 import FreeTemplates from "../components/FreeTemplates";
+import Card from "../components/Hero";
+import CardList from "../components/CardList";
 
 export const metadata = {
   title: "medCode-Blogs & Articles",
@@ -54,8 +54,8 @@ const Page = async () => {
         text="Software Development Skills:Tips and Tricks for
             Success"
       />
-      <Card />
-      <CardList />
+      <Card/>
+      <CardList/>
       <FreeTemplates />
     </Layout>
   );

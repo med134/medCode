@@ -12,6 +12,7 @@ import { FeaturedProject } from "../components/FeaturedProject";
 import { Project } from "../components/ProjectArtcle";
 import AnimatedText from "../components/AnimatedText";
 import TransitionEffect from "../components/TransitionEffect";
+import { getArticles } from "../components/FetchData";
 export const metadata = {
   title: "medCode-Web Development Projects",
   description: `Discover the latest web app projects created by MedCode, free and premium code source projects for beginners, React.js Next.js,javascript,HTML CSS`,
@@ -41,7 +42,7 @@ export const metadata = {
       "en-us": `https://www.medcode.dev/en-us/projects`,
     },
     types: {
-      'application/rss+xml': 'https://www.medcode.dev/rss',
+      "application/rss+xml": "https://www.medcode.dev/rss",
     },
   },
   openGraph: {
@@ -57,7 +58,9 @@ export const metadata = {
   },
 };
 
-const page = () => {
+const page = async () => {
+  const data = await getArticles();
+  console.log(data)
   return (
     <>
       <TransitionEffect />

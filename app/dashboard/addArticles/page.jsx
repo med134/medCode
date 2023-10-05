@@ -1,24 +1,18 @@
 "use client";
-import React, { useState } from "react";
-import Loading from "../loading";
+import React, { useState, useEffect } from "react";
+import Loading from "@/app/loading";
 import useSWR from "swr";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { useQuill } from "react-quilljs";
+import "quill/dist/quill.snow.css";
+
 const AddNewArticle = () => {
   const route = useRouter();
-  const [text, setText] = useState("");
-  /*   const handleDelete = async (id) => {
-    try {
-      await fetch(`/api/articles/${id}`, {
-        method: "DELETE",
-      });
-      mutate();
-    } catch (err) {
-      console.log(err);
-    }
-  }; */
+  const [text, setText] = useState();
+  const { quill, quillRef } = useQuill();
+  console.log(text);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const title = e.target[0].value;
@@ -54,12 +48,13 @@ const AddNewArticle = () => {
     fetcher
   );
 
-  if (session.status === "loading") {
-    return <Loading />;
-  }
-  if (session.status === "unauthenticated") {
-    route?.push("/dashboard/login");
-  }
+  useEffect(() => {
+    if (quill) {
+      setText(quill.root.innerHTML);
+    }
+   
+  },[quill]);
+
   return (
     <div className="inline-block p-8 py-8 sm:p-2 sm:py-2">
       <div className="p-8 block justify-between items-center md:inline-block sm:items-center">
@@ -89,51 +84,16 @@ const AddNewArticle = () => {
             placeholder="description"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
-          <div className="w-full h-[500px] text-center py-12 p-8">
-            <CKEditor
-              className="h-[400px] w-full"
-              editor={ClassicEditor}
-              data={text}
-              onChange={(editor) => {
-                const data = editor.getData();
-                setText(data);
-              }}
-            />
+          <div
+            style={{ width: 1000, height: 300 }}
+            className="py-16 items-center text-center"
+          >
+            <div ref={quillRef} />
           </div>
-          <button className="rounded-md font-semibold py-2 w-full bg-violet-600 text-light ml-4 hover:bg-purple-400">
+          <button className="rounded-md font-semibold py-2 w-full bg-violet-600 text-light ml-4 mt-8 hover:bg-purple-400">
             Post Now
           </button>
         </form>
-        {/* <div className="w-full p-6 grid grid-cols rounded-lg sm:p-2 items-start">
-          {isLoading ? (
-            <Loading />
-          ) : (
-            data?.map((post) => (
-              <div key={post._id}>
-                <div className="">
-                  <Image
-                    className="rounded-md object-cover"
-                    src={post.image}
-                    alt="image_post"
-                    width={350}
-                    height={80}
-                  />
-                </div>
-                <div className="inline-flex justify-between items-center">
-                  <h2 className="text-xl p-3 px-2 sm:text-sm font-lexend py-3">
-                    {post.title}
-                  </h2>
-                  <span
-                    onClick={() => handleDelete(post._id)}
-                    className="p-1 bg-red-400 text-light text-center m-3 font-semibold rounded-md cursor-pointer hover:bg-red-500 bottom-1"
-                  >
-                    delete
-                  </span>
-                </div>
-              </div>
-            ))
-          )}
-        </div> */}
       </div>
     </div>
   );

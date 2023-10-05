@@ -3,6 +3,7 @@ import Image from "next/image";
 import Layout from "@/app/components/Layout";
 import Category from "@/app/components/Category";
 import SidBar from "@/app/components/SidBar";
+import parse from "html-react-parser";
 
 async function getData(id) {
   const res = await fetch(`https://www.medcode.dev/api/articles/${id}`, {
@@ -43,6 +44,7 @@ export async function generateMetadata({ params }) {
 const BlogPage = async ({ params }) => {
   const { id } = params;
   const blog = await getData(id);
+  const blog1 = blog.content;
 
   return (
     <Layout className="p-8 by-1 xl:p-4 lg:p-4 md:p-2 sm:p-8">
@@ -62,10 +64,8 @@ const BlogPage = async ({ params }) => {
                 {blog.tags}
               </span>
             </div>
-            <div
-              className="p-6 py-2 font-normal"
-              dangerouslySetInnerHTML={{ __html: blog.content }}
-            />
+
+            <div className="p-6 py-2 font-normal" {...blog1}></div>
           </div>
         </div>
         <div className="lg:grid grid-cols-2 gap-6 lg:p-14 md:block">

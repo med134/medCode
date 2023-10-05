@@ -6,12 +6,13 @@ import React from "react";
 
 const Card = async () => {
   const articles = await getArticles();
+  console.log(articles)
   return (
     <>
       <Layout className="p-10 py-4 xl:p-4 xl:px-6 md:items-center sm:p-1 sm:py-1 sm:px-1">
         {articles.map(
           (item, index) =>
-            index === 1 && (
+            index === 0 && (
               <div key={item._id} className="container mx-auto px-4 sm:px-1">
                 <div className="grid grid-cols-2 w-full item-center md:block md:justify-center">
                   <div className="w-[500px] h-full md:w-full lg:w-full md:px-6">
