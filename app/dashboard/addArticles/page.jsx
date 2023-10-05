@@ -11,10 +11,13 @@ const AddNewArticle = () => {
   const route = useRouter();
   const [text, setText] = useState();
   const { quill, quillRef } = useQuill();
-  console.log(text);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (quill) {
+      const htmlContent = quill.root.innerHTML;
+      setText(htmlContent);
+    }
     const title = e.target[0].value;
     const tags = e.target[1].value;
     const image = e.target[2].value;
@@ -48,12 +51,13 @@ const AddNewArticle = () => {
     fetcher
   );
 
-  useEffect(() => {
-    if (quill) {
-      setText(quill.root.innerHTML);
-    }
-   
-  },[quill]);
+  if (session.status === "loading") {
+    return <Loading />;
+  }
+
+  if (session.status === "unauthenticated") {
+    route?.push("/dashboard/login");
+  }
 
   return (
     <div className="inline-block p-8 py-8 sm:p-2 sm:py-2">
@@ -84,11 +88,8 @@ const AddNewArticle = () => {
             placeholder="description"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
-          <div
-            style={{ width: 1000, height: 300 }}
-            className="py-16 items-center text-center"
-          >
-            <div ref={quillRef} />
+          <div className="py-16 items-center text-center">
+            <div ref={quillRef} style={{ height: "400px" }} />
           </div>
           <button className="rounded-md font-semibold py-2 w-full bg-violet-600 text-light ml-4 mt-8 hover:bg-purple-400">
             Post Now
