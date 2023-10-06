@@ -15,6 +15,7 @@ async function getData(id) {
 }
 export async function generateMetadata({ params }) {
   const post = await getData(params.id);
+
   return {
     title: post.title,
     description: post.shortDescription,
@@ -43,6 +44,7 @@ export async function generateMetadata({ params }) {
 const BlogPage = async ({ params }) => {
   const { id } = params;
   const blog = await getData(id);
+  const content = blog.content;
 
   return (
     <Layout className="p-8 by-1 xl:p-4 lg:p-4 md:p-2 sm:p-8">
@@ -62,8 +64,9 @@ const BlogPage = async ({ params }) => {
                 {blog.tags}
               </span>
             </div>
-
-            <div className="p-6 py-2 font-normal" dangerouslySetInnerHTML={{ __html: blog.content }} />
+            <div>
+              <div className="bg-slate-100" dangerouslySetInnerHTML={{ __html: content}} />
+            </div>
           </div>
         </div>
         <div className="lg:grid grid-cols-2 gap-6 lg:p-14 md:block">
