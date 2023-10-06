@@ -60,7 +60,7 @@ const BlogPage = async ({ params }) => {
                 height={500}
               />
               <h2 className="text-4xl font-bold mt-2 py-1">{blog.title}</h2>
-              <span className="flex justify-start items-start py-6 ml-2 mt-1 font-bolder">
+              <span className="flex underline font-bold justify-start items-start py-6 ml-2 mt-1 font-bolder">
                 {blog.tags}
               </span>
             </div>

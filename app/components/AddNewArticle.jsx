@@ -9,6 +9,7 @@ import "quill/dist/quill.snow.css";
 
 const AddNewArticle = () => {
   const { quill, quillRef } = useQuill();
+
   const route = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
