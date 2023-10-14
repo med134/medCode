@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Layout from "@/app/components/Layout";
-import Category from "@/app/components/Category";
 import SidBar from "@/app/components/SidBar";
 
 async function getData(id) {
@@ -70,7 +69,7 @@ const BlogPage = async ({ params }) => {
           </div>
         </div>
         <div className="lg:grid grid-cols-2 gap-6 lg:p-14 md:block">
-          <Category />
+         {/*  <Category /> */}
           <div>
             <span className="text-xl text-gray-800 font-semibold mt-7">
               More titles From{" "}

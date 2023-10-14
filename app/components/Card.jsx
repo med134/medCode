@@ -1,13 +1,41 @@
-import React from "react";
-import { getArticles } from "./FetchData";
+"use client";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const Card = async () => {
-  const articles = await getArticles();
+const Card = ({ articles }) => {
+  const [posts, setPosts] = useState(articles);
+  const [selected, setSelected] = useState("");
+
+  const filterPosts = (cat) => {
+    const result = posts.filter((index) => {
+      return index.category === cat;
+    });
+    setPosts(result);
+  };
+  const HandelChange = (e) => {
+    const cat = e.target.value;
+    setSelected(cat);
+    console.log(cat);
+    filterPosts(cat);
+  };
   return (
     <>
-      {articles.map((item) => (
+      <div>
+        <h1 className="text-2xl px-12 py-8 font-bold text-gray-800">
+          Categories
+        </h1>
+        <select
+          className="w-full px-8 p-2"
+          value={selected}
+          onChange={HandelChange}
+        >
+          <option value="">selected...</option>
+          <option value="react">react</option>
+          <option value="productivity">productivity</option>
+        </select>
+      </div>
+      {posts.map((item) => (
         <div
           key={item._id}
           className="flex items-center justify-evenly mb-6 mt-4 bg-white shadow-lg p-6 rounded-md lg:block lg:w-full sm:w-full"
@@ -20,6 +48,7 @@ const Card = async () => {
             <Image
               src={item.image}
               loading="lazy"
+              p
               alt="blog_image"
               className="object-cover transition items-center duration-200 group-hover:scale-110"
               width={300}
@@ -55,5 +84,4 @@ const Card = async () => {
     </>
   );
 };
-
 export default Card;

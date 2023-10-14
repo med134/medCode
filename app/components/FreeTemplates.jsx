@@ -1,17 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-async function getData() {
-  const res = await fetch(`https://medcode.dev/api/posts`, {
-    cache: "no-store",
-  });
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return res.json();
-}
+import { getAll } from "./FetchData";
+
 const FreeTemplates = async () => {
-  const data = await getData();
+  const data = await getAll();
   return (
     <section className="mx-auto max-w-screen-xl py-8 text-blue-900 sm:py-16 lg:py-20">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">

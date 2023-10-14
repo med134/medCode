@@ -4,7 +4,6 @@ import Layout from "../components/Layout";
 import FreeTemplates from "../components/FreeTemplates";
 import Card from "../components/Hero";
 import CardList from "../components/CardList";
-
 export const metadata = {
   title: "medCode-Blogs & Articles",
   description: `Browse through MedCode collection of software engineering articles blogs and debugging tutorials  Next.js, React.js, javascript html ,css web development`,
@@ -46,7 +45,6 @@ export const metadata = {
 };
 
 const Page = async () => {
-  
   return (
     <Layout className="p-6 2xl:p-4 lg:p-4 md:p-2 xs:p-0">
       <AnimatedText
@@ -54,9 +52,9 @@ const Page = async () => {
         text="Software Development Skills:Tips and Tricks for
             Success"
       />
-      <Card/>
-      <CardList/>
-      <FreeTemplates />
+      <Card />
+      <CardList />
+      {/* <FreeTemplates /> */}
     </Layout>
   );
 };
