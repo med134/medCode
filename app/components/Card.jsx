@@ -3,39 +3,36 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const Card = ({ articles }) => {
-  const [posts, setPosts] = useState(articles);
-  const [selected, setSelected] = useState("");
-
+export default function Card({ posts }) {
+  const [data, setData] = useState(posts);
   const filterPosts = (cat) => {
-    const result = posts.filter((index) => {
-      return index.category === cat;
-    });
-    setPosts(result);
+    const newArray = posts.filter((item) => item.category === cat);
+    return newArray;
+    setData(newArray);
   };
-  const HandelChange = (e) => {
-    const cat = e.target.value;
-    setSelected(cat);
-    console.log(cat);
-    filterPosts(cat);
-  };
+
   return (
     <>
       <div>
         <h1 className="text-2xl px-12 py-8 font-bold text-gray-800">
           Categories
         </h1>
-        <select
-          className="w-full px-8 p-2"
-          value={selected}
-          onChange={HandelChange}
-        >
-          <option value="">selected...</option>
-          <option value="react">react</option>
-          <option value="productivity">productivity</option>
-        </select>
+        <div className="p-4 py-4 ">
+          <button
+            onClick={() => filterPosts("react")}
+            className="p-3 px-2 py-1 bg-slate-200 text-red-500"
+          >
+            React.js
+          </button>
+          <button
+            onClick={() => filterPosts("productivity")}
+            className="p-3 px-2 py-1 bg-slate-200 text-red-500"
+          >
+            Productivity
+          </button>
+        </div>
       </div>
-      {posts.map((item) => (
+      {data?.map((item) => (
         <div
           key={item._id}
           className="flex items-center justify-evenly mb-6 mt-4 bg-white shadow-lg p-6 rounded-md lg:block lg:w-full sm:w-full"
@@ -83,5 +80,4 @@ const Card = ({ articles }) => {
       ))}
     </>
   );
-};
-export default Card;
+}

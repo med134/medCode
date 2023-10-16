@@ -6,9 +6,47 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
+import hljs from "highlight.js";
 
 const AddNewArticle = () => {
-  const { quill, quillRef } = useQuill();
+  hljs.configure({
+    languages: ["javascript", "ruby", "python", "rust"],
+  });
+
+  const theme = "snow";
+
+  const modules = {
+    toolbar: [
+      ["code-block"],
+      ["bold", "italic", "underline", "strike"],
+      [{ header: 1 }, { header: 2 }],
+      [{ list: "ordered" }, { list: "bullet" }],
+      [{ script: "sub" }, { script: "super" }],
+      [{ indent: "-1" }, { indent: "+1" }],
+      [{ direction: "rtl" }],
+      [{ color: [] }, { background: [] }],
+      ["link", "image", "video"],
+      ["clean"],
+      [{ font: [] }],
+      [{ align: [] }],
+
+      [{ size: ["small", false, "large", "huge"] }],
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+    ],
+    syntax: {
+      highlight: (text) => hljs.highlightAuto(text).value,
+    },
+  };
+
+  const placeholder = "Compose an epic...";
+
+  const formats = ["code-block"];
+  const { quill, quillRef } = useQuill({
+    theme,
+    modules,
+    formats,
+    placeholder,
+  });
 
   const route = useRouter();
   const handleSubmit = async (e) => {

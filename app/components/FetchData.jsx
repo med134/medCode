@@ -1,9 +1,11 @@
+import { notFound } from "next/navigation";
+
 export async function getData() {
   const res = await fetch(`https://dev.to/api/articles?username=med_code`, {
     cache: "no-store",
   });
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    return notFound();
   }
   return res.json();
 }
@@ -12,7 +14,7 @@ export async function getAll() {
     cache: "no-store",
   });
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    return notFound();
   }
   return res.json();
 }
@@ -21,7 +23,7 @@ export async function getArticles() {
     cache: "no-store",
   });
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    return notFound();
   }
   return res.json();
 }
@@ -30,7 +32,7 @@ export async function getCategory() {
     cache: "no-store",
   });
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    return notFound();
   }
   return res.json();
 }
