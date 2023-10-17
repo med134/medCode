@@ -46,30 +46,31 @@ const BlogPage = async ({ params }) => {
   const content = blog.content;
 
   return (
-    <Layout className="p-8 by-1 xl:p-4 lg:p-4 md:p-2 sm:p-8">
+    <Layout className="p-8 by-1 xl:p-4 lg:p-4 md:p-2 sm:p-8 bg-transparent">
       <main className="containerBlog mx-auto mt-2 lg:block ">
         <div className="flex flex-wrap justify-around">
           <div className="w-full px-4 mb-8">
-            <div>
-              <Image
-                src={blog.image}
-                alt="Featured Image"
-                className="w-full object-cover rounded"
-                width={500}
-                height={500}
-              />
-              <h2 className="text-4xl font-bold mt-2 py-1">{blog.title}</h2>
-              <span className="flex underline font-bold justify-start items-start py-6 ml-2 mt-1 font-bolder">
-                {blog.tags}
-              </span>
-            </div>
-            <div>
-              <div className="bg-slate-100" dangerouslySetInnerHTML={{ __html: content}} />
+            <Image
+              src={blog.image}
+              alt="Featured Image"
+              className="w-full object-cover rounded"
+              width={500}
+              height={500}
+            />
+            <h2 className="text-4xl font-bold mt-2 py-1">{blog.title}</h2>
+            <span className="flex underline font-bold justify-start items-start py-6 ml-2 mt-1 font-bolder">
+              {blog.tags}
+            </span>
+
+            <div className="ql-snow">
+              <div
+                className="ql-editor"
+                dangerouslySetInnerHTML={{ __html: content }}
+              ></div>
             </div>
           </div>
         </div>
         <div className="lg:grid grid-cols-2 gap-6 lg:p-14 md:block">
-         {/*  <Category /> */}
           <div>
             <span className="text-xl text-gray-800 font-semibold mt-7">
               More titles From{" "}

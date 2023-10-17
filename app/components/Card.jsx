@@ -1,38 +1,24 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Card({ posts }) {
-  const [data, setData] = useState(posts);
-  const filterPosts = (cat) => {
-    const newArray = posts.filter((item) => item.category === cat);
-    return newArray;
-    setData(newArray);
-  };
-
+const Card = () => {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:3000/api/articles");
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const result = await response.json();
+      setPosts(result);
+    };
+    fetchData();
+  }, []);
   return (
     <>
-      <div>
-        <h1 className="text-2xl px-12 py-8 font-bold text-gray-800">
-          Categories
-        </h1>
-        <div className="p-4 py-4 ">
-          <button
-            onClick={() => filterPosts("react")}
-            className="p-3 px-2 py-1 bg-slate-200 text-red-500"
-          >
-            React.js
-          </button>
-          <button
-            onClick={() => filterPosts("productivity")}
-            className="p-3 px-2 py-1 bg-slate-200 text-red-500"
-          >
-            Productivity
-          </button>
-        </div>
-      </div>
-      {data?.map((item) => (
+      {posts?.map((item) => (
         <div
           key={item._id}
           className="flex items-center justify-evenly mb-6 mt-4 bg-white shadow-lg p-6 rounded-md lg:block lg:w-full sm:w-full"
@@ -80,4 +66,5 @@ export default function Card({ posts }) {
       ))}
     </>
   );
-}
+};
+export default Card;

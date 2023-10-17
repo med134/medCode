@@ -7,24 +7,41 @@ import { useSession } from "next-auth/react";
 import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
 import hljs from "highlight.js";
+import "highlight.js/styles/darcula.css";
 
 const AddNewArticle = () => {
   hljs.configure({
     languages: ["javascript", "ruby", "python", "rust"],
+    theme: ["darcula"],
   });
 
   const theme = "snow";
-
+  const formats = [
+    "header",
+    "font",
+    "size",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "code-block",
+    "list",
+    "bullet",
+    "indent",
+    "link",
+    "align",
+  ];
   const modules = {
     toolbar: [
-      ["code-block"],
+      ["blockquote", "code-block"],
       ["bold", "italic", "underline", "strike"],
       [{ header: 1 }, { header: 2 }],
       [{ list: "ordered" }, { list: "bullet" }],
       [{ script: "sub" }, { script: "super" }],
       [{ indent: "-1" }, { indent: "+1" }],
       [{ direction: "rtl" }],
-      [{ color: [] }, { background: [] }],
+      [{ color: [] }],
       ["link", "image", "video"],
       ["clean"],
       [{ font: [] }],
@@ -34,13 +51,11 @@ const AddNewArticle = () => {
       [{ header: [1, 2, 3, 4, 5, 6, false] }],
     ],
     syntax: {
-      highlight: (text) => hljs.highlightAuto(text).value,
+      highlight: (text) => hljs.highlightBlock(text).value,
     },
   };
 
   const placeholder = "Compose an epic...";
-
-  const formats = ["code-block"];
   const { quill, quillRef } = useQuill({
     theme,
     modules,
@@ -119,7 +134,11 @@ const AddNewArticle = () => {
             placeholder="description"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
-          <div ref={quillRef} style={{ height: "400px" }} />
+          <div
+            ref={quillRef}
+            style={{ height: "400px" }}
+            className="bg-transparent"
+          />
           <button className="rounded-md font-semibold py-2 w-full bg-violet-600 text-light ml-4 hover:bg-purple-400">
             Post Now
           </button>
