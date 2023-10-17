@@ -6,13 +6,13 @@ import React from "react";
 
 const Card = async () => {
   const articles = await getArticles();
-  console.log(articles)
+  console.log(articles);
   return (
     <>
       <Layout className="p-10 py-4 xl:p-4 xl:px-6 md:items-center sm:p-1 sm:py-1 sm:px-1">
         {articles.map(
           (item, index) =>
-            index === 0 && (
+            index === articles.length - 1 && (
               <div key={item._id} className="container mx-auto px-4 sm:px-1">
                 <div className="grid grid-cols-2 w-full item-center md:block md:justify-center">
                   <div className="w-[500px] h-full md:w-full lg:w-full md:px-6">
@@ -32,7 +32,7 @@ const Card = async () => {
                       {item.title}
                     </h1>
                     <p className="text-medium text-gray-700 lg:text-sm mb-2">
-                      {item.description.slice(0,80)}...
+                      {item.description.slice(0, 80)}...
                     </p>
                     <span className="font-bold text-sm mb-5">{item.tags}</span>
                     <Link
