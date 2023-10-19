@@ -9,7 +9,6 @@ import "react-quill/dist/quill.snow.css";
 import hljs from "highlight.js";
 
 const AddNewArticle = () => {
-  const [htmlContent, setHtmlContent] = useState("");
   const ex = undefined;
   const text = ex || "";
   hljs.configure({
@@ -143,14 +142,6 @@ const AddNewArticle = () => {
             Post Now
           </button>
         </form>
-        <button onClick={getHtmlContent}>get html</button>
-        {quill && (
-          <div className='ql-snow'>
-          <div
-            className="ql-editor"
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-          /></div>
-        )}
       </div>
     </div>
   );
