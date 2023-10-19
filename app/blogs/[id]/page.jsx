@@ -57,11 +57,10 @@ const BlogPage = async ({ params }) => {
               width={500}
               height={500}
             />
-            <h2 className="text-4xl font-bold mt-2 py-1">{blog.title}</h2>
+            <h2 className="text-4xl font-bold mt-2 py-1 sm:text-xl">{blog.title}</h2>
             <span className="flex underline font-bold justify-start items-start py-6 ml-2 mt-1 font-bolder">
               {blog.tags}
             </span>
-
             <div className="ql-snow">
               <div
                 className="ql-editor"
@@ -70,11 +69,11 @@ const BlogPage = async ({ params }) => {
             </div>
           </div>
         </div>
-        <div className="lg:grid grid-cols-2 gap-6 lg:p-14 md:block">
-          <div>
-            <span className="text-xl text-gray-800 font-semibold mt-7">
+        <div className="lg:grid grid-cols-2 gap-6 lg:p-14 md:block sm:p-2">
+          <div className="sm:w-full">
+            <span className="text-xl text-gray-800 font-semibold mt-7 sm:w-full sm:text-sm">
               More titles From{" "}
-              <span className="text-2xl text-red-500">MedCode...</span>{" "}
+              <span className="text-2xl text-red-500 sm:text-xl">MedCode...</span>{" "}
             </span>
             <SidBar />
           </div>
@@ -83,5 +82,4 @@ const BlogPage = async ({ params }) => {
     </Layout>
   );
 };
-
 export default BlogPage;

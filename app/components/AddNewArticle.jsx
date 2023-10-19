@@ -7,12 +7,15 @@ import { useSession } from "next-auth/react";
 import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
 import hljs from "highlight.js";
+import 'highlight.js/styles/a11y-dark.css';
+
 
 const AddNewArticle = () => {
   const ex = undefined;
   const text = ex || "";
   hljs.configure({
     languages: ["javascript", "ruby", "python", "rust"],
+    theme: "a11y-dark",
   });
   const theme = "snow";
   const formats = [
@@ -50,7 +53,7 @@ const AddNewArticle = () => {
       [{ header: [1, 2, 3, 4, 5, 6, false] }],
     ],
     syntax: {
-      highlight: (text) => hljs.highlightAuto(text).value,
+      highlight: (text) => hljs.highlightAll(text).value,
     },
   };
 

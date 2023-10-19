@@ -8,7 +8,10 @@ const SidBar = async ({ params }) => {
     <>
       {dev?.map((item, index) =>
         index < 4 ? (
-          <div key={item._id} className="mt-6 bg-white shadow-md p-5 px-6">
+          <div
+            key={item._id}
+            className="mt-6 bg-white shadow-md p-5 px-6 sm:mt-3 sm:w-72 sm:px-0 xs:p-3"
+          >
             <h3 className="text-xl font-semibold text-gray-800">
               {item.title}
             </h3>
