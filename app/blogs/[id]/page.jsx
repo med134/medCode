@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import Layout from "@/app/components/Layout";
 import SidBar from "@/app/components/SidBar";
+import "react-quill/dist/quill.snow.css";
+
 
 async function getData(id) {
   const res = await fetch(`https://www.medcode.dev/api/articles/${id}`, {
@@ -46,8 +47,8 @@ const BlogPage = async ({ params }) => {
   const content = blog.content;
 
   return (
-    <Layout className="p-8 by-1 xl:p-4 lg:p-4 md:p-2 sm:p-8 bg-transparent">
-      <main className="containerBlog mx-auto mt-2 lg:block ">
+
+      <section className="containerBlog p-16 mx-auto mt-2 lg:block  ">
         <div className="flex flex-wrap justify-around">
           <div className="w-full px-4 mb-8">
             <Image
@@ -78,8 +79,7 @@ const BlogPage = async ({ params }) => {
             <SidBar />
           </div>
         </div>
-      </main>
-    </Layout>
+      </section>
   );
 };
 export default BlogPage;

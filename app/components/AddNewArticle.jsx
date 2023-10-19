@@ -5,19 +5,19 @@ import useSWR from "swr";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { useQuill } from "react-quilljs";
-import "quill/dist/quill.snow.css";
+import "react-quill/dist/quill.snow.css";
 import hljs from "highlight.js";
-import 'highlight.js/styles/a11y-dark.css';
-
 
 const AddNewArticle = () => {
+  const [htmlContent, setHtmlContent] = useState("");
   const ex = undefined;
   const text = ex || "";
   hljs.configure({
     languages: ["javascript", "ruby", "python", "rust"],
-    theme: "a11y-dark",
+    theme: "snow",
   });
   const theme = "snow";
+  const placeholder = "write your content...";
   const formats = [
     "header",
     "font",
@@ -53,11 +53,9 @@ const AddNewArticle = () => {
       [{ header: [1, 2, 3, 4, 5, 6, false] }],
     ],
     syntax: {
-      highlight: (text) => hljs.highlightAll(text).value,
+      highlight: (text) => hljs.highlightBlock(text).value,
     },
   };
-
-  const placeholder = "Compose an epic...";
   const { quill, quillRef } = useQuill({
     theme,
     modules,
@@ -89,7 +87,6 @@ const AddNewArticle = () => {
       });
       mutate();
       e.target.reset();
-      quill.deleteText;
     } catch (err) {
       console.log(err);
     }
@@ -101,7 +98,11 @@ const AddNewArticle = () => {
     `/api/articles?username=${session?.data?.user.name}`,
     fetcher
   );
-
+  const getHtmlContent = () => {
+    if (quill) {
+      setHtmlContent(quill.root.innerHTML);
+    }
+  };
   if (session.status === "loading") {
     return <Loading />;
   }
@@ -137,11 +138,19 @@ const AddNewArticle = () => {
             placeholder="description"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
-          <div ref={quillRef} style={{ height: "400px" }} />
+          <div ref={quillRef} style={{ height: 400 }} />
           <button className="rounded-md font-semibold py-2 w-full bg-violet-600 text-light ml-4 hover:bg-purple-400">
             Post Now
           </button>
         </form>
+        <button onClick={getHtmlContent}>get html</button>
+        {quill && (
+          <div className='ql-snow'>
+          <div
+            className="ql-editor"
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+          /></div>
+        )}
       </div>
     </div>
   );
