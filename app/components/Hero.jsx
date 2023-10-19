@@ -6,7 +6,6 @@ import React from "react";
 
 const Card = async () => {
   const articles = await getArticles();
-  console.log(articles);
   return (
     <>
       <Layout className="p-10 py-4 xl:p-4 xl:px-6 md:items-center sm:p-1 sm:py-1 sm:px-1">
@@ -28,13 +27,15 @@ const Card = async () => {
                     <span className="text-gray-500">
                       {item.createdAt.slice(0, 10)}
                     </span>
-                    <h1 className="font-bold text-3xl leading-tight mb-4 sm:text-xl">
+                    <h1 className="font-bold text-3xl leading-tight mb-2 sm:text-xl dark:text-light">
                       {item.title}
                     </h1>
-                    <p className="text-medium text-gray-700 lg:text-sm mb-2">
+
+                    <p className="text-medium text-gray-700 lg:text-sm mb-2 dark:text-light">
                       {item.description.slice(0, 80)}...
                     </p>
-                    <span className="font-bold text-sm mb-5">{item.tags}</span>
+                    <span className="font-bold text-sm mb-5 dark:text-light">{item.tags}</span>
+
                     <Link
                       href={`/blogs/${item._id}`}
                       className="block font-semibold mt-4 text-rose-500 transition duration-100 hover:text-rose-600 hover:underline active:text-rose-700"

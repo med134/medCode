@@ -7,14 +7,13 @@ import { useSession } from "next-auth/react";
 import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
 import hljs from "highlight.js";
-import "highlight.js/styles/darcula.css";
 
 const AddNewArticle = () => {
+  const ex = undefined;
+  const text = ex || "";
   hljs.configure({
     languages: ["javascript", "ruby", "python", "rust"],
-    theme: ["darcula"],
   });
-
   const theme = "snow";
   const formats = [
     "header",
@@ -51,7 +50,7 @@ const AddNewArticle = () => {
       [{ header: [1, 2, 3, 4, 5, 6, false] }],
     ],
     syntax: {
-      highlight: (text) => hljs.highlightBlock(text).value,
+      highlight: (text) => hljs.highlightAuto(text).value,
     },
   };
 
@@ -62,7 +61,6 @@ const AddNewArticle = () => {
     formats,
     placeholder,
   });
-
   const route = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,6 +70,7 @@ const AddNewArticle = () => {
     const category = e.target[3].value;
     const description = e.target[4].value;
     const content = quill.root.innerHTML;
+
     try {
       await fetch("/api/articles", {
         method: "POST",
@@ -87,6 +86,7 @@ const AddNewArticle = () => {
       });
       mutate();
       e.target.reset();
+      quill.deleteText;
     } catch (err) {
       console.log(err);
     }
@@ -134,11 +134,7 @@ const AddNewArticle = () => {
             placeholder="description"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
-          <div
-            ref={quillRef}
-            style={{ height: "400px" }}
-            className="bg-transparent"
-          />
+          <div ref={quillRef} style={{ height: "400px" }} />
           <button className="rounded-md font-semibold py-2 w-full bg-violet-600 text-light ml-4 hover:bg-purple-400">
             Post Now
           </button>

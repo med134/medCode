@@ -12,16 +12,16 @@ const SideBar = async () => {
         index < 3 ? (
           <div
             key={item.id}
-            className="mt-3 bg-white shadow-md p-3 border border-b-red-500"
+            className="mt-3 bg-white dark:bg-dark shadow-md p-3 border border-b-red-500 dark:border-b-light"
           >
-            <h3 className="text-xl font-semibold text-gray-800">
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-light">
               {item.title}
             </h3>
-            <p className="mt-1 text-sm mb-2 text-gray-500">
+            <p className="mt-1 text-sm mb-2 text-gray-500 dark:text-light">
               {item.description}
             </p>
 
-            <p className="mt-1 text-sm ml-2 mb-2 underline text-gray-900 font-semibold">
+            <p className="mt-1 text-sm ml-2 mb-2 underline text-gray-900 font-semibold dark:text-light">
               #{item.tags}
             </p>
 

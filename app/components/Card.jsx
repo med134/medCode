@@ -15,7 +15,7 @@ const Card = async () => {
             index > 0 && (
               <div
                 key={item._id}
-                className="flex items-center justify-evenly mb-6 mt-4 bg-white shadow-lg p-6 rounded-md lg:block lg:w-full sm:w-full"
+                className="flex items-center justify-evenly mb-6 mt-4 bg-white shadow-lg dark:shadow-white p-6 rounded-md lg:block lg:w-full sm:w-full dark:bg-dark dark:border-light"
               >
                 <Link
                   href={`/blogs/${item._id}`}
@@ -32,19 +32,19 @@ const Card = async () => {
                     height={500}
                   />
                 </Link>
-                <div className="flex flex-col gap-2 px-4 lg:mt-4">
+                <div className="flex flex-col gap-2 px-4 lg:mt-4 dark:text-light">
                   <span className="text-sm text-gray-400">
                     {item?.createdAt.slice(0, 10)}
                   </span>
                   <h2 className="text-xl font-bold text-gray-800">
                     <Link
                       href={`/blogs/${item._id}`}
-                      className="transition duration-100 hover:text-rose-500 active:text-rose-600 sm:text-sm"
+                      className="transition duration-100 hover:text-rose-500 active:text-rose-600 sm:text-sm dark:text-light"
                     >
                       {item.title}
                     </Link>
                   </h2>
-                  <p className="text-gray-500 sm:text-xs">
+                  <p className="text-gray-500 sm:text-xs dark:text-light">
                     {item?.description.slice(0, 50)}...
                   </p>
                   <div>

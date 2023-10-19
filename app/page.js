@@ -6,6 +6,8 @@ import { LinkArrow } from "./components/Icons";
 import profilePic from "../app/images/med12.png";
 import TransitionEffect from "./components/TransitionEffect";
 import { Dancing_Script } from "next/font/google";
+import "./globals.css";
+
 const inter = Dancing_Script({
   subsets: ["latin"],
   variable: "--dancing",
@@ -51,6 +53,7 @@ export default function Home() {
   return (
     <>
       <TransitionEffect />
+
       <main className="flex items-center text-dark w-full min-h-screen dark:text-light sm:items-start">
         <Layout className="pt-0 md:pt-16 sm:pt-16 xs:p-10 xs:pt-18">
           <div className="flex items-center justify-between w-full lg:flex-col">
