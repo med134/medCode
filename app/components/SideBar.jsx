@@ -9,7 +9,7 @@ const SideBar = async () => {
   return (
     <>
       {dev.map((item, index) =>
-        index < 3 ? (
+        index < 4 ? (
           <div
             key={item.id}
             className="mt-3 bg-white dark:bg-dark shadow-md p-3 border border-b-red-500 dark:border-b-light"

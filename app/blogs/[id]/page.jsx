@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import SidBar from "@/app/components/SidBar";
 import "react-quill/dist/quill.snow.css";
+import "highlight.js/styles/a11y-dark.css";
 
 
 async function getData(id) {

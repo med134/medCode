@@ -2,7 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import { getAll } from "./FetchData";
-import { motion,AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const FreeTemplates = async () => {
   const data = await getAll();
@@ -17,34 +18,37 @@ const FreeTemplates = async () => {
           </h2>
         </div>
         <article className="grid grid-cols-3 gap-6 p-16 xl:gap-4 xl:p-8 lg:grid-cols-2 lg:gap-6 lg:p-10 sm:flex flex-wrap sm:p-2 dark:bg-dark">
-          <AnimatePresence> 
-          {data.map(
-            (item, index) =>
-              index > 5 && (
-                <motion.div
-                  key={item._id}
-                  className="bg-white p-6 shadow-lg rounded-lg dark:bg-dark dark:shadow-white"
-                  initial={{ opacity: 0, translateX: -50, translateY: -50 }}
-                  animate={{ opacity: 1, translateX: 0, translateY: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.2 }}
-                >
-                  <h3 className="text-xl py-2 font-bold text-gray-800 dark:text-light">
-                    {item.title}
-                  </h3>
-                  <Image
-                    className="w-full"
-                    src={item.image}
-                    alt="templates image"
-                    priority
-                    width={500}
-                    height={300}
-                  />
-                  <p className="mt-3 text-sm font-semibold text-gray-700 dark:text-light">
-                    {item.description}
-                  </p>
-                </motion.div>
-              )
-          )}
+          <AnimatePresence>
+            {data.map(
+              (item, index) =>
+                index > 5 && (
+                  <motion.div
+                    key={item._id}
+                    className="bg-white p-6 shadow-lg rounded-lg dark:bg-dark dark:shadow-white"
+                    initial={{ opacity: 0, translateX: -50, translateY: -50 }}
+                    animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.2 }}
+                  >
+                    <Link
+                      href={`/templates/${item._id}`}
+                      className="text-xl py-2 font-bold text-gray-800 dark:text-light"
+                    >
+                      {item.title}
+                      <Image
+                        className="w-full"
+                        src={item.image}
+                        alt="templates image"
+                        priority
+                        width={500}
+                        height={300}
+                      />
+                    </Link>
+                    <p className="mt-3 text-sm font-semibold text-gray-700 dark:text-light">
+                      {item.description}
+                    </p>
+                  </motion.div>
+                )
+            )}
           </AnimatePresence>
         </article>
       </div>

@@ -1,13 +1,15 @@
-import { getArticles } from "./FetchData";
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "./Layout";
 import React from "react";
+import { getArticles } from "./FetchData";
 
 const Card = async () => {
   const articles = await getArticles();
+
   return (
-    <>
+  
       <Layout className="p-10 py-4 xl:p-4 xl:px-6 md:items-center sm:p-1 sm:py-1 sm:px-1">
         {articles.map(
           (item, index) =>
@@ -34,7 +36,9 @@ const Card = async () => {
                     <p className="text-medium text-gray-700 lg:text-sm mb-2 dark:text-light">
                       {item.description.slice(0, 80)}...
                     </p>
-                    <span className="font-bold text-sm mb-5 dark:text-light">{item.tags}</span>
+                    <span className="font-bold text-sm mb-5 dark:text-light">
+                      {item.tags}
+                    </span>
 
                     <Link
                       href={`/blogs/${item._id}`}
@@ -48,7 +52,6 @@ const Card = async () => {
             )
         )}
       </Layout>
-    </>
   );
 };
 

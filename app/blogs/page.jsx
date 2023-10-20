@@ -47,6 +47,7 @@ export const metadata = {
 };
 
 const Page = async () => {
+
   return (
     <Layout className="p-6 2xl:p-4 lg:p-4 md:p-2 xs:p-0">
       <TransitionEffect />
@@ -57,8 +58,7 @@ const Page = async () => {
       />
       <Card />
       <CardList />
-      
-      <FreeTemplates />
+      <FreeTemplates/>
     </Layout>
   );
 };
