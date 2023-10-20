@@ -97,11 +97,6 @@ const AddNewArticle = () => {
     `/api/articles?username=${session?.data?.user.name}`,
     fetcher
   );
-  const getHtmlContent = () => {
-    if (quill) {
-      setHtmlContent(quill.root.innerHTML);
-    }
-  };
   if (session.status === "loading") {
     return <Loading />;
   }
