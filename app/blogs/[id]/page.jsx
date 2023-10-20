@@ -49,9 +49,9 @@ const BlogPage = async ({ params }) => {
 
   return (
 
-      <section className="containerBlog p-16 mx-auto mt-2 lg:block  ">
+      <section className="containerBlog p-16 mx-auto mt-2 lg:block sm:p-2 dark:bg-dark">
         <div className="flex flex-wrap justify-around">
-          <div className="w-full px-4 mb-8">
+          <div className="w-full px-4 mb-8 sm:text-sm sm:mb-2 dark:text-light">
             <Image
               src={blog.image}
               alt="Featured Image"
@@ -63,7 +63,7 @@ const BlogPage = async ({ params }) => {
             <span className="flex underline font-bold justify-start items-start py-6 ml-2 mt-1 font-bolder">
               {blog.tags}
             </span>
-            <div className="ql-snow">
+            <div className="ql-snow dark:bg-dark">
               <div
                 className="ql-editor"
                 dangerouslySetInnerHTML={{ __html: content }}
@@ -73,7 +73,7 @@ const BlogPage = async ({ params }) => {
         </div>
         <div className="lg:grid grid-cols-2 gap-6 lg:p-14 md:block sm:p-2">
           <div className="sm:w-full">
-            <span className="text-xl text-gray-800 font-semibold mt-7 sm:w-full sm:text-sm">
+            <span className="text-xl text-gray-800 font-semibold mt-7 sm:w-full sm:text-sm sm:mt-1 dark:text-light">
               More titles From{" "}
               <span className="text-2xl text-red-500 sm:text-xl">MedCode...</span>{" "}
             </span>

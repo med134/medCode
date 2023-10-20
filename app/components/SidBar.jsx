@@ -10,14 +10,14 @@ const SidBar = async ({ params }) => {
         index < 4 ? (
           <div
             key={item._id}
-            className="mt-6 bg-white shadow-md p-5 px-6 sm:mt-3 sm:w-72 sm:px-0 xs:p-3"
+            className="mt-6 bg-white shadow-md p-5 px-6 sm:mt-1 sm:w-72 sm:px-0 xs:p-1 border border-b-red-500 dark:bg-dark "
           >
-            <h3 className="text-xl font-semibold text-gray-800">
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-light">
               {item.title}
             </h3>
             <p className="mt-1 text-sm mb-2 text-gray-500">
               {/* {item.shortDescription.slice(0, 50)}... */}
-              <p className="mt-1 text-sm underline text-gray-900 font-semibold">
+              <p className="mt-1 text-sm underline text-gray-900 font-semibold dark:text-light">
                 {item.tags}
               </p>
             </p>
