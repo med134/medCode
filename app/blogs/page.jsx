@@ -58,7 +58,7 @@ const Page = async () => {
       />
       <Card />
       <CardList />
-      <FreeTemplates/>
+      <FreeTemplates />
     </Layout>
   );
 };

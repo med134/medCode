@@ -10,7 +10,7 @@ export async function getData() {
   return res.json();
 }
 export async function getAll() {
-  const res = await fetch(`http://localhost:3000/api/posts`, {
+  const res = await fetch(`https://www.medcode.dev/api/posts`, {
     cache: "no-store",
   });
   if (!res.ok) {

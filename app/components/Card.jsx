@@ -8,25 +8,23 @@ import { useInView } from "react-intersection-observer";
 const Card = ({ data }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.8,
+    threshold: 0.01,
   });
   const childVariants = {
-    hidden: { opacity: 0, y: 60 },
-    visible: { opacity: 1, y: 0 },
-    duration: 1.5,
-    delay:1,
+    hidden: { opacity: 0, x: -30 },
+    visible: { opacity: 1, x: 0 },
   };
   const parentVariants = {
     visible: {
       transition: {
-        when: "beforeChildren",
-        staggerChildren: 2,
-        duration:2,
+        when: "beforeChildren", // Stagger children animation before parent
+        staggerChildren: 0.5,
+        delay: 0.2, // Delay between each child
       },
     },
   };
   return (
-    <>
+    <section ref={ref} className="mt-4">
       {data
         ?.slice()
         .reverse()
@@ -39,8 +37,8 @@ const Card = ({ data }) => {
                 variants={parentVariants}
                 key={item._id}
               >
-                <motion.div variants={childVariants}>
-                  <div ref={ref} className="flex items-center justify-evenly mb-6 mt-0 bg-white shadow-lg dark:shadow-white p-6 rounded-md lg:block lg:w-full sm:w-full dark:bg-dark dark:border-light">
+                <motion.div variants={childVariants} transition={{ delay: index * 1 }}>
+                  <div className="flex items-center justify-evenly mb-6 mt-0 bg-white shadow-lg dark:shadow-white p-6 rounded-md lg:block lg:w-full sm:w-full dark:bg-dark dark:border-light">
                     <Link
                       href={`/blogs/${item._id}`}
                       target="_blank"
@@ -85,7 +83,7 @@ const Card = ({ data }) => {
               </motion.div>
             )
         )}
-    </>
+    </section>
   );
 };
 export default Card;

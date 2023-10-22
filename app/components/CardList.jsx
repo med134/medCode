@@ -2,9 +2,11 @@ import React from "react";
 import SideBar from "./SideBar";
 import Card from "./Card";
 import { getArticles } from "./FetchData";
+import { getAll } from "./FetchData";
 
 const CardList = async() => {
   const data =await getArticles();
+  
   return (
     <section>
       <div className="grid grid-cols-3 gap-10 mt-[-10px] lg:grid-cols-4 p-16 lg:gap-16 lg:p-10 md:block sm:flex flex-wrap sm:p-14 xs:p-12 md:p-16">
