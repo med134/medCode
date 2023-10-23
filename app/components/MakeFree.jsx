@@ -55,7 +55,7 @@ const MakeFree = () => {
                   index < 3 && (
                     <div
                       key={item._id}
-                      className="rounded overflow-hidden shadow-lg w-full md:mb-4"
+                      className="rounded overflow-hidden shadow-lg w-full md:mb-4 dark:shadow-white"
                     >
                       <div className="relative">
                         <Link href={`/templates/${item._id}`}>
@@ -79,7 +79,7 @@ const MakeFree = () => {
                         >
                           {item.title}
                         </Link>
-                        <p className="text-gray-500 text-sm mt-3">
+                        <p className="text-gray-500 text-sm mt-3 dark:text-light">
                           {item.description}
                         </p>
                       </div>
@@ -95,6 +95,13 @@ const MakeFree = () => {
                   )
               )}
           </section>
+          <Link
+            href="/templates"
+            className="text-xl text-dark dark:text-light ml-[50%] font-semibold hover:underline hover:font-bold hover:text-red-600"
+          >
+            See More...
+            
+          </Link>
         </motion.div>
       </div>
     </section>

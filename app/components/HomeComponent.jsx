@@ -34,7 +34,7 @@ const HomeComponent = () => {
           animate={{ x: inView ? 0 : -100}} // Animate when in view
           transition={{
             type: "bezier",
-            duration: 1,
+            duration: 0.6,
             easing: [0.42, 0, 0.58, 1],
           }} // Use spring transition
         >

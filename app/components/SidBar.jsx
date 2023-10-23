@@ -10,7 +10,7 @@ const SidBar = async ({ params }) => {
         index < 4 ? (
           <div
             key={item._id}
-            className="mt-6 bg-white shadow-md p-5 px-6 sm:mt-1 sm:w-72 sm:px-0 xs:p-1 border border-b-red-500 dark:bg-dark "
+            className="mt-6 bg-white shadow-md p-5 px-6 sm:mt-1 sm:px-3 sm:mb-3 sm:p-4 border border-b-red-500 dark:bg-dark "
           >
             <h3 className="text-xl font-semibold text-gray-800 dark:text-light">
               {item.title}

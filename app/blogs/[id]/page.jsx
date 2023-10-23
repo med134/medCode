@@ -71,14 +71,12 @@ const BlogPage = async ({ params }) => {
             </div>
           </div>
         </div>
-        <div className="lg:grid grid-cols-2 gap-6 lg:p-14 md:block sm:p-2">
-          <div className="sm:w-full">
-            <span className="text-xl text-gray-800 font-semibold mt-7 sm:w-full sm:text-sm sm:mt-1 dark:text-light">
+          <div className="sm:w-full sm:p-6">
+            <span className="text-xl text-gray-800 font-semibold mt-7 sm:w-full sm:mb-4 sm:text-xl sm:mt-1 dark:text-light">
               More titles From{" "}
               <span className="text-2xl text-red-500 sm:text-xl">MedCode...</span>{" "}
             </span>
             <SidBar />
-          </div>
         </div>
       </section>
   );
