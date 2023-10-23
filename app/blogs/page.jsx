@@ -1,10 +1,10 @@
 import React from "react";
 import AnimatedText from "../components/AnimatedText";
 import Layout from "../components/Layout";
-import FreeTemplates from "../components/FreeTemplates";
 import Card from "../components/Hero";
 import CardList from "../components/CardList";
 import TransitionEffect from "../components/TransitionEffect";
+import MakeFree from "../components/MakeFree";
 
 export const metadata = {
   title: "medCode-Blogs & Articles",
@@ -58,7 +58,7 @@ const Page = async () => {
       />
       <Card />
       <CardList />
-      <FreeTemplates />
+      <MakeFree />
     </Layout>
   );
 };

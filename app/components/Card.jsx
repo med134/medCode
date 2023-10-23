@@ -42,14 +42,13 @@ const Card = ({ data }) => {
                     <Link
                       href={`/blogs/${item._id}`}
                       target="_blank"
-                      className="group relative items-center block shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg"
+                      className="group relative items-center block shrink-0 overflow-hidden rounded-lg bg-gray-100 shadow-lg"
                     >
                       <Image
                         src={item.image}
                         loading="lazy"
-                        p
                         alt="blog_image"
-                        className="object-cover transition items-center duration-200 group-hover:scale-110"
+                        className="object-cover transition items-center duration-200 group-hover:scale-110 md:object-fill"
                         width={300}
                         height={500}
                       />
