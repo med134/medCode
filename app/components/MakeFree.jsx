@@ -75,7 +75,7 @@ const MakeFree = () => {
                       <div className="px-6 py-0">
                         <Link
                           href={`/templates/${item._id}`}
-                          className="font-semibold text-xl mt-4 text-red-600 inline-block hover:text-red-800 transition duration-500 ease-in-out"
+                          className="font-semibold text-xl mt-4 text-dark inline-block hover:text-red-800 transition duration-500 ease-in-out"
                         >
                           {item.title}
                         </Link>
@@ -97,7 +97,7 @@ const MakeFree = () => {
           </section>
           <Link
             href="/templates"
-            className="text-xl text-dark dark:text-light ml-[50%] font-semibold hover:underline hover:font-bold hover:text-red-600"
+            className="text-xl text-dark dark:text-light ml-[50%] sm:ml-[40%] font-semibold hover:underline hover:font-bold hover:text-red-600"
           >
             See More...
             

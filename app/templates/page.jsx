@@ -5,7 +5,7 @@ import { BgTemplates } from "../components/Icons";
 import Image from "next/image";
 
 async function getData() {
-  const res = await fetch(`https://medcode.dev/api/posts`, {
+  const res = await fetch(`https://www.medcode.dev/api/posts`, {
     cache: "no-store",
   });
   if (!res.ok) {
@@ -126,7 +126,8 @@ const page = async () => {
         </div>
       </div>
       <article className="grid grid-cols-3 gap-6 p-16 xl:gap-4 xl:p-8 lg:grid-cols-2 lg:gap-6 lg:p-10 sm:flex flex-wrap dark:bg-dark">
-        {data.map((item) => (
+        {data?.slice()
+        .reverse().map((item) => (
           <div
             key={item._id}
             className="max-w-sm rounded overflow-hidden shadow-lg"
