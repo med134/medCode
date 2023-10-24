@@ -1,13 +1,15 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import useSWR from "swr";
 import { motion } from "framer-motion";
+import Loading from "../loading";
+import useSWR from "swr";
 import { useInView } from "react-intersection-observer";
 
 const Card = () => {
   const [limit, setLimit] = useState(4);
+  const [loading, setLoading] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.01,
@@ -22,26 +24,29 @@ const Card = () => {
       transition: {
         when: "beforeChildren", // Stagger children animation before parent
         staggerChildren: 0.5,
-        delay: 0.2, // Delay between each child
+        delay: 0, // Delay between each child
       },
     },
+  };
+
+  const ShowMoreArticles = () => {
+    if (limit <= data.length) {
+      setLimit(limit + 1);
+    } else {
+      console.log("not data to show");
+    }
   };
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading, mutate } = useSWR(
     `https://www.medcode.dev/api/articles`,
     fetcher
   );
-
-  const ShowMoreArticles = () => {
-    setLimit(limit + 1);
-  };
-  
   return (
     <section ref={ref} className="mt-4">
-      {data
-        ?.reverse()
-        .slice(0, limit)
-        .map(
+      {isLoading ? (
+        <Loading />
+      ) : (
+        data?.slice(0, limit).map(
           (item, index) =>
             index > 0 && (
               <motion.div
@@ -97,12 +102,14 @@ const Card = () => {
                 </motion.div>
               </motion.div>
             )
-        )}
+        )
+      )}
+      {isLoading && <Loading />}
       <button
         onClick={ShowMoreArticles}
         className="text-xl text-dark dark:text-light ml-[40%] sm:ml-[30%] sm:text-sm sm:mb-6 sm:underline font-semibold hover:underline hover:font-bold hover:text-red-600"
       >
-        Load more articles...
+        {isLoading ? "Loading..." : "Load More"}
       </button>
     </section>
   );
