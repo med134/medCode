@@ -47,14 +47,12 @@ export const metadata = {
 };
 
 const Page = async () => {
-
   return (
     <Layout className="p-6 2xl:p-4 lg:p-4 md:p-2 xs:p-0">
       {/* <TransitionEffect /> */}
       <AnimatedText
         className="text-[40px] m-6 text-borderColor md:text-4xl xs:text-2xl"
-        text="Software Development Skills:Tips and Tricks for
-            Success"
+        text="Software Development Skills:Tips and Tricks for Success"
       />
       <Card />
       <CardList />

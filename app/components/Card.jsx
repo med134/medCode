@@ -1,15 +1,18 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import useSWR from "swr";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const Card = ({ data }) => {
+const Card = () => {
+  const [limit, setLimit] = useState(4);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.01,
   });
+
   const childVariants = {
     hidden: { opacity: 0, x: -30 },
     visible: { opacity: 1, x: 0 },
@@ -23,21 +26,34 @@ const Card = ({ data }) => {
       },
     },
   };
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const { data, error, isLoading, mutate } = useSWR(
+    `https://www.medcode.dev/api/articles`,
+    fetcher
+  );
+
+  const ShowMoreArticles = () => {
+    setLimit(limit + 1);
+  };
+  
   return (
     <section ref={ref} className="mt-4">
       {data
-        ?.slice()
-        .reverse()
+        ?.reverse()
+        .slice(0, limit)
         .map(
           (item, index) =>
             index > 0 && (
               <motion.div
                 initial="hidden"
-                animate={inView ? "visible":"hidden"}
+                animate={inView ? "visible" : "hidden"}
                 variants={parentVariants}
                 key={item._id}
               >
-                <motion.div variants={childVariants} transition={{ delay: index * 1 }}>
+                <motion.div
+                  variants={childVariants}
+                  transition={{ delay: index * 1 }}
+                >
                   <div className="flex items-center justify-evenly mb-6 mt-0 bg-white shadow-lg dark:shadow-white p-6 rounded-md lg:block lg:w-full sm:w-full dark:bg-dark dark:border-light">
                     <Link
                       href={`/blogs/${item._id}`}
@@ -82,6 +98,12 @@ const Card = ({ data }) => {
               </motion.div>
             )
         )}
+      <button
+        onClick={ShowMoreArticles}
+        className="text-xl text-dark dark:text-light ml-[40%] sm:ml-[30%] sm:text-sm sm:mb-6 sm:underline font-semibold hover:underline hover:font-bold hover:text-red-600"
+      >
+        Load more articles...
+      </button>
     </section>
   );
 };
