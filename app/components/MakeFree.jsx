@@ -97,10 +97,9 @@ const MakeFree = () => {
           </section>
           <Link
             href="/templates"
-            className="text-xl text-dark dark:text-light ml-[50%] sm:ml-[40%] font-semibold hover:underline hover:font-bold hover:text-red-600"
+            className="text-xl text-dark dark:text-light ml-[50%] sm:ml-[40%] sm:text-sm font-semibold hover:underline hover:font-bold hover:text-red-600"
           >
             See More...
-            
           </Link>
         </motion.div>
       </div>

@@ -133,7 +133,7 @@ const page = async () => {
             className="max-w-sm rounded overflow-hidden shadow-lg"
           >
             <Image
-              className="w-full"
+              className="w-full h-44"
               src={item.image}
               alt="templates image"
               priority
