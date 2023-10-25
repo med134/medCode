@@ -1,10 +1,9 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import React, { useState } from "react";
-import { useEffect } from "react";
-import StackOverFlow from "./StackOverFlow";
+import React, { useState, useEffect } from "react";
 import Youtube from "./Youtube";
+import AnimatedText from "./AnimatedText";
 
 const Article = async () => {
   const [news, setNews] = useState([]);
@@ -27,13 +26,11 @@ const Article = async () => {
   }, []);
   return (
     <>
-      <p className="text-3xl font-bold px-24 underline xs:text-xl sm:text-center sm:px-0 dark:text-light">
-        Trending News and Articles :
-      </p>
-      <article className="article gap-16 p-20 lg:p-10 lg:gap-8 md:flex md:flex-col md:items-center">
+       <AnimatedText text='Trending News and Articles' className="text-[22px] sm:text-xl mt-4 px-16 text-left"/>
+      <article className="article gap-16 p-16 lg:p-10 lg:gap-8 md:flex md:flex-col md:items-center">
         <div className="art flex-col justify-start">
           {news.map((item, index) =>
-            index <= 4 ? (
+            index <= 2 ? (
               <div
                 className="grid gap-6 p-4 overflow-hidden shadow-xl shadow-gray-600"
                 key={item.objectID}
@@ -99,7 +96,6 @@ const Article = async () => {
               </div>
             </div>
           </div>
-          <StackOverFlow />
           <Youtube />
         </div>
       </article>{" "}

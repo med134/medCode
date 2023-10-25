@@ -4,7 +4,6 @@ import SidBar from "@/app/components/SidBar";
 import "react-quill/dist/quill.snow.css";
 import "highlight.js/styles/a11y-dark.css";
 
-
 async function getData(id) {
   const res = await fetch(`https://www.medcode.dev/api/articles/${id}`, {
     cache: "no-store",
@@ -20,6 +19,7 @@ export async function generateMetadata({ params }) {
   return {
     title: post.title,
     description: post.shortDescription,
+    keywords: post.tags,
     alternates: {
       canonical: `https://www.medcode.dev/blogs/${params.id}`,
       languages: {
@@ -48,37 +48,34 @@ const BlogPage = async ({ params }) => {
   const content = blog.content;
 
   return (
-
-      <section className="containerBlog p-16 mx-auto mt-2 lg:block sm:p-2 dark:bg-dark">
-        <div className="flex flex-wrap justify-around">
-          <div className="w-full px-4 mb-8 sm:text-sm sm:mb-2 dark:text-light">
-            <Image
-              src={blog.image}
-              alt="Featured Image"
-              className="w-full object-cover rounded"
-              width={500}
-              height={500}
-            />
-            <h2 className="text-4xl font-bold mt-2 py-1 sm:text-xl">{blog.title}</h2>
-            <span className="flex underline font-bold justify-start items-start py-6 ml-2 mt-1 font-bolder">
-              {blog.tags}
-            </span>
-            <div className="ql-snow dark:bg-dark">
-              <div
-                className="ql-editor"
-                dangerouslySetInnerHTML={{ __html: content }}
-              ></div>
-            </div>
+    <section className="containerBlog p-16 mx-auto mt-2 lg:block sm:p-2 dark:bg-dark">
+      <div className="flex flex-wrap justify-around">
+        <div className="w-full px-4 mb-8 sm:text-sm sm:mb-2 dark:text-light">
+          <Image
+            src={blog.image}
+            alt="Featured Image"
+            className="w-full object-cover rounded"
+            width={500}
+            height={500}
+          />
+          <h2 className="text-4xl font-bold mt-2 py-1 sm:text-xl">
+            {blog.title}
+          </h2>
+          <span className="flex underline font-bold justify-start items-start py-6 ml-2 mt-1 font-bolder">
+            {blog.tags}
+          </span>
+          <div className="ql-snow dark:bg-dark">
+            <div
+              className="ql-editor"
+              dangerouslySetInnerHTML={{ __html: content }}
+            ></div>
           </div>
         </div>
-          <div className="sm:w-full sm:p-6">
-            <span className="text-xl text-gray-800 font-semibold mt-7 sm:w-full sm:mb-4 sm:text-xl sm:mt-1 dark:text-light">
-              More titles From{" "}
-              <span className="text-2xl text-red-500 sm:text-xl">MedCode...</span>{" "}
-            </span>
-            <SidBar />
-        </div>
-      </section>
+      </div>
+      <div className="sm:w-full sm:p-6">
+        <SidBar />
+      </div>
+    </section>
   );
 };
 export default BlogPage;
