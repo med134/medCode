@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -9,7 +9,6 @@ import { useInView } from "react-intersection-observer";
 
 const Card = () => {
   const [limit, setLimit] = useState(4);
-  const [loading, setLoading] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.01,
