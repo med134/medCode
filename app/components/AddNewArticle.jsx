@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Loading from "../loading";
+import "highlight.js/styles/a11y-dark.min.css";
 import useSWR from "swr";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
@@ -9,11 +10,11 @@ import "react-quill/dist/quill.snow.css";
 import hljs from "highlight.js";
 
 const AddNewArticle = () => {
+  const [htmlContent, setHtmlContent] = useState("");
   const ex = undefined;
   const text = ex || "";
   hljs.configure({
     languages: ["javascript", "ruby", "python", "rust"],
-    theme: "snow",
   });
   const theme = "snow";
   const placeholder = "write your content...";
@@ -42,7 +43,7 @@ const AddNewArticle = () => {
       [{ script: "sub" }, { script: "super" }],
       [{ indent: "-1" }, { indent: "+1" }],
       [{ direction: "rtl" }],
-      [{ color: [] }],
+      [{ color: [], background: [] }],
       ["link", "image", "video"],
       ["clean"],
       [{ font: [] }],
@@ -52,7 +53,7 @@ const AddNewArticle = () => {
       [{ header: [1, 2, 3, 4, 5, 6, false] }],
     ],
     syntax: {
-      highlight: (text) => hljs.highlightBlock(text).value,
+      highlight: (text) => hljs.highlightAuto(text).value,
     },
   };
   const { quill, quillRef } = useQuill({
@@ -103,6 +104,7 @@ const AddNewArticle = () => {
   if (session.status === "unauthenticated") {
     route?.push("/dashboard/login");
   }
+
   return (
     <div className="inline-block p-8 py-8 sm:p-2 sm:py-2">
       <div className="p-8 block justify-between items-center md:inline-block sm:items-center">

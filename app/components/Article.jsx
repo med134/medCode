@@ -3,7 +3,6 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import Youtube from "./Youtube";
-import useSWR from "swr";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import AnimatedText from "./AnimatedText";
@@ -30,6 +29,7 @@ const Article = () => {
   const slideInVariants = {
     hidden: { x: "100%" }, // Start from the right
     visible: { x: 0 }, // Slide to the left
+    delay: 0.5,
   };
 
   const slideInTransition = {

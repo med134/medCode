@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import SidBar from "@/app/components/SidBar";
+import "highlight.js/styles/a11y-dark.min.css";
 import "react-quill/dist/quill.snow.css";
 import "highlight.js/styles/a11y-dark.css";
 
@@ -64,12 +65,12 @@ const BlogPage = async ({ params }) => {
           <span className="flex underline font-bold justify-start items-start py-6 ml-2 mt-1 font-bolder">
             {blog.tags}
           </span>
-          <div className="ql-snow dark:bg-dark">
-            <div
-              className="ql-editor"
-              dangerouslySetInnerHTML={{ __html: content }}
-            ></div>
-          </div>
+          <div className="code.hljs">
+          <div
+            className="hljs"
+            dangerouslySetInnerHTML={{ __html: content }}
+          ></div>
+        </div>
         </div>
       </div>
       <div className="sm:w-full sm:p-6">
