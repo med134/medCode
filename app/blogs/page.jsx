@@ -5,6 +5,7 @@ import Card from "../components/Hero";
 import CardList from "../components/CardList";
 import MakeFree from "../components/MakeFree";
 import Article from "../components/Article";
+import CategoryList from "../components/categoryList/CategoryList ";
 
 export const metadata = {
   title: "medCode-Blogs & Articles",
@@ -54,9 +55,10 @@ const Page = async () => {
         text="Software Development Skills:Tips and Tricks for Success"
       />
       <Card />
-      <CardList />
+      <CategoryList />
+      <CardList/>
       <MakeFree />
-      <Article/>
+      <Article />
     </Layout>
   );
 };

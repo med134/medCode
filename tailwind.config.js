@@ -40,6 +40,9 @@ module.exports = {
       fontFamily: {
         dance: ["var(--dancing)", ...fontFamily.sans],
         poppins: ["var(--poppins)", ...fontFamily.sans],
+        mr: ["var(--font-mr)"],
+        in: ["var(--font-in)"],
+        outFit:["var(--Outfit)",...fontFamily.sans]
       },
       colors: {
         dark: "#1b1b1b",

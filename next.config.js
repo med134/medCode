@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   optimizeFonts: true,
+  swcMinify: true,
+  experimental: {
+    appDir: true,
+  },
   images: {
     remotePatterns: [
       {

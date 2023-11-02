@@ -5,9 +5,20 @@ import { NextResponse } from "next/server";
 export const GET = async (request) => {
   const url = new URL(request.url);
   const username = url.searchParams.get("username");
+  const category = url.searchParams.get("category");
+
   try {
     await connectArticles();
-    const articles = await Article.find(username && { username });
+    const query = {};
+
+    if (username) {
+      query.username = username;
+    }
+
+    if (category && category.toLowerCase() !== "all") {
+      query.category = category;
+    }
+    const articles = await Article.find(query);
     return new NextResponse(JSON.stringify(articles), { status: 200 });
   } catch (error) {
     return new NextResponse("error database", { status: 500 });

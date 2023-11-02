@@ -69,20 +69,24 @@ const Card = () => {
                     animate="visible"
                     variants={parentVariants}
                   >
-                    <div className="md:w-full mb-8 md:mb-0 text-gray-800 p-6 sm:mt-0">
+                    <div className="md:w-full mb-8 md:mb-0 text-gray-800 p-4 sm:mt-0">
+                      <span className="text-gray-500">
+                        {item.createdAt.slice(0, 10)}
+                      </span>
                       <motion.div variants={childVariants}>
-                        <span className="text-gray-500">
-                          {item.createdAt.slice(0, 10)}
-                        </span>
-                        <h1 className="font-bold text-3xl leading-tight mb-2 sm:text-xl dark:text-light">
+                        <Link
+                          href={`/blogs/${item._id}`}
+                          className="font-bold text-3xl leading-tight hover:underline-offset-1 mb-4 sm:text-xl dark:text-light"
+                        >
                           {item.title}
-                        </h1>
+                        </Link>
                       </motion.div>
+
                       <motion.div variants={childVariants}>
-                        <p className="text-medium text-gray-700 lg:text-sm mb-2 dark:text-light">
+                        <p className="text-medium text-gray-700 lg:text-sm mt-3 dark:text-light">
                           {item.description.slice(0, 80)}...
                         </p>
-                        <span className="font-bold text-sm mb-5 dark:text-light">
+                        <span className="font-bold text-sm mb-5 mt-2 dark:text-light">
                           {item.tags}
                         </span>
                       </motion.div>

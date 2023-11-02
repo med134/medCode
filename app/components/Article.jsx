@@ -9,6 +9,7 @@ import AnimatedText from "./AnimatedText";
 
 const Article = () => {
   const [news, setNews] = useState([]);
+  const [cat, setCat] = useState([]);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.01,
@@ -37,6 +38,7 @@ const Article = () => {
     duration: 0.5,
   };
   useEffect(() => {
+
     const fetchSeoData = async () => {
       const res = await fetch(
         `https://hn.algolia.com/api/v1/search?query=software_developments`,
@@ -51,6 +53,7 @@ const Article = () => {
       setNews(data.hits);
     };
     fetchSeoData();
+  
   }, []);
 
   return (
@@ -59,6 +62,7 @@ const Article = () => {
         text="Trending News and Articles"
         className="text-[24px] sm:text-xl mt-4 px-16 text-left"
       />
+     
       <article
         ref={ref}
         className="article gap-16 p-10 lg:p-10 lg:gap-8 md:flex md:flex-col md:items-center"
@@ -70,16 +74,13 @@ const Article = () => {
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 variants={parentVariants}
-                key={item._id}
+                key={item.objectID}
               >
                 <motion.div
                   variants={childVariants}
                   transition={{ delay: index * 1 }}
                 >
-                  <div
-                    className="grid gap-6 p-4 overflow-hidden shadow-xl shadow-gray-600"
-                    key={item.objectID}
-                  >
+                  <div className="grid gap-6 p-4 overflow-hidden shadow-xl shadow-gray-600">
                     <div className="flex flex-1 flex-col justify-between bg-white p-6 lg:py-8 lg:px-7">
                       <div className="flex-1">
                         <p className="text-2xl font-bold">News-Articles</p>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState} from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -8,12 +8,15 @@ import useSWR from "swr";
 import { useInView } from "react-intersection-observer";
 
 const Card = () => {
-  const [limit, setLimit] = useState(4);
+  const [loading, setLoading] = useState(false);
+  const [sortedPosts, setSortedPosts] = useState([]);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.01,
   });
-
+  const loadMore = () => {
+    setVisibleCount(visibleCount + 3); // Increase the number of visible posts
+  };
   const childVariants = {
     hidden: { opacity: 0, x: -30 },
     visible: { opacity: 1, x: 0 },
@@ -28,26 +31,28 @@ const Card = () => {
     },
   };
 
-  const ShowMoreArticles = () => {
-    if (limit <= data.length) {
-      setLimit(limit + 1);
-    } else {
-      console.log("not data to show");
-    }
-  };
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error, isLoading, mutate } = useSWR(
-    `https://www.medcode.dev/api/articles`,
-    fetcher
-  );
+  useEffect(() => {
+    setLoading(true);
+    fetch("https://www.medcode.dev/api/articles")
+      .then((response) => response.json())
+      .then((data) => {
+        // Sort posts by the createdAt date in descending order
+        const sorted = data.sort(
+          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+        );
+        setSortedPosts(sorted);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <section ref={ref} className="mt-4">
-      {isLoading ? (
+      {loading ? (
         <Loading />
       ) : (
-        data?.slice(0, limit).map(
+        sortedPosts?.map(
           (item, index) =>
-            index > 0 && (
+            index < 5 && (
               <motion.div
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
@@ -77,14 +82,13 @@ const Card = () => {
                       <span className="text-sm text-gray-400">
                         {item?.createdAt.slice(0, 10)}
                       </span>
-                      <h2 className="text-xl font-bold text-gray-800">
-                        <Link
-                          href={`/blogs/${item._id}`}
-                          className="transition duration-100 hover:text-rose-500 active:text-rose-600 sm:text-sm dark:text-light"
-                        >
-                          {item.title}
-                        </Link>
-                      </h2>
+
+                      <Link
+                        href={`/blogs/${item._id}`}
+                        className="transition text-xl font-bold text-gray-800 duration-100 hover:text-rose-500 active:text-rose-600 sm:text-sm dark:text-light"
+                      >
+                        {item.title}
+                      </Link>
                       <p className="text-gray-500 sm:text-xs dark:text-light">
                         {item?.description.slice(0, 50)}...
                       </p>
@@ -103,13 +107,13 @@ const Card = () => {
             )
         )
       )}
-      {isLoading && <Loading />}
-      <button
-        onClick={ShowMoreArticles}
-        className="text-xl text-dark dark:text-light ml-[40%] sm:ml-[30%] sm:text-sm sm:mb-6 sm:underline font-semibold hover:underline hover:font-bold hover:text-red-600"
+
+      <Link
+        className="text-red-600 font-semibold hover:underline"
+        href={`https://www.medcode.dev/category/all`}
       >
-        {isLoading ? "Loading..." : "Load More"}
-      </button>
+        Show All Posts...
+      </Link>
     </section>
   );
 };

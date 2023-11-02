@@ -31,7 +31,7 @@ const SideBar = () => {
   return (
     <section ref={ref}>
       {data?.map((item, index) =>
-        index < 4 ? (
+        index < 5 ? (
           <motion.div
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
@@ -43,7 +43,6 @@ const SideBar = () => {
               transition={{ delay: index * 1 }}
             >
               <div
-                key={item.id}
                 className="mt-3 bg-white dark:bg-dark shadow-md p-3 border border-b-red-500 dark:border-b-light"
               >
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-light">

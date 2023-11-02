@@ -10,7 +10,7 @@ import "react-quill/dist/quill.snow.css";
 import hljs from "highlight.js";
 
 const AddNewArticle = () => {
-  const [htmlContent, setHtmlContent] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
   const ex = undefined;
   const text = ex || "";
   hljs.configure({
@@ -62,13 +62,16 @@ const AddNewArticle = () => {
     formats,
     placeholder,
   });
+  const handleSelectChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
   const route = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const title = e.target[0].value;
     const tags = e.target[1].value;
     const image = e.target[2].value;
-    const category = e.target[3].value;
+    const category = selectedOption;
     const description = e.target[4].value;
     const content = quill.root.innerHTML;
 
@@ -110,6 +113,7 @@ const AddNewArticle = () => {
       <div className="p-8 block justify-between items-center md:inline-block sm:items-center">
         <form className="p-4 text-left text-gray-700" onSubmit={handleSubmit}>
           <input
+            required
             type="text"
             placeholder="Title"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring sm:px-2"
@@ -120,15 +124,27 @@ const AddNewArticle = () => {
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
           <input
+            required
             type="text"
             placeholder="Image"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
-          <input
-            type="text"
-            placeholder="category"
-            className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
-          />
+          <div className="">
+            <select
+              id="selectChoice"
+              value={selectedOption}
+              onChange={handleSelectChange}
+              className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
+            >
+              <option value="">Select category</option>
+              <option value="react">React.js</option>
+              <option value="nextjs">Next.js</option>
+              <option value="career">Career</option>
+              <option value="solution">Solution</option>
+              <option value="poductivity">Productivity</option>
+              <option value="tools">Tools</option>
+            </select>
+          </div>
           <input
             type="text"
             placeholder="description"

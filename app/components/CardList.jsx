@@ -2,7 +2,8 @@ import React from "react";
 import SideBar from "./SideBar";
 import Card from "./Card";
 
-const CardList = async() => {
+
+const CardList = async () => {
  
   return (
     <section>
@@ -11,7 +12,7 @@ const CardList = async() => {
           <span className="text-xl  space-x-2 font-bold text-gray-800 mb-10 dark:text-light">
             Moore Posts...
           </span>
-          <Card/>
+          <Card  />
         </div>
         <div className="col-span-1 lg:col-span-2">
           <span className="text-xl space-x-2 font-bold text-red-600 ">
