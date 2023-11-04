@@ -50,7 +50,7 @@ const Card = () => {
         <Loading />
       ) : (
         sortedPosts?.map((item, index) =>
-          index > 1 && index < 6 ? (
+          index > 0 && index < 5 ? (
             <motion.div
               initial="hidden"
               animate={inView ? "visible" : "hidden"}

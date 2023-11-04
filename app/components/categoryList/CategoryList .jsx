@@ -18,7 +18,7 @@ const getData = async () => {
 const CategoryList = async () => {
   const data = await getData();
   return (
-    <div className="px-2">
+    <div className="px-2 mt-6">
       <span className="px-8 py-8 mt-4 text-red-600 font-bold text-xl sm:text-sm">
         Popular Categories
       </span>
