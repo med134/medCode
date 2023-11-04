@@ -22,7 +22,7 @@ const CategoryList = async () => {
       <span className="px-8 py-8 mt-4 text-red-600 font-bold text-xl sm:text-sm">
         Popular Categories
       </span>
-      <div className="grid grid-cols-7 gap-2 px-16 lg:flex lg:justify-evenly lg:flex-wrap lg:px-8 xs:flex">
+      <div className="grid grid-cols-7 mt-4 gap-2 px-16 lg:flex lg:justify-evenly lg:flex-wrap lg:px-8 xs:flex">
         {data?.map((item) => (
           <Link
             className={`${styles.category} xs:shrink w-8 h-8 dark:text-light`}
