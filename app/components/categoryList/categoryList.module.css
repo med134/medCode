@@ -62,11 +62,3 @@
     width: 45%;
   }
 }
-@media screen and (max-width: 640px) {
-  .category {
-    width: 100%;
-  }
-  .categories{
-    justify-content: start;
-  }
-}

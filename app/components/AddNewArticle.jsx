@@ -126,7 +126,7 @@ const AddNewArticle = () => {
           <input
             required
             type="text"
-            placeholder="Image"
+            placeholder="Image link"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
           <div className="">
@@ -151,7 +151,7 @@ const AddNewArticle = () => {
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
           <div ref={quillRef} style={{ height: 400 }} />
-          <button className="rounded-md font-semibold py-2 w-full bg-violet-600 text-light ml-4 hover:bg-purple-400">
+          <button className="rounded-md font-semibold py-2 w-full bg-violet-600 text-light ml-4 mt-5 hover:bg-purple-400">
             Post Now
           </button>
         </form>

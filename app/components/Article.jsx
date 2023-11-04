@@ -80,21 +80,21 @@ const Article = () => {
                   variants={childVariants}
                   transition={{ delay: index * 1 }}
                 >
-                  <div className="grid gap-6 p-4 overflow-hidden shadow-xl shadow-gray-600">
-                    <div className="flex flex-1 flex-col justify-between bg-white p-6 lg:py-8 lg:px-7">
+                  <div className="grid gap-6 p-4 overflow-hidden shadow-xl shadow-light">
+                    <div className="flex flex-1 flex-col justify-between bg-white p-6 lg:py-8 lg:px-7 dark:bg-dark">
                       <div className="flex-1">
-                        <p className="text-2xl font-bold">News-Articles</p>
+                        <p className="text-2xl font-bold dark:text-red-600">News-Articles</p>
                         <Link
                           href={item.url}
                           target="_blank"
                           className="mt-8 flex-1"
                         >
-                          <span className="leading-relaxed text-blue-900 text-xl font-lexend font-semibold">
+                          <span className="leading-relaxed text-blue-900 text-xl font-lexend dark:text-light font-semibold">
                             {item.title}
                           </span>
                         </Link>
                       </div>
-                      <div className="mt-8 border px-8 inline-flex items-center rounded-md shadow-md text-gray-600 py-1 g-blue-400 ">
+                      <div className="mt-8 border px-8 inline-flex items-center dark:text-light rounded-md shadow-md text-gray-600 py-1 g-blue-400 ">
                         <div className="">
                           <p className="text-base font-bold ">
                             {item.author}/{item.relevancy_score}
@@ -117,35 +117,35 @@ const Article = () => {
             transition={slideInTransition}
           >
             <div className="max-w-md mb-8 rounded-xl border bg-white p-6 pb-10 text-gray-900 dark:bg-dark dark:text-light">
-              <p className="text-md text-blue-900 font-medium dark:text-gray-400">
+              <p className="text-md text-blue-900 font-medium dark:text-light">
                 Trending Languages and frameworks
               </p>
               <div className="mt-4">
                 <p className="float-left mb-2">javascript</p>
                 <span className="float-right mb-2">20,00</span>
                 <div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-50">
-                  <div className="h-full w-10/12 overflow-hidden rounded-full bg-indigo-600" />
+                  <div className="h-full w-10/12 overflow-hidden rounded-full bg-red-600" />
                 </div>
               </div>
               <div className="mt-4">
                 <p className="float-left mb-2">Python</p>
                 <span className="float-right mb-2">2,000</span>
                 <div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-50">
-                  <div className="h-full w-4/12 overflow-hidden rounded-full bg-indigo-600" />
+                  <div className="h-full w-4/12 overflow-hidden rounded-full bg-red-600" />
                 </div>
               </div>
               <div className="mt-4">
                 <p className="float-left mb-2">Typescript</p>
                 <span className="float-right mb-2">1,500</span>
                 <div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-50">
-                  <div className="h-full w-3/12 overflow-hidden rounded-full bg-indigo-600" />
+                  <div className="h-full w-3/12 overflow-hidden rounded-full bg-red-600" />
                 </div>
               </div>
               <div className="mt-4">
                 <p className="float-left mb-2">React js</p>
                 <span className="float-right mb-2">260</span>
                 <div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-50">
-                  <div className="h-full w-1/12 overflow-hidden rounded-full bg-indigo-600" />
+                  <div className="h-full w-1/12 overflow-hidden rounded-full bg-red-600" />
                 </div>
               </div>
             </div>

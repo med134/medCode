@@ -46,7 +46,7 @@ const MakeFree = () => {
           transition={animationTransition}
           ref={ref} // Attach the ref to trigger when in view
         >
-          <section className="grid grid-cols-3 gap-6 p-16 py-4 lg:grid-cols-2 lg:p-8 md:block sm:p-2 sm:py-1">
+          <section className="grid grid-cols-3 gap-6 p-16 py-4 lg:grid-cols-2 lg:p-8 md:block sm:p-1 sm:py-1">
             {data
               ?.slice()
               .reverse()

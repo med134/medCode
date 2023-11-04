@@ -15,6 +15,35 @@ async function getPosts(cat) {
   }
   return res.json();
 }
+export async function generateMetadata({ params }) {
+  const post = await getPosts(params.cat);
+
+  return {
+    title: post.title,
+    description: post.description,
+    keywords: post.tags,
+    alternates: {
+      canonical: `https://www.medcode.dev/blogs/${params.cat}`,
+      languages: {
+        "en-us": `https://www.medcode.dev/en-us/blogs${params.cat}`,
+      },
+      types: {
+        "application/rss+xml": "https://www.medcode.dev/rss",
+      },
+    },
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      images: [
+        {
+          url: post.image,
+          width: "400",
+          height: "300",
+        },
+      ],
+    },
+  };
+}
 const Card = async ({ params }) => {
   const posts = await getPosts(params.cat);
   return (
@@ -44,7 +73,7 @@ const Card = async ({ params }) => {
                 <span className="text-red-600 font-bold tex-sm">
                   #{item.category}
                 </span>
-                <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline lg:text-xl">
+                <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline lg:text-xl dark:text-light">
                   {item.title}
                 </h3>
                 <span className="text-xs dark:text-gray-400">
