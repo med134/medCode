@@ -19,7 +19,7 @@ const ArticlesByCat = ({ posts }) => {
           className="bg-white shadow-lg dark:shadow-white rounded-md lg:block md:mb-6 lg:w-full sm:w-full dark:bg-dark dark:border-light"
         >
           <Link
-            href={`https://www.medcode.com/blogs/${item._id}`}
+            href={`https://www.medcode.dev/blogs/${item._id}`}
             className="hover:no-underline focus:no-underline dark:bg-gray-900"
           >
             <Image

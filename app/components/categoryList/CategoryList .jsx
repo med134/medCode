@@ -27,7 +27,7 @@ const CategoryList = async () => {
           <Link
             className={`${styles.category} xs:shrink w-8 h-8 dark:text-light`}
             key={item._id}
-            href={`https://www.medcode.dev/blogs/${item._id}`}
+            href={`https://www.medcode.dev/category/${item.value}`}
           >
             {item.image && (
               <Image
