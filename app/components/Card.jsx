@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Loading from "../loading";
-import useSWR from "swr";
 import { useInView } from "react-intersection-observer";
 
 const Card = () => {

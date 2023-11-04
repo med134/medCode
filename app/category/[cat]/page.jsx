@@ -1,8 +1,8 @@
 import React from "react";
-import Link from "next/link";
 import CategoryList from "@/app/components/categoryList/CategoryList ";
-import Image from "next/image";
 import Layout from "@/app/components/Layout";
+import ArticlesByCat from "@/app/components/ArticlesByCat";
+
 async function getPosts(cat) {
   const res = await fetch(
     `https://www.medcode.dev/api/articles?category=${cat}`,
@@ -52,39 +52,7 @@ const Card = async ({ params }) => {
         #{params.cat}
       </h1>
       <CategoryList />
-      <div className="grid justify-center grid-cols-3 gap-6 mt-8 md:block">
-        {posts?.map((item) => (
-          <div
-            key={item._id}
-            className="bg-white shadow-lg dark:shadow-white rounded-md lg:block md:mb-6 lg:w-full sm:w-full dark:bg-dark dark:border-light"
-          >
-            <Link
-              href={`https://www.medcode.dev/api/blogs/${item._id}`}
-              className="hover:no-underline focus:no-underline dark:bg-gray-900"
-            >
-              <Image
-                width={300}
-                height={300}
-                className="object-cover w-full rounded h-44 dark:bg-gray-500 md:object-fill"
-                src={item.image}
-                alt="blog_image"
-              />
-              <div className="p-6 space-y-2">
-                <span className="text-red-600 font-bold tex-sm">
-                  #{item.category}
-                </span>
-                <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline lg:text-xl dark:text-light">
-                  {item.title}
-                </h3>
-                <span className="text-xs dark:text-gray-400">
-                  {item?.createdAt.slice(0, 10)}
-                </span>
-                <p className="text-gray-500 text-sm">{item.description}</p>
-              </div>
-            </Link>
-          </div>
-        ))}
-      </div>
+      <ArticlesByCat posts={posts} />
     </Layout>
   );
 };

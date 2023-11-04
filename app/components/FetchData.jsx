@@ -28,7 +28,7 @@ export async function getArticles() {
   return res.json();
 }
 export async function getCategory() {
-  const res = await fetch(`http://localhost:3000/api/categories`, {
+  const res = await fetch(`https://www.medcode.dev/api/categories`, {
     cache: "no-store",
   });
   if (!res.ok) {
