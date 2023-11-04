@@ -33,6 +33,9 @@ const AddNewArticle = () => {
     "indent",
     "link",
     "align",
+    "color",
+    "background",
+    "GIF"
   ];
   const modules = {
     toolbar: [
@@ -44,7 +47,7 @@ const AddNewArticle = () => {
       [{ indent: "-1" }, { indent: "+1" }],
       [{ direction: "rtl" }],
       [{ color: [], background: [] }],
-      ["link", "image", "video"],
+      ["link", "image", "video","GIF"],
       ["clean"],
       [{ font: [] }],
       [{ align: [] }],
