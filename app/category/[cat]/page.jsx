@@ -21,7 +21,7 @@ export async function generateMetadata({ params }) {
   return {
     title: "category page:" + params.cat,
     description:
-      "Discover a world of topics and expertise in our category pages",
+      `Discover a world of topics and expertise in our category of ${params.cat} Find your passion, delve into knowledge`,
     keywords: ["category", "solution", "questions"],
     alternates: {
       canonical: `https://www.medcode.dev/category/${params.cat}`,
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: "category page:" + params.cat,
       description:
-        "Discover a world of topics and expertise in our category pages",
+        "Discover a world of topics and expertise in our category pages Find your passion, delve into knowledge",
       images: [
         {
           url: post.image,

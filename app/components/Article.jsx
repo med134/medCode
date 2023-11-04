@@ -62,7 +62,6 @@ const Article = () => {
         text="Trending News and Articles"
         className="text-[24px] sm:text-xl mt-4 px-16 text-left"
       />
-     
       <article
         ref={ref}
         className="article gap-16 p-10 lg:p-10 lg:gap-8 md:flex md:flex-col md:items-center"
