@@ -49,62 +49,60 @@ const Card = () => {
       {loading ? (
         <Loading />
       ) : (
-        sortedPosts?.map(
-          (item, index) =>
-            index > 1 &&
-            index < 5 && (
+        sortedPosts?.map((item, index) =>
+          index > 1 && index < 6 ? (
+            <motion.div
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              variants={parentVariants}
+              key={item._id}
+            >
               <motion.div
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"}
-                variants={parentVariants}
-                key={item._id}
+                variants={childVariants}
+                transition={{ delay: index * 1 }}
               >
-                <motion.div
-                  variants={childVariants}
-                  transition={{ delay: index * 1 }}
-                >
-                  <div className="flex items-center justify-evenly mb-6 mt-0 bg-white shadow-lg dark:shadow-white p-6 rounded-md lg:block lg:w-full sm:w-full dark:bg-dark dark:border-light">
+                <div className="flex items-center justify-evenly mb-6 mt-0 bg-white shadow-lg dark:shadow-white p-6 rounded-md lg:block lg:w-full sm:w-full dark:bg-dark dark:border-light">
+                  <Link
+                    href={`/blogs/${item._id}`}
+                    target="_blank"
+                    className="group relative items-center block shrink-0 overflow-hidden rounded-lg bg-gray-100 shadow-lg"
+                  >
+                    <Image
+                      src={item.image}
+                      loading="lazy"
+                      alt="blog_image"
+                      className="object-cover transition items-center duration-200 group-hover:scale-110 md:object-fill"
+                      width={300}
+                      height={500}
+                    />
+                  </Link>
+                  <div className="flex flex-col gap-2 px-4 lg:mt-4 dark:text-light">
+                    <span className="text-sm text-gray-400">
+                      {item?.createdAt.slice(0, 10)}
+                    </span>
+
                     <Link
                       href={`/blogs/${item._id}`}
-                      target="_blank"
-                      className="group relative items-center block shrink-0 overflow-hidden rounded-lg bg-gray-100 shadow-lg"
+                      className="transition text-xl font-bold text-gray-800 duration-100 hover:text-rose-500 active:text-rose-600 sm:text-sm dark:text-light"
                     >
-                      <Image
-                        src={item.image}
-                        loading="lazy"
-                        alt="blog_image"
-                        className="object-cover transition items-center duration-200 group-hover:scale-110 md:object-fill"
-                        width={300}
-                        height={500}
-                      />
+                      {item.title}
                     </Link>
-                    <div className="flex flex-col gap-2 px-4 lg:mt-4 dark:text-light">
-                      <span className="text-sm text-gray-400">
-                        {item?.createdAt.slice(0, 10)}
-                      </span>
-
+                    <p className="text-gray-500 sm:text-xs dark:text-light">
+                      {item?.description.slice(0, 50)}...
+                    </p>
+                    <div>
                       <Link
                         href={`/blogs/${item._id}`}
-                        className="transition text-xl font-bold text-gray-800 duration-100 hover:text-rose-500 active:text-rose-600 sm:text-sm dark:text-light"
+                        className="font-semibold text-rose-500 transition duration-100 hover:text-rose-600 hover:underline active:text-rose-700 sm:text-xs"
                       >
-                        {item.title}
+                        Read more...
                       </Link>
-                      <p className="text-gray-500 sm:text-xs dark:text-light">
-                        {item?.description.slice(0, 50)}...
-                      </p>
-                      <div>
-                        <Link
-                          href={`/blogs/${item._id}`}
-                          className="font-semibold text-rose-500 transition duration-100 hover:text-rose-600 hover:underline active:text-rose-700 sm:text-xs"
-                        >
-                          Read more...
-                        </Link>
-                      </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </motion.div>
-            )
+            </motion.div>
+          ) : null
         )
       )}
 

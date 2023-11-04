@@ -19,7 +19,7 @@ const NavigationBar = async () => {
   return (
     <Layout className="mx-auto flex p-16 bg-white py-2 w-full text-center flex-col rounded-3xl px-4 sm:px-0 sm:p-1 sm:py-0">
       <h1 className="mx-auto max-w-4xl space-x-2 py-4 font-title text-5xl font-bold tracking-normal xs:py-0 xs:w-full text-gray-800 sm:text-xl">
-        Join us and add your skills
+        Join to us and add your coding skills
         <span className="relative whitespace-nowrap text-purple-700">
           <svg
             aria-hidden="true"
@@ -32,10 +32,10 @@ const NavigationBar = async () => {
           <span className="relative ml-3">MedCode</span>
         </span>
       </h1>
-      <h1 className="text-2xl font-bold tracking-tight text-gray-800 sm:text-5xl md:text-2xl font-title xs:text-sm">
+      <span className="text-2xl font-bold tracking-tight text-gray-800 sm:text-5xl md:text-2xl font-title xs:text-sm">
         <span className="block space-x-3">Free Templates & Components</span>
         <span className="block pt-2 space-x-3">New Articles & blogs</span>
-      </h1>
+      </span>
       <p className="mt-6 text-lg leading-8 text-gray-600 sm:text-xs xs:mt-3">
         Discover a wealth of resources for your programming and technology
         journey at MedCode Community. Explore our collection of free templates
