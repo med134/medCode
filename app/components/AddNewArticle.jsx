@@ -35,7 +35,7 @@ const AddNewArticle = () => {
     "align",
     "color",
     "background",
-    "GIF"
+    "GIF",
   ];
   const modules = {
     toolbar: [
@@ -46,8 +46,8 @@ const AddNewArticle = () => {
       [{ script: "sub" }, { script: "super" }],
       [{ indent: "-1" }, { indent: "+1" }],
       [{ direction: "rtl" }],
-      [{ color: [], background: [] }],
-      ["link", "image", "video","GIF"],
+      [{ color: [] }, { background: [] }],
+      ["link", "image", "video", "gif"],
       ["clean"],
       [{ font: [] }],
       [{ align: [] }],
@@ -153,7 +153,7 @@ const AddNewArticle = () => {
             placeholder="description"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
-          <div ref={quillRef} style={({ height: 400 ,marginLeft:4 })} />
+          <div ref={quillRef} style={{ height: 400, marginLeft: 4 }} />
           <button className="rounded-md font-semibold py-2 w-full bg-violet-600 text-light ml-4 mt-5 hover:bg-purple-400">
             Post Now
           </button>
