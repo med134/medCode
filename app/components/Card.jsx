@@ -51,6 +51,7 @@ const Card = () => {
       ) : (
         sortedPosts?.map(
           (item, index) =>
+            index > 1 &&
             index < 5 && (
               <motion.div
                 initial="hidden"
