@@ -19,21 +19,23 @@ export async function generateMetadata({ params }) {
   const post = await getPosts(params.cat);
 
   return {
-    title: post.title,
-    description: post.description,
-    keywords: post.tags,
+    title: "category page:" + params.cat,
+    description:
+      "Discover a world of topics and expertise in our category pages",
+    keywords: ["category", "solution", "questions"],
     alternates: {
-      canonical: `https://www.medcode.dev/blogs/${params.cat}`,
+      canonical: `https://www.medcode.dev/category/${params.cat}`,
       languages: {
-        "en-us": `https://www.medcode.dev/en-us/blogs${params.cat}`,
+        "en-us": `https://www.medcode.dev/en-us/category${params.cat}`,
       },
       types: {
         "application/rss+xml": "https://www.medcode.dev/rss",
       },
     },
     openGraph: {
-      title: post.title,
-      description: post.description,
+      title: "category page:" + params.cat,
+      description:
+        "Discover a world of topics and expertise in our category pages",
       images: [
         {
           url: post.image,
