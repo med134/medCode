@@ -19,7 +19,7 @@ const CategoryList = async () => {
   const data = await getData();
   return (
     <div className="px-2">
-      <span className="px-8 py-4 text-red-600 font-bold text-xl sm:text-sm">
+      <span className="px-8 py-8 mt-4 text-red-600 font-bold text-xl sm:text-sm">
         Popular Categories
       </span>
       <div className="grid grid-cols-7 gap-2 px-16 lg:flex lg:justify-evenly lg:flex-wrap lg:px-8 xs:flex">
