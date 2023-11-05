@@ -39,7 +39,7 @@ export const metadata = {
       tutorials.`,
     images: [
       {
-        url: "/app/images/postera.png",
+        url: "https://i.ibb.co/vztYGDH/Untitled.png",
         width: "400",
         height: "300",
       },
