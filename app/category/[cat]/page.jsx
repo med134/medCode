@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
   const post = await getPosts(params.cat);
 
   return {
-    title: "category page:" + params.cat,
+    title: "Category page: " + params.cat,
     description:
       `Discover a world of topics and expertise in our category of ${params.cat} Find your passion, delve into knowledge`,
     keywords: ["category", "solution", "questions"],

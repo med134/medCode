@@ -144,7 +144,7 @@ const AddNewArticle = () => {
               <option value="nextjs">Next.js</option>
               <option value="career">Career</option>
               <option value="solution">Solution</option>
-              <option value="poductivity">Productivity</option>
+              <option value="productivity">Productivity</option>
               <option value="tools">Tools</option>
             </select>
           </div>
