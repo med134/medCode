@@ -39,7 +39,7 @@ export const metadata = {
       tutorials.`,
     images: [
       {
-        url: "https://i.ibb.co/vztYGDH/Untitled.png",
+        url: "https://i.ibb.co/rHvLvvr/Untitled.png",
         width: "400",
         height: "300",
       },

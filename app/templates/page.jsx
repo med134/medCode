@@ -59,7 +59,7 @@ export const metadata = {
       with full free code source`,
     images: [
       {
-        url: "/app/images/temp.png",
+        url: "https://i.ibb.co/rHvLvvr/Untitled.png",
         width: "400",
         height: "300",
       },
