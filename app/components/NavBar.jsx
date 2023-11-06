@@ -10,8 +10,7 @@ import {
 } from "./Icons";
 import logo from "../images/logo3.png";
 import { AiFillYoutube } from "react-icons/ai";
-import {BsInstagram } from "react-icons/bs";
-import { useRouter } from "next/router";
+import { BsInstagram } from "react-icons/bs";
 import { motion } from "framer-motion";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
 import Image from "next/image";
@@ -70,30 +69,38 @@ const NavBar = () => {
     "
     >
       <button
-        className="flex-col justify-center items-center hidden lg:flex"
+        className="flex-col justify-between items-center hidden ml-[100%] lg:flex"
         onClick={handleClick}
       >
-        <span
-          className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm  ${
-            isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
-          }`}
-        ></span>
-        <span
-          className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${
-            isOpen ? "opacity-0" : "opacity-100"
-          } `}
-        ></span>
-        <span
-          className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${
-            isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
-          } `}
-        ></span>
+        <div className="flex-col">
+          <span
+            className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm  ${
+              isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
+            }`}
+          ></span>
+          <span
+            className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${
+              isOpen ? "opacity-0" : "opacity-100"
+            } `}
+          ></span>
+          <span
+            className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${
+              isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
+            } `}
+          ></span>
+        </div>
+        <Image
+          src={logo}
+          alt="website_logo"
+          width={100}
+          height={100}
+          className={`w-12 h-12 rounded-full absolute sm:left-6 bottom-3 lg:left-12`}
+        />
       </button>
 
       <div className="w-full flex justify-evenly items-center font-semibold lg:hidden">
         <nav className="flex items-center justify-evenly flex-wrap">
           <CustomLink href="/" title="Home" className="mr-4 uppercase" />
-
           <CustomLink href="/about" title="About" className="mx-4 uppercase" />
           <CustomLink
             href="/projects"
@@ -111,28 +118,26 @@ const NavBar = () => {
           <Logo />
         </div>
         <nav className="flex items-center justify-between flex-wrap">
-           <CustomLink
+          <CustomLink
             href="/templates"
             title="Templates"
             className="mx-4 uppercase"
             target="_blank"
-          /> 
-            <CustomLink
+          />
+          <CustomLink
             href="/books"
             title="Books"
             className="mx-4 uppercase"
             target="_blank"
-          /> 
-      
+          />
+
           <CustomLink
             href="/dashboard"
             title="Dashboard"
             className="mx-4 uppercase"
             target="_blank"
           />
-          {session.status === "authenticated" && (
-            <ProfileDown/>
-          )}
+          {session.status === "authenticated" && <ProfileDown />}
           <button
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
             className={`w-8 h-8 ml-8 flex items-center justify-center rounded-full p-1 transition-all duration-75 ease-linear delay-75 
@@ -156,7 +161,7 @@ const NavBar = () => {
         <motion.div
           initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
           animate={{ scale: 1, opacity: 1 }}
-          className="min-w-[60vw] sm:min-w-[70vw] sm:h-min flex flex-col justify-between z-30 items-center fixed top-1/2 left-2/4 -translate-x-1/2 -translate-y-1/2
+          className="min-w-[60vw] sm:min-w-[70vw] sm:h-min flex flex-col justify-between z-30 items-center fixed top-[50%] xs:top-[40%] left-2/4 -translate-x-1/2 -translate-y-1/2
     bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-8
     "
         >
@@ -202,19 +207,19 @@ const NavBar = () => {
               toggle={handleClick}
             />
 
-           <CustomMobileLink
+            <CustomMobileLink
               href="/templates"
               title="Template"
               className="templates"
               toggle={handleClick}
             />
-              <CustomMobileLink
+            <CustomMobileLink
               href="/books"
               title="books"
               className="books"
               toggle={handleClick}
             />
-         
+
             <CustomMobileLink
               href="/dashboard"
               title="Dashboard"
@@ -239,7 +244,7 @@ const NavBar = () => {
               whileTap={{ scale: 0.9 }}
               className="w-6 ml-4 sm:mx-1"
             >
-             <LinkedInIcon/>
+              <LinkedInIcon />
             </motion.a>
             <motion.a
               href="https://www.youtube.com/@VivaCode99"
