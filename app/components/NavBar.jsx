@@ -161,7 +161,7 @@ const NavBar = () => {
         <motion.div
           initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
           animate={{ scale: 1, opacity: 1 }}
-          className="min-w-[60vw] sm:min-w-[70vw] sm:h-min flex flex-col justify-between z-30 items-center fixed top-[50%] xs:top-[40%] left-2/4 -translate-x-1/2 -translate-y-1/2
+          className="min-w-[60vw] sm:min-w-[70vw] sm:h-min flex flex-col justify-between z-30 items-center fixed top-[50%] sm:top-[42%] xs:top-[44%] left-2/4 -translate-x-1/2 -translate-y-1/2
     bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-8
     "
         >
