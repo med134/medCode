@@ -18,24 +18,7 @@ const AddNewArticle = () => {
   });
   const theme = "snow";
   const placeholder = "write your content...";
-  const formats = [
-    "header",
-    "font",
-    "size",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "code-block",
-    "list",
-    "bullet",
-    "indent",
-    "link",
-    "align",
-    "color",
-    "background",
-  ];
+  
   const modules = {
     toolbar: [
       ["blockquote", "code-block"],
@@ -58,6 +41,26 @@ const AddNewArticle = () => {
       highlight: (text) => hljs.highlightAuto(text).value,
     },
   };
+  const formats = [
+    "header",
+    "font",
+    "size",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "code-block",
+    "list",
+    "bullet",
+    "indent",
+    "link",
+    "image",
+    "video",
+    "align",
+    "color",
+    "background",
+  ];
   const { quill, quillRef } = useQuill({
     theme,
     modules,
