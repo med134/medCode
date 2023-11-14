@@ -3,6 +3,7 @@ import Image from "next/image";
 import SidBar from "@/app/components/SidBar";
 import "highlight.js/styles/a11y-dark.min.css";
 import "react-quill/dist/quill.snow.css";
+import Comments from "@/app/components/comments/comments";
 
 async function getData(id) {
   const res = await fetch(`https://www.medcode.dev/api/articles/${id}`, {
@@ -50,7 +51,7 @@ const BlogPage = async ({ params }) => {
   return (
     <section className="containerBlog p-16 mx-auto mt-2 lg:block sm:p-2 dark:bg-dark">
       <div className="flex flex-wrap justify-around">
-        <div className="w-full px-4 mb-8 sm:text-sm sm:mb-2 dark:text-light">
+        <div className="w-full px-4 mb-1 sm:text-sm sm:mb-2 dark:text-light">
           <Image
             src={blog.image}
             alt="Featured Image"
@@ -70,6 +71,7 @@ const BlogPage = async ({ params }) => {
               dangerouslySetInnerHTML={{ __html: content }}
             ></div>
           </div>
+         <Comments postSlug={id} />
         </div>
       </div>
       <div className="sm:w-full sm:p-6">

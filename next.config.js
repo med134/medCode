@@ -20,6 +20,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "books.google.com/books/content",
       },
+      {
+        protocol:"https",
+        hostname:"avatars.githubusercontent.com"
+      }
     ],
     minimumCacheTTL: 1500000,
   },
