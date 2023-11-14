@@ -41,7 +41,7 @@ const Comments = ({ postSlug }) => {
       {status === "authenticated" ? (
         <form className={styles.write} onSubmit={handleSubmit}>
           <Image
-            src={session?.data?.user.image}
+            src={session?.data?.user ? session?.data?.user?.image :`https://i.ibb.co/p1dMcP9/man.png`}
             alt=""
             width={50}
             height={50}
@@ -77,7 +77,7 @@ const Comments = ({ postSlug }) => {
               <div className={styles.user}>
                 <div className="flex justify-center items-center">
                   <Image
-                    src={item?.imageUser}
+                    src={item?.imageUser ? item.image : `https://i.ibb.co/p1dMcP9/man.png`}
                     alt=""
                     width={50}
                     height={50}
