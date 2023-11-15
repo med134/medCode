@@ -87,10 +87,11 @@ const Comments = ({ postSlug }) => {
               <div className={styles.user}>
                 <div className="flex justify-center items-center">
                   <img
-                    src={item?.imageUser ? item.image : 'https://i.ibb.co/p1dMcP9/man.png'}
+                    src={item?.imageUser}
                     alt=""
                     width={50}
                     height={50}
+                    priority
                     className={styles.image}
                   />
                   <div className="block ml-2">
