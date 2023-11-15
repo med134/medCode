@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import Link from "next/link";
 import styles from "./comments.module.css";
@@ -36,6 +37,10 @@ const Comments = ({ postSlug }) => {
     e.target.reset();
   };
   const MyLoader = ({ src }) => {
+    const session = useSession();
+    return `${session?.data?.user.image}`;
+  };
+  const MyLoader2 = ({ src }) => {
     const session = useSession();
     return `${session?.data?.user.image}`;
   };
@@ -81,7 +86,7 @@ const Comments = ({ postSlug }) => {
             >
               <div className={styles.user}>
                 <div className="flex justify-center items-center">
-                  <Image
+                  <img
                     src={item?.imageUser ? item.image : 'https://i.ibb.co/p1dMcP9/man.png'}
                     alt=""
                     width={50}
@@ -98,7 +103,7 @@ const Comments = ({ postSlug }) => {
                   </div>
                 </div>
               </div>
-              <p className="text-xl text-gray-800 rounded-lg font-poppins sm:text-sm">
+              <p className="text-medium px-3 text-gray-800 rounded-lg font-poppins sm:text-sm">
                 {item?.comment}
               </p>
             </div>
