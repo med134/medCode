@@ -14,7 +14,7 @@ const Comments = ({ postSlug }) => {
   const session = useSession();
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, mutate, isLoading } = useSWR(
-    `http://localhost:3000/api/comments?blogId=${postSlug}`,
+    `https://www.medcode.dev/api/comments?blogId=${postSlug}`,
     fetcher
   );
   const [comment, setComment] = useState("");
@@ -40,9 +40,9 @@ const Comments = ({ postSlug }) => {
 
   return (
     <div className="w-full bg-white rounded-lg border p-2">
-      <h3 className="font-bold text-xl py-2">Comments</h3>
+      <h3 className="font-bold text-xl py-2 dark:text-light">Comments</h3>
       {status === "authenticated" ? (
-        <form className={styles.write} onSubmit={handleSubmit}>
+        <form className={`${styles.write} dark:bg-dark dark:text-light`} onSubmit={handleSubmit}>
           <Image
            loader={MyLoader}
             src={session?.data?.user?.image ? session.data.user.image :`https://i.ibb.co/p1dMcP9/man.png`}
@@ -54,7 +54,7 @@ const Comments = ({ postSlug }) => {
           <input
             placeholder="write a comment..."
             required
-            className="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 sm:h-12 py-2 px-4 sm:px-1 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"
+            className="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 sm:h-12 py-2 px-4 sm:px-1 font-medium placeholder-gray-700 focus:outline-none focus:bg-white dark:bg-dark dark:text-light"
             onChange={(e) => setComment(e.target.value)}
           />
           <button className="text-xl sm:text-sm bg-red-500 text-light px-4 py-4 rounded-lg font-semibold p-4">
@@ -75,7 +75,7 @@ const Comments = ({ postSlug }) => {
         ) : (
           data?.map((item) => (
             <div
-              className="border rounded-md p-3 ml-3 my-3 bg-gray-100"
+              className="border rounded-md p-3 ml-3 my-3 bg-gray-100 dark:bg-dark dark:text-light"
               key={item._id}
             >
               <div className={styles.user}>
@@ -89,16 +89,16 @@ const Comments = ({ postSlug }) => {
                     className='w-8 h-8 rounded-full'
                   />
                   <div className="block ml-2">
-                    <span className="text-sm font-semibold block text-gray-700">
+                    <span className="text-sm font-semibold block text-gray-700 dark:text-light">
                       {item?.username}
                     </span>
-                    <span className="text-xs text-gray-700">
+                    <span className="text-xs text-gray-700 dark:text-light">
                       {item.createdAt.slice(0, 10)}
                     </span>
                   </div>
                 </div>
               </div>
-              <p className="text-medium px-3 text-gray-800 rounded-lg font-poppins sm:text-sm">
+              <p className="text-medium px-3 text-gray-800 rounded-lg dark:text-light font-poppins sm:text-sm">
                 {item?.comment}
               </p>
             </div>
