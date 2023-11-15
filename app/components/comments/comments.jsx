@@ -39,7 +39,7 @@ const Comments = ({ postSlug }) => {
   };
 
   return (
-    <div className="w-full bg-white rounded-lg border p-2">
+    <div className="w-full bg-white rounded-lg border p-2 dark:bg-dark">
       <h3 className="font-bold text-xl py-2 dark:text-light">Comments</h3>
       {status === "authenticated" ? (
         <form className={`${styles.write} dark:bg-dark dark:text-light`} onSubmit={handleSubmit}>
@@ -64,7 +64,7 @@ const Comments = ({ postSlug }) => {
       ) : (
         <Link
           href="/dashboard/login"
-          className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
         >
           Login to write a comment
         </Link>
