@@ -8,6 +8,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 
 const Comments = ({ postSlug }) => {
+ 
   const { status } = useSession();
   const session = useSession();
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -34,13 +35,17 @@ const Comments = ({ postSlug }) => {
     mutate();
     e.target.reset();
   };
-
+  const MyLoader = ({ src }) => {
+    const session = useSession();
+    return `${session?.data?.user.image}`;
+  };
   return (
     <div className="w-full bg-white rounded-lg border p-2">
       <h3 className="font-bold text-xl py-2">Comments</h3>
       {status === "authenticated" ? (
         <form className={styles.write} onSubmit={handleSubmit}>
           <Image
+           loader={MyLoader}
             src={session?.data?.user?.image ? session.data.user.image :`https://i.ibb.co/p1dMcP9/man.png`}
             alt=""
             width={50}
