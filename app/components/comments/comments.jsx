@@ -6,7 +6,7 @@ import Image from "next/image";
 import useSWR from "swr";
 import Loading from "@/app/loading";
 import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Comments = ({ postSlug }) => {
  
@@ -14,13 +14,10 @@ const Comments = ({ postSlug }) => {
   const session = useSession();
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, mutate, isLoading } = useSWR(
-    `https://www.medcode.dev/api/comments?blogId=${postSlug}`,
+    `http://localhost:3000/api/comments?blogId=${postSlug}`,
     fetcher
   );
   const [comment, setComment] = useState("");
-  useEffect(() => {
-    console.log(session?.data?.user, comment, postSlug);
-  });
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -40,10 +37,7 @@ const Comments = ({ postSlug }) => {
     const session = useSession();
     return `${session?.data?.user.image}`;
   };
-  const MyLoader2 = ({ src }) => {
-    const session = useSession();
-    return `${session?.data?.user.image}`;
-  };
+
   return (
     <div className="w-full bg-white rounded-lg border p-2">
       <h3 className="font-bold text-xl py-2">Comments</h3>
@@ -60,7 +54,7 @@ const Comments = ({ postSlug }) => {
           <input
             placeholder="write a comment..."
             required
-            className="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 sm:h-12 py-2 px-3 sm:px-1 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"
+            className="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 sm:h-12 py-2 px-4 sm:px-1 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"
             onChange={(e) => setComment(e.target.value)}
           />
           <button className="text-xl sm:text-sm bg-red-500 text-light px-4 py-4 rounded-lg font-semibold p-4">
@@ -92,7 +86,7 @@ const Comments = ({ postSlug }) => {
                     width={50}
                     height={50}
                     priority
-                    className={styles.image}
+                    className='w-8 h-8 rounded-full'
                   />
                   <div className="block ml-2">
                     <span className="text-sm font-semibold block text-gray-700">
