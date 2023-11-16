@@ -18,6 +18,13 @@ const commentsSchema = new Schema(
       type: String,
       require: true,
     },
+    replies: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Comments",
+        require: false,
+      },
+    ],
     createdAt: {
       type: Date,
       default: Date.now,

@@ -76,7 +76,13 @@ const Card = () => {
                       <motion.div variants={childVariants}>
                         <Link
                           href={`/blogs/${item._id}`}
-                          className="font-bold text-3xl leading-tight hover:underline-offset-1 mb-4 sm:text-xl dark:text-light"
+                          className="bg-gradient-to-r text-2xl font-bold from-red-400 to-green-600 bg-[length:0px_14px] dark:text-light bg-left-bottom
+                          bg-no-repeat
+                          transition-[background-size]
+                          duration-500
+                          hover:bg-[length:100%_3px]
+                          group-hover:bg-[length:100%_10px]
+                          dark:from-red-800 dark:to-purple-900"
                         >
                           {item.title}
                         </Link>

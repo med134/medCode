@@ -29,16 +29,23 @@ const ArticlesByCat = ({ posts }) => {
               src={item.image}
               alt="blog_image"
             />
-            <div className="p-6 space-y-2">
-              <span className="text-red-600 font-bold tex-sm">
+            <div className="p-6 space-y-2 block">
+              <p className="text-red-600 font-bold tex-sm">
                 #{item.category}
-              </span>
-              <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline lg:text-xl dark:text-light">
-                {item.title}
-              </h3>
-              <span className="text-xs dark:text-gray-400">
+              </p>
+              <span
+                  className="bg-gradient-to-r text-2xl font-semibold from-red-200 to-red-400 bg-[length:0px_10px] bg-left-bottom
+      bg-no-repeat
+      transition-[background-size]
+      duration-500
+      hover:bg-[length:100%_3px]
+      group-hover:bg-[length:100%_10px]
+      dark:from-red-800 dark:to-purple-900">
+                  {item.title}
+                </span>
+              <p className="text-xs dark:text-gray-400">
                 {item?.createdAt.slice(0, 10)}
-              </span>
+              </p>
               <p className="text-gray-500 text-sm">{item.description}</p>
             </div>
           </Link>

@@ -9,12 +9,11 @@ import { useSession } from "next-auth/react";
 import { useState } from "react";
 
 const Comments = ({ postSlug }) => {
- 
   const { status } = useSession();
   const session = useSession();
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, mutate, isLoading } = useSWR(
-    `https://www.medcode.dev/api/comments?blogId=${postSlug}`,
+    `http://localhost:3000/api/comments?blogId=${postSlug}`,
     fetcher
   );
   const [comment, setComment] = useState("");
@@ -42,10 +41,17 @@ const Comments = ({ postSlug }) => {
     <div className="w-full bg-white rounded-lg border p-2 dark:bg-dark">
       <h3 className="font-bold text-xl py-2 dark:text-light">Comments</h3>
       {status === "authenticated" ? (
-        <form className={`${styles.write} dark:bg-dark dark:text-light`} onSubmit={handleSubmit}>
+        <form
+          className={`${styles.write} dark:bg-dark dark:text-light`}
+          onSubmit={handleSubmit}
+        >
           <Image
-           loader={MyLoader}
-            src={session?.data?.user?.image ? session.data.user.image :`https://i.ibb.co/p1dMcP9/man.png`}
+            loader={MyLoader}
+            src={
+              session?.data?.user?.image
+                ? session.data.user.image
+                : `https://i.ibb.co/p1dMcP9/man.png`
+            }
             alt=""
             width={50}
             height={50}
@@ -86,7 +92,7 @@ const Comments = ({ postSlug }) => {
                     width={50}
                     height={50}
                     priority
-                    className='w-8 h-8 rounded-full'
+                    className="w-8 h-8 rounded-full"
                   />
                   <div className="block ml-2">
                     <span className="text-sm font-semibold block text-gray-700 dark:text-light">

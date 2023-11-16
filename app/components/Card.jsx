@@ -81,11 +81,18 @@ const Card = () => {
                       {item?.createdAt.slice(0, 10)}
                     </span>
 
-                    <Link
-                      href={`/blogs/${item._id}`}
-                      className="transition text-xl font-bold text-gray-800 duration-100 hover:text-rose-500 active:text-rose-600 sm:text-sm dark:text-light"
-                    >
-                      {item.title}
+                    <Link href={`/blogs/${item._id}`}>
+                      <span
+                        className="bg-gradient-to-r text-2xl font-semibold from-red-300 to-red-600 bg-[length:0px_10px] bg-left-bottom
+      bg-no-repeat
+      transition-[background-size]
+      duration-500
+      hover:bg-[length:100%_3px]
+      group-hover:bg-[length:100%_10px]
+      dark:from-red-800 dark:to-purple-900"
+                      >
+                        {item.title}
+                      </span>
                     </Link>
                     <p className="text-gray-500 sm:text-xs dark:text-light">
                       {item?.description.slice(0, 50)}...
