@@ -62,7 +62,7 @@ const BlogPage = async ({ params }) => {
           <h2 className="text-4xl font-bold mt-2 py-1 sm:text-xl">
             {blog.title}
           </h2>
-          <p className="text-xl font-semibold px-3">@{blog.username}</p>
+          <p className="text-sm font-semibold text-red-400">@{blog.username}</p>
           <span className="flex underline font-bold justify-start items-start py-6 ml-2 mt-1 font-bolder">
             {blog.tags}
           </span>
