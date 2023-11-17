@@ -45,9 +45,9 @@ const SideBar = () => {
               <div
                 className="mt-3 bg-white dark:bg-dark shadow-md p-3 border border-b-red-500 dark:border-b-light"
               >
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-light">
+                <p className="text-xl font-semibold text-gray-800 dark:text-light">
                   {item.title}
-                </h3>
+                </p>
                 <p className="mt-1 text-sm mb-2 text-gray-500 dark:text-light">
                   {item.description}
                 </p>

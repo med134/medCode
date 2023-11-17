@@ -32,7 +32,7 @@ const Card = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://www.medcode.dev/api/articles")
+    fetch("/api/articles")
       .then((response) => response.json())
       .then((data) => {
         // Sort posts by the createdAt date in descending order

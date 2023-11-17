@@ -16,11 +16,14 @@ async function getData(id) {
 }
 export async function generateMetadata({ params }) {
   const post = await getData(params.id);
+  const publicAt = new Date(post.createdAt).toISOString();
 
   return {
+    
     title: post.title,
     description: post.shortDescription,
     keywords: post.tags,
+    publishedTime: publicAt,
     alternates: {
       canonical: `https://www.medcode.dev/blogs/${params.id}`,
       languages: {
@@ -30,6 +33,8 @@ export async function generateMetadata({ params }) {
         "application/rss+xml": "https://www.medcode.dev/rss",
       },
     },
+    local: "en_Us",
+    type: "article",
     openGraph: {
       title: post.title,
       description: post.shortDescription,
@@ -72,7 +77,7 @@ const BlogPage = async ({ params }) => {
               dangerouslySetInnerHTML={{ __html: content }}
             ></div>
           </div>
-         <Comments postSlug={id} />
+          <Comments postSlug={id} />
         </div>
       </div>
       <div className="sm:w-full sm:p-6">

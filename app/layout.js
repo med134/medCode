@@ -7,7 +7,7 @@ import AuthProvider from "./components/authProvider/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   metadataBase: new URL("https://www.medcode.dev"),
-  title: "medCode-Web Developer Freelance",
+  title: "medCode Web Developer Freelance",
   description: `Learning programming is accessible for beginners through free software programming
   courses These courses introduce essential best programming languages`,
   generator: "Next.js",
@@ -49,9 +49,9 @@ export const metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "medCode|web developer & freelance",
-    description: `Unlock the world of programming and software development with my content. From coding insights to software design trends, explore articles that demystify the digital realm. Dive into the intricacies of algorithms, languages, and best practices. Elevate your tech literacy as I unravel the dynamic landscape of zeros and ones
-  `,
+    title: "medCode web developer & freelance",
+    description: `Learning programming is accessible for beginners through free software programming
+    courses These courses introduce essential best programming languages`,
     images: [
       {
         url: "https://i.ibb.co/7C7bbTZ/Frame-1.png",
@@ -69,7 +69,7 @@ export const metadata = {
       "en-us": `https://www.medcode.dev/en-us`,
     },
     types: {
-      'application/rss+xml': 'https://www.medcode.dev/rss',
+      "application/rss+xml": "https://www.medcode.dev/rss",
     },
   },
 };

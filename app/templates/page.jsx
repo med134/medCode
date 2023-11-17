@@ -54,7 +54,7 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "medCode|free templates & components",
+    title: "medCode free templates & components",
     description: `Browse through MedCode collection of free templates and components for tailwind css and bootstrap
       with full free code source`,
     images: [

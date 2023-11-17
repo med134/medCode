@@ -5,7 +5,8 @@ import "./globals.css";
 import HomeComponent from "./components/HomeComponent";
 
 export const metadata = {
-  title: "medCode-Web Development Company",
+  metadataBase: new URL("https://www.medcode.dev"),
+  title: "medCode Web Development Company",
   description: `Learning programming is accessible for beginners through free web design and web development services. These courses introduce essential front-end developer skills and programming languages,
     `,
   keywords: [
@@ -34,6 +35,20 @@ export const metadata = {
     "Problem Solving",
     "Code Snippets",
   ],
+  authors: [
+    { name: "med dakir" },
+    { name: "medCode", url: "https://www.medcode.dev/" },
+  ],
+  creator: "Med Dakir",
+  publisher: "Med Dakir",
+  formatDetection: {
+    email: "med@vivacode.dev",
+    address: "312 Lovely Street, NY",
+    telephone: false,
+  },
+  generator: "Next.js",
+  applicationName: "MedCode",
+  referrer: "origin-when-cross-origin",
   alternates: {
     canonical: `/`,
     languages: {
@@ -44,7 +59,7 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-    <TransitionEffect/>
+      <TransitionEffect />
       <main className="flex items-center text-dark w-full min-h-screen dark:text-light sm:items-start">
         <Layout className="pt-0 md:pt-16 sm:pt-16 xs:p-10 xs:pt-18">
           <HomeComponent />
