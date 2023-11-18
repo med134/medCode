@@ -44,6 +44,21 @@ export const metadata = {
     "Learning Resources",
     "Code Snippets",
   ],
+  authors: [
+    { name: "med dakir" },
+    { name: "medCode", url: "https://www.medcode.dev/templates" },
+  ],
+  colorScheme: "light",
+  creator: "Med Dakir",
+  publisher: "Med Dakir",
+  formatDetection: {
+    email: "med@vivacode.dev",
+    address: "312 Lovely Street, NY",
+    telephone: false,
+  },
+  generator: "Next.js",
+  applicationName: "MedCode",
+  referrer: "origin-when-cross-origin",
   alternates: {
     canonical: `https://www.medcode.dev/templates`,
     languages: {
@@ -86,16 +101,16 @@ const page = async () => {
 
             <div className="flex mt-8 px-10 sm:text-xs sm:px-4">
               <ul className="inline-flex bg-purple-400 py-4 text-light font-lexend rounded-xl px-10 sm:px-4">
-                <Link target="_blank" href="https://react.dev/">
+                <Link target="_blank" href="https://www.medcode/category/react">
                   {" "}
                   <li className="cursor-pointer hover:underline">React js</li>
                 </Link>
-                <Link target="_blank" href="https://nextjs.org/">
+                <Link target="_blank" href="https://www.medcode/category/nextjs">
                   <li className="ml-4 cursor-pointer hover:underline">
                     Next js
                   </li>
                 </Link>
-                <Link target="_blank" href="https://tailwindcss.com/">
+                <Link target="_blank" href="https://www.medcode/category/tools">
                   {" "}
                   <li className="ml-4 cursor-pointer hover:underline">
                     Tailwind css

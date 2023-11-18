@@ -45,6 +45,7 @@ const HomeComponent = () => {
             priority
             width={500}
             height={300}
+            properly="true"
           />
         </motion.div>
       </div>
@@ -61,25 +62,24 @@ const HomeComponent = () => {
             <div className="container xs:mb-4">
               <div className="row">
                 <div className="col-md-12 text-left lg:text-center">
-                  <p
+                  <h1
                     className={`${dance.className} animate-charcter font-dance text-4xl md:text-center font-bold lg:text-center`}
                   >
-                    {" "}
-                    Hi My Name is Med
-                  </p>
+                    Hi My Name is Med, I'm a Software Developer 
+                  </h1>
                 </div>
               </div>
             </div>
           </motion.div>
           <motion.div variants={childVariants}>
-            <h1
+            <p
               className="text-6xl text-left 
                 xl:text-5xl lg:text-center lg:text=6xl md:text-5xl sm:text-3xl"
             >
               Turning Vision Into Reality With{" "}
               <span className="code">Code</span> And{" "}
               <span className="design"> Design.</span>
-            </h1>
+            </p>
           </motion.div>
           <motion.div variants={childVariants}>
             <p className="my-4 text-base font-lexend font-semibold md:text-sm sm:text-sm xs:text-sm">
