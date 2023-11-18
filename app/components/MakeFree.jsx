@@ -24,7 +24,7 @@ const MakeFree = () => {
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading, mutate } = useSWR(
-    `http://localhost:3000/api/posts`,
+    `https://www.medcode.dev/api/posts`,
     fetcher
   );
   return (
