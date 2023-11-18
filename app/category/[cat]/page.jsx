@@ -3,7 +3,6 @@ import styles from "@/app/components/categoryList/categoryList.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "@/app/components/Layout";
-import ArticlesByCat from "@/app/components/ArticlesByCat";
 const getData = async () => {
   const res = await fetch("https://www.medcode.dev/api/categories", {
     cache: "no-store",
@@ -28,7 +27,7 @@ async function getPosts(cat) {
   const posts = await res.json();
 
   // Assuming 'date' is the field representing the date in each post object
-  const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const sortedPosts = posts?.sort((a, b) => new Date(b.date) - new Date(a.date));
   
   return sortedPosts;
 }
@@ -85,8 +84,10 @@ export async function generateMetadata({ params }) {
 }
 
 const Card = async ({ params }) => {
-  const posts = await getPosts(params.cat);
+  const sortedPosts = await getPosts(params.cat);
   const category = await getData();
+  console.log("sorted posts",sortedPosts)
+
   const myTitle =
     params.cat === "all"
       ? `All Blogs & Articles`
