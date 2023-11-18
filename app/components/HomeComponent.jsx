@@ -65,7 +65,7 @@ const HomeComponent = () => {
                   <h1
                     className={`${dance.className} animate-charcter font-dance text-4xl md:text-center font-bold lg:text-center`}
                   >
-                    Hi My Name is Med, I'm a Software Developer 
+                    Hi My Name is Med, Im a Software Developer 
                   </h1>
                 </div>
               </div>

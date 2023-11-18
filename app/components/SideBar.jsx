@@ -43,6 +43,7 @@ const SideBar = () => {
               transition={{ delay: index * 1 }}
             >
               <div
+                key={item._id}
                 className="mt-3 bg-white dark:bg-dark shadow-md p-3 border border-b-red-500 dark:border-b-light"
               >
                 <p className="text-xl font-semibold text-gray-800 dark:text-light">
