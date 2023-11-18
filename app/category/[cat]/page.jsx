@@ -66,7 +66,7 @@ const Card = async ({ params }) => {
   return (
     <Layout className="py-4 px-16 p-8 xl:px-8 xl:p-6">
       <h1 className="px-10 text-red-600 text-3xl font-outFit font-bold uppercase mt-4">
-        #{params.cat}
+        #Blogs About {params.cat}
       </h1>
       <div className="px-2 mt-6">
       <span className="px-10 py-8 mt-4 text-red-600 font-bold text-xl sm:text-sm">
