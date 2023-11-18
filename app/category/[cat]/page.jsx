@@ -19,9 +19,10 @@ async function getPosts(cat) {
 }
 export async function generateMetadata({ params }) {
   const post = await getPosts(params.cat);
+  const heading = `Blogs About ${params.cat}`;
 
   return {
-    title:  `Blogs About ${params.cat}`,
+    title: heading,
     description: `Explore a treasure trove of insightful programming articles and engaging blogs about ${params.cat} Discover expert-written content covering languages, frameworks`,
     keywords: [
       "React",
@@ -36,7 +37,10 @@ export async function generateMetadata({ params }) {
     ],
     authors: [
       { name: "med dakir" },
-      { name: "medCode", url: `https://www.medcode.dev/category/${params.cat}` },
+      {
+        name: "medCode",
+        url: `https://www.medcode.dev/category/${params.cat}`,
+      },
     ],
     alternates: {
       canonical: `https://www.medcode.dev/category/${params.cat}`,
@@ -49,8 +53,7 @@ export async function generateMetadata({ params }) {
     },
     openGraph: {
       title: `Blogs About ${params.cat}`,
-      description:
-       `Explore a treasure trove of insightful programming articles and engaging blogs about ${params.cat} Discover expert-written content covering languages, frameworks`,
+      description: `Explore a treasure trove of insightful programming articles and engaging blogs about ${params.cat} Discover expert-written content covering languages, frameworks`,
       images: [
         {
           url: post.image,
@@ -63,36 +66,37 @@ export async function generateMetadata({ params }) {
 }
 const Card = async ({ params }) => {
   const posts = await getPosts(params.cat);
+  const myTitle = `Blogs About ${params.cat}`;
   return (
     <Layout className="py-4 px-16 p-8 xl:px-8 xl:p-6">
       <h1 className="px-10 text-red-600 text-3xl font-outFit font-bold uppercase mt-4">
-        #Blogs About {params.cat}
+        {myTitle}
       </h1>
       <div className="px-2 mt-6">
-      <span className="px-10 py-8 mt-4 text-red-600 font-bold text-xl sm:text-sm">
-        Popular Categories
-      </span>
-      <div className="grid grid-cols-7 mt-4 gap-2 px-16 lg:flex lg:justify-evenly lg:flex-wrap lg:px-8 xs:flex">
-        {data?.map((item) => (
-          <Link
-            className={`${styles.category} xs:shrink w-8 h-8 dark:text-light`}
-            key={item._id}
-            href={`/category/${item.value}`}
-          >
-            {item.image && (
-              <Image
-                src={item.image}
-                alt=""
-                width={32}
-                height={32}
-                className={styles.image}
-              />
-            )}
-            {item.label}
-          </Link>
-        ))}
+        <span className="px-10 py-8 mt-4 text-red-600 font-bold text-xl sm:text-sm">
+          Popular Categories
+        </span>
+        <div className="grid grid-cols-7 mt-4 gap-2 px-16 lg:flex lg:justify-evenly lg:flex-wrap lg:px-8 xs:flex">
+          {data?.map((item) => (
+            <Link
+              className={`${styles.category} xs:shrink w-8 h-8 dark:text-light`}
+              key={item._id}
+              href={`/category/${item.value}`}
+            >
+              {item.image && (
+                <Image
+                  src={item.image}
+                  alt=""
+                  width={32}
+                  height={32}
+                  className={styles.image}
+                />
+              )}
+              {item.label}
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
       <ArticlesByCat posts={posts} />
     </Layout>
   );
