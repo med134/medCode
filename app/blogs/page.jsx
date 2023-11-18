@@ -10,6 +10,7 @@ import Article from "../components/Article";
 import Image from "next/image";
 
 export const metadata = {
+  metadataBase: new URL("https://www.medcode.dev/blogs"),
   title: "medCode Blogs & Articles",
   description: `Browse through MedCode collection of software engineering articles blogs and debugging tutorials  Next.js, React.js, javascript html ,css web development`,
   keywords: [
@@ -38,9 +39,12 @@ export const metadata = {
     google: "cFXi6ELWEfl4UY9OE5i_S5QFU3LbUvdxGgW6RQgHWw",
   },
   alternates: {
-    canonical: `/blogs`,
+    canonical: `https://www.medcode.dev/blogs`,
     languages: {
-      "en-us": `/en/blogs`,
+      "en-us": `https://www.medcode.dev/en-us`,
+    },
+    types: {
+      "application/rss+xml": "https://www.medcode.dev/rss",
     },
   },
   openGraph: {
@@ -90,7 +94,7 @@ const Page = async () => {
             {item.image && (
               <Image
                 src={item.image}
-                alt=""
+                alt={`${item.label}category`}
                 width={32}
                 height={32}
                 className={styles.image}

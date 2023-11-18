@@ -35,6 +35,7 @@ export const metadata = {
     "Problem Solving",
     "Code Snippets",
   ],
+  referrer: "origin-when-cross-origin",
   authors: [
     { name: "med dakir" },
     { name: "medCode", url: "https://www.medcode.dev/" },

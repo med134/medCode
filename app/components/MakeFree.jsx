@@ -52,7 +52,7 @@ const MakeFree = () => {
                       <Image
                         className="w-full h-44"
                         src={item.image}
-                        alt="Sunset in the mountains"
+                        alt="template image"
                         width={300}
                         height={300}
                       />

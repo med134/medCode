@@ -51,11 +51,6 @@ export const metadata = {
   colorScheme: "light",
   creator: "Med Dakir",
   publisher: "Med Dakir",
-  formatDetection: {
-    email: "med@vivacode.dev",
-    address: "312 Lovely Street, NY",
-    telephone: false,
-  },
   generator: "Next.js",
   applicationName: "MedCode",
   referrer: "origin-when-cross-origin",

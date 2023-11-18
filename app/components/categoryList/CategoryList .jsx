@@ -32,7 +32,7 @@ const CategoryList = async () => {
             {item.image && (
               <Image
                 src={item.image}
-                alt=""
+                alt={`${item.label}category`}
                 width={32}
                 height={32}
                 className={styles.image}

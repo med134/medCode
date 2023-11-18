@@ -70,7 +70,7 @@ const Card = () => {
                     <Image
                       src={item.image}
                       loading="lazy"
-                      alt="blog_image"
+                      alt="Article_image"
                       className="object-cover transition items-center duration-200 group-hover:scale-110 md:object-fill"
                       width={300}
                       height={500}
