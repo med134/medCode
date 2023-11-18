@@ -25,7 +25,11 @@ async function getPosts(cat) {
   if (!res.ok) {
     return notFound();
   }
-  return res.json();
+  const posts = res.json();
+  const sorted = posts.sort(
+    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+  );
+  return sorted;
 }
 export async function generateMetadata({ params }) {
   const post = await getPosts(params.cat);
@@ -62,7 +66,10 @@ export async function generateMetadata({ params }) {
       },
     },
     openGraph: {
-      title: `Blogs About ${params.cat}`,
+      title:
+        params.cat === "all"
+          ? `All Blogs & Articles`
+          : `All Blogs About ${params.cat}`,
       description: `Explore a treasure trove of insightful programming articles and engaging blogs about ${params.cat} Discover expert-written content covering languages, frameworks`,
       images: [
         {
@@ -74,10 +81,14 @@ export async function generateMetadata({ params }) {
     },
   };
 }
+
 const Card = async ({ params }) => {
   const posts = await getPosts(params.cat);
-  const category=await getData();
-  const myTitle = `Blogs About ${params.cat}`;
+  const category = await getData();
+  const myTitle =
+    params.cat === "all"
+      ? `All Blogs & Articles`
+      : `All Blogs About ${params.cat}`;
   return (
     <Layout className="py-4 px-16 p-8 xl:px-8 xl:p-6">
       <h1 className="px-10 text-red-600 text-3xl font-outFit font-bold uppercase mt-4">
@@ -108,7 +119,48 @@ const Card = async ({ params }) => {
           ))}
         </div>
       </div>
-      <ArticlesByCat posts={posts} />
+      <div className="grid justify-center grid-cols-3 gap-6 mt-8 md:block">
+        {posts?.map((item) => (
+          <div
+            key={item._id}
+            className="bg-white shadow-lg dark:shadow-white rounded-md lg:block md:mb-6 lg:w-full sm:w-full dark:bg-dark dark:border-light"
+          >
+            <Link
+              href={`https://www.medcode.dev/blogs/${item._id}`}
+              className="hover:no-underline focus:no-underline dark:bg-gray-900"
+            >
+              <Image
+                width={300}
+                height={300}
+                className="object-cover w-full rounded h-44 dark:bg-gray-500 md:object-fill"
+                src={item.image}
+                alt="blog_image"
+              />
+              <div className="p-6 space-y-2 block">
+                <p className="text-red-600 font-bold tex-sm">
+                  #{item.category}
+                </p>
+                <span
+                  className="bg-gradient-to-r text-2xl font-semibold from-red-200 to-red-400 bg-[length:0px_10px] bg-left-bottom
+      bg-no-repeat
+      transition-[background-size]
+      duration-500
+      hover:bg-[length:100%_3px]
+      group-hover:bg-[length:100%_10px]
+      dark:from-red-800 dark:to-purple-900"
+                >
+                  {item.title}
+                </span>
+                <p className="text-xs dark:text-gray-400">
+                  {item?.createdAt.slice(0, 10)}
+                </p>
+                <p className="text-gray-500 text-sm">{item.description}</p>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
+      {/*  <ArticlesByCat posts={posts} /> */}
     </Layout>
   );
 };

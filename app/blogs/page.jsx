@@ -77,9 +77,9 @@ const Page = async () => {
       />
       <Card />
       <div className="px-2 mt-6">
-      <span className="px-10 py-8 mt-4 text-red-600 font-bold text-xl sm:text-sm">
+      <p className="px-10 py-8 mt-4 text-red-600 font-bold text-xl sm:text-sm">
         Popular Categories
-      </span>
+      </p>
       <div className="grid grid-cols-7 mt-4 gap-2 px-16 lg:flex lg:justify-evenly lg:flex-wrap lg:px-8 xs:flex">
         {data?.map((item) => (
           <Link
