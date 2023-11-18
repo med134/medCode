@@ -4,7 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 import Layout from "@/app/components/Layout";
 import ArticlesByCat from "@/app/components/ArticlesByCat";
+const getData = async () => {
+  const res = await fetch("https://www.medcode.dev/api/categories", {
+    cache: "no-store",
+  });
 
+  if (!res.ok) {
+    throw new Error("Failed");
+  }
+
+  return res.json();
+};
 async function getPosts(cat) {
   const res = await fetch(
     `https://www.medcode.dev/api/articles?category=${cat}`,
@@ -66,6 +76,7 @@ export async function generateMetadata({ params }) {
 }
 const Card = async ({ params }) => {
   const posts = await getPosts(params.cat);
+  const category=await getData();
   const myTitle = `Blogs About ${params.cat}`;
   return (
     <Layout className="py-4 px-16 p-8 xl:px-8 xl:p-6">
@@ -77,7 +88,7 @@ const Card = async ({ params }) => {
           Popular Categories
         </span>
         <div className="grid grid-cols-7 mt-4 gap-2 px-16 lg:flex lg:justify-evenly lg:flex-wrap lg:px-8 xs:flex">
-          {data?.map((item) => (
+          {category?.map((item) => (
             <Link
               className={`${styles.category} xs:shrink w-8 h-8 dark:text-light`}
               key={item._id}
