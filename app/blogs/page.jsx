@@ -40,8 +40,9 @@ export const metadata = {
   },
   alternates: {
     canonical: `https://www.medcode.dev/blogs`,
+    hreflang: "en",
     languages: {
-      "en-us": `https://www.medcode.dev/en-us`,
+      "en-Us": `https://www.medcode.dev/en-Us`,
     },
     types: {
       "application/rss+xml": "https://www.medcode.dev/rss",
@@ -81,30 +82,30 @@ const Page = async () => {
       />
       <Card />
       <div className="px-2 mt-6">
-      <p className="px-10 py-8 mt-4 text-red-600 font-bold text-xl sm:text-sm">
-        Popular Categories
-      </p>
-      <div className="grid grid-cols-7 mt-4 gap-2 px-16 lg:flex lg:justify-evenly lg:flex-wrap lg:px-8 xs:flex">
-        {data?.map((item) => (
-          <Link
-            className={`${styles.category} xs:shrink w-8 h-8 dark:text-light`}
-            key={item._id}
-            href={`/category/${item.value}`}
-          >
-            {item.image && (
-              <Image
-                src={item.image}
-                alt={`${item.label}category`}
-                width={32}
-                height={32}
-                className={styles.image}
-              />
-            )}
-            {item.label}
-          </Link>
-        ))}
+        <p className="px-10 py-8 mt-4 text-red-600 font-bold text-xl sm:text-sm">
+          Popular Categories
+        </p>
+        <div className="grid grid-cols-7 mt-4 gap-2 px-16 lg:flex lg:justify-evenly lg:flex-wrap lg:px-8 xs:flex">
+          {data?.map((item) => (
+            <Link
+              className={`${styles.category} xs:shrink w-8 h-8 dark:text-light`}
+              key={item._id}
+              href={`/category/${item.value}`}
+            >
+              {item.image && (
+                <Image
+                  src={item.image}
+                  alt={`${item.label} category`}
+                  width={32}
+                  height={32}
+                  className={styles.image}
+                />
+              )}
+              {item.label}
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
       <CardList />
       <section className="mx-auto max-w-screen-xl py-1 text-blue-900 sm:py-4 lg:py-4">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">

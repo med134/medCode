@@ -28,7 +28,7 @@ export async function getArticles() {
   return res.json();
 }
 export async function getCategory() {
-  const res = await fetch(`https://www.medcode.dev/api/categories`, {
+  const res = await fetch(`https://hn.algolia.com/api/v1/search?query=software_developments`, {
     cache: "no-store",
   });
   if (!res.ok) {

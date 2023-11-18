@@ -5,7 +5,6 @@ import React, { useState, useEffect } from "react";
 import Youtube from "./Youtube";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import AnimatedText from "./AnimatedText";
 
 const Article = () => {
   const [news, setNews] = useState([]);

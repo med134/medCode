@@ -55,7 +55,7 @@ export const metadata = {
   applicationName: "MedCode",
   referrer: "origin-when-cross-origin",
   alternates: {
-    canonical: `https://www.medcode.dev/templates`,
+    canonical: `https://www.medcode.dev/templates`,hrefflag:'en',
     languages: {
       "en-us": `https://www.medcode.dev/en-us/templates`,
     },
@@ -96,16 +96,16 @@ const page = async () => {
 
             <div className="flex mt-8 px-10 sm:text-xs sm:px-4">
               <ul className="inline-flex bg-purple-400 py-4 text-light font-lexend rounded-xl px-10 sm:px-4">
-                <Link target="_blank" href="https://www.medcode/category/react">
+                <Link target="_blank" href="https://www.medcode.dev/category/react">
                   {" "}
                   <li className="cursor-pointer hover:underline">React js</li>
                 </Link>
-                <Link target="_blank" href="https://www.medcode/category/nextjs">
+                <Link target="_blank" href="https://www.medcode.dev/category/nextjs">
                   <li className="ml-4 cursor-pointer hover:underline">
                     Next js
                   </li>
                 </Link>
-                <Link target="_blank" href="https://www.medcode/category/tools">
+                <Link target="_blank" href="https://www.medcode.dev/category/tools">
                   {" "}
                   <li className="ml-4 cursor-pointer hover:underline">
                     Tailwind css
