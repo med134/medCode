@@ -10,48 +10,46 @@ import Article from "../components/Article";
 import Image from "next/image";
 
 export const metadata = {
-  metadataBase: new URL("https://www.medcode.dev/blogs"),
-  title: "medCode Blogs & Articles",
-  description: `Browse through MedCode collection of software engineering articles blogs and debugging tutorials  Next.js, React.js, javascript html ,css web development`,
+  metadataBase: new URL('https://medcode.dev'),
+  title: "Insightful Articles: Software & Web Development Tips | medcode",
+  description: `Explore in-depth articles on software engineering, web and mobile development. Get expert tips and solutions for debugging errors. Your go-to source for tech insights!`,
   keywords: [
-    "best programming blogs",
     "programming blogs",
-    " Programming Languages",
-    "Software Engineering",
-    "software development blogs",
+    "blogs",
+    "Programming Languages",
+    "Software",
+    "development",
     "UI/UX Design",
-    "computer programming articles",
-    "Cybersecurity programming",
-    "Best Practices",
-    "Web Design",
-    "Mobile Development",
-    "Learning Resources",
-    "IDEs (Integrated Development Environments)",
-    "Problem Solving",
-    "Code Snippets",
+    "Beginners",
+    "learn",
+    "free",
+    "solution"
   ],
   referrer: "origin-when-cross-origin",
   authors: [
     { name: "med dakir" },
     { name: "medCode blogs", url: "https://www.medcode.dev/blogs" },
   ],
+  creator: 'MOHAMED DAKIR',
+  publisher: 'MOHAMED DAKIR',
   verification: {
     google: "cFXi6ELWEfl4UY9OE5i_S5QFU3LbUvdxGgW6RQgHWw",
   },
+  category: 'technology',
   alternates: {
-    canonical: `https://www.medcode.dev/blogs`,
-    hreflang: "en",
+    canonical: '/blogs',
     languages: {
-      "en-Us": `https://www.medcode.dev/en-Us`,
+      'en-US': '/en-US',
     },
     types: {
-      "application/rss+xml": "https://www.medcode.dev/rss",
+      "application/rss+xml": "https://medcode.dev/rss",
     },
   },
   openGraph: {
     title: "medCode Blogs & Articles",
     description: `Browse through MedCode collection of software engineering articles blogs and 
       tutorials.`,
+      url: 'https://medcode.dev/blogs',
     images: [
       {
         url: "https://i.ibb.co/rHvLvvr/Untitled.png",
@@ -59,6 +57,8 @@ export const metadata = {
         height: "300",
       },
     ],
+    locale: 'en_US',
+    type: 'website',
   },
 };
 const getData = async () => {
@@ -78,7 +78,7 @@ const Page = async () => {
     <Layout className="p-6 2xl:p-4 lg:p-4 md:p-2 xs:p-0">
       <AnimatedText
         className="text-[40px] m-6 text-borderColor md:text-4xl xs:text-2xl"
-        text="Software Development Skills:Tips and Tricks for Success"
+        text="Insightful Articles: Software & Web Development Tips |medcode"
       />
       <Card />
       <div className="px-2 mt-6">

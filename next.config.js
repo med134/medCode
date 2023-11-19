@@ -6,6 +6,8 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  poweredByHeader: false,
+  unstable_runtimeJS: false,
   images: {
     remotePatterns: [
       {
