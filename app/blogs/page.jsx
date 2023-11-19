@@ -4,13 +4,14 @@ import styles from "../components/categoryList/categoryList.module.css";
 import Layout from "../components/Layout";
 import Card from "../components/Hero";
 import CardList from "../components/CardList";
+import Youtube from "../components/Youtube";
 import Link from "next/link";
 import MakeFree from "../components/MakeFree";
-import Article from "../components/Article";
 import Image from "next/image";
+import { getArticle } from "../components/FetchData";
 
 export const metadata = {
-  metadataBase: new URL('https://medcode.dev'),
+  metadataBase: new URL("https://medcode.dev"),
   title: "Insightful Articles: Software & Web Development Tips|medcode",
   description: `Explore in-depth articles on software engineering, web and mobile development. Get expert tips and solutions for debugging errors. Your go-to source for tech insights!`,
   keywords: [
@@ -23,7 +24,7 @@ export const metadata = {
     "Beginners",
     "learn",
     "free",
-    "solution"
+    "solution",
   ],
   referrer: "origin-when-cross-origin",
   authors: [
@@ -33,11 +34,11 @@ export const metadata = {
   verification: {
     google: "cFXi6ELWEfl4UY9OE5i_S5QFU3LbUvdxGgW6RQgHWw",
   },
-  category: 'technology',
+  category: "technology",
   alternates: {
-    canonical: '/blogs',
+    canonical: "/blogs",
     languages: {
-      'en-US': '/en-US',
+      "en-US": "/en-US",
     },
     types: {
       "application/rss+xml": "https://medcode.dev/rss",
@@ -46,7 +47,7 @@ export const metadata = {
   openGraph: {
     title: "Insightful Articles: Software & Web Development Tips",
     description: `Explore in-depth articles on software engineering, web and mobile development. Get expert tips and solutions for debugging errors. Your go-to source for tech insights!`,
-      url: 'https://medcode.dev/blogs',
+    url: "https://medcode.dev/blogs",
     images: [
       {
         url: "https://i.ibb.co/rHvLvvr/Untitled.png",
@@ -54,8 +55,8 @@ export const metadata = {
         height: "300",
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
 };
 const getData = async () => {
@@ -71,6 +72,7 @@ const getData = async () => {
 };
 const Page = async () => {
   const data = await getData();
+  const article = await getArticle();
   return (
     <Layout className="p-6 2xl:p-4 lg:p-4 md:p-2 xs:p-0">
       <AnimatedText
@@ -104,7 +106,7 @@ const Page = async () => {
         </div>
       </div>
       <CardList />
-      <section className="mx-auto max-w-screen-xl py-1 text-blue-900 sm:py-4 lg:py-4">
+      <section className="mx-auto max-w-screen-xl py-1 mb-6 text-blue-900 sm:py-4 lg:py-4">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center py-8 lg:py-2">
             <p className="text-xl font-bold text-red-500">MEDCODE</p>
@@ -115,7 +117,83 @@ const Page = async () => {
           <MakeFree />
         </div>
       </section>
-      <Article />
+      <span className='px-11 text-2xl font-bold py-6 text-gray-800 sm:text-sm'>
+        The latest in the tech industry
+        relevant to web and mobile development
+      </span>
+      <article className="article gap-16 p-10 lg:p-10 lg:gap-8 md:flex md:flex-col md:items-center">
+        <div className="art flex-col justify-start">
+          {article.hits?.map((item, index) =>
+            index <= 2 ? (
+              <div
+                key={item._id}
+                className="grid gap-6 p-4 overflow-hidden shadow-xl shadow-light"
+              >
+                <div className="flex flex-1 flex-col justify-between bg-white p-6 lg:py-8 lg:px-7 dark:bg-dark">
+                  <div className="flex-1">
+                    <p className="text-2xl font-bold dark:text-red-600">
+                      Development-Articles
+                    </p>
+                    <Link
+                      href={item.url}
+                      target="_blank"
+                      className="mt-8 flex-1"
+                    >
+                      <span className="leading-relaxed text-blue-900 text-xl font-lexend dark:text-light font-semibold">
+                        {item.title}
+                      </span>
+                    </Link>
+                  </div>
+                  <div className="mt-8 border px-8 inline-flex items-center dark:text-light rounded-md shadow-md text-gray-600 py-1 g-blue-400 ">
+                    <div className="">
+                      <p className="text-base font-bold ">
+                        {item.author}/{item.relevancy_score}
+                      </p>
+                      <p className="mt-0.5 text-sm">{item.created_at}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : null
+          )}
+        </div>
+        <div className="slider xs:w-full">
+          <div className="max-w-md mb-8 rounded-xl border bg-white p-6 pb-10 text-gray-900 dark:bg-dark dark:text-light">
+            <p className="text-md text-blue-900 font-medium dark:text-light">
+              Trending Languages and frameworks
+            </p>
+            <div className="mt-4">
+              <p className="float-left mb-2">javascript</p>
+              <span className="float-right mb-2">20,00</span>
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-50">
+                <div className="h-full w-10/12 overflow-hidden rounded-full bg-red-600" />
+              </div>
+            </div>
+            <div className="mt-4">
+              <p className="float-left mb-2">Python</p>
+              <span className="float-right mb-2">2,000</span>
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-50">
+                <div className="h-full w-4/12 overflow-hidden rounded-full bg-red-600" />
+              </div>
+            </div>
+            <div className="mt-4">
+              <p className="float-left mb-2">Typescript</p>
+              <span className="float-right mb-2">1,500</span>
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-50">
+                <div className="h-full w-3/12 overflow-hidden rounded-full bg-red-600" />
+              </div>
+            </div>
+            <div className="mt-4">
+              <p className="float-left mb-2">React js</p>
+              <span className="float-right mb-2">260</span>
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-50">
+                <div className="h-full w-1/12 overflow-hidden rounded-full bg-red-600" />
+              </div>
+            </div>
+          </div>
+          <Youtube />
+        </div>
+      </article>
     </Layout>
   );
 };
