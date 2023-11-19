@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export const metadata = {
   metadataBase: new URL('https://medcode.dev'),
-  title: "Insightful Articles: Software & Web Development Tips | medcode",
+  title: "Insightful Articles: Software & Web Development Tips|medcode",
   description: `Explore in-depth articles on software engineering, web and mobile development. Get expert tips and solutions for debugging errors. Your go-to source for tech insights!`,
   keywords: [
     "programming blogs",
@@ -30,8 +30,6 @@ export const metadata = {
     { name: "med dakir" },
     { name: "medCode blogs", url: "https://www.medcode.dev/blogs" },
   ],
-  creator: 'MOHAMED DAKIR',
-  publisher: 'MOHAMED DAKIR',
   verification: {
     google: "cFXi6ELWEfl4UY9OE5i_S5QFU3LbUvdxGgW6RQgHWw",
   },
@@ -46,9 +44,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "medCode Blogs & Articles",
-    description: `Browse through MedCode collection of software engineering articles blogs and 
-      tutorials.`,
+    title: "Insightful Articles: Software & Web Development Tips",
+    description: `Explore in-depth articles on software engineering, web and mobile development. Get expert tips and solutions for debugging errors. Your go-to source for tech insights!`,
       url: 'https://medcode.dev/blogs',
     images: [
       {

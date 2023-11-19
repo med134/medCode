@@ -40,6 +40,7 @@ export const metadata = {
     { name: "med dakir" },
     { name: "medCode", url: "https://www.medcode.dev/" },
   ],
+  category: 'technology',
   colorScheme: "light",
   creator: "Med Dakir",
   publisher: "Med Dakir",
@@ -52,6 +53,7 @@ export const metadata = {
     title: "medCode web developer & freelance",
     description: `Learning programming is accessible for beginners through free software programming
     courses These courses introduce essential best programming languages`,
+    url: "https://medcode.dev",
     images: [
       {
         url: "https://i.ibb.co/7C7bbTZ/Frame-1.png",
@@ -59,17 +61,19 @@ export const metadata = {
         height: "300",
       },
     ],
+    locale: "en_US",
+    type: "website",
   },
   verification: {
     google: "cFXi6ELWEfl4UY9OE5i_S5QFU3LbUvdxGgW6RQgHWw",
   },
   alternates: {
-    canonical: `https://www.medcode.dev`,
+    canonical: '/',
     languages: {
-      "en-us": `https://www.medcode.dev/en-us`,
+      'en-US': '/en-US',
     },
     types: {
-      "application/rss+xml": "https://www.medcode.dev/rss",
+      "application/rss+xml": "https://medcode.dev/rss",
     },
   },
 };
