@@ -55,6 +55,15 @@ export const metadata = {
         height: "300",
       },
     ],
+    alternates: {
+      canonical: "/blogs",
+      languages: {
+        "en-US": "/en-US",
+      },
+      types: {
+        "application/rss+xml": "https://medcode.dev/rss",
+      },
+    },
     locale: "en_US",
     type: "website",
   },
@@ -117,7 +126,7 @@ const Page = async () => {
           <MakeFree />
         </div>
       </section>
-      <span className='px-11 text-2xl font-bold py-6 text-gray-800 sm:text-sm'>
+      <span className='px-11 text-2xl font-bold py-6 text-gray-800 sm:text-sm sm:text-center'>
         The latest in the tech industry
         relevant to web and mobile development
       </span>
