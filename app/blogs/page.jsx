@@ -36,7 +36,7 @@ export const metadata = {
   },
   category: "technology",
   alternates: {
-    canonical: "/blogs",
+    canonical: "https://medcode.dev/blogs",
     languages: {
       "en-US": "/en-US",
     },
@@ -56,7 +56,7 @@ export const metadata = {
       },
     ],
     alternates: {
-      canonical: "/blogs",
+      canonical: "https://medcode.dev/blogs",
       languages: {
         "en-US": "/en-US",
       },

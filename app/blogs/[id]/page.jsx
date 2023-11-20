@@ -17,11 +17,9 @@ async function getData(id) {
 export async function generateMetadata({ params }) {
   const post = await getData(params.id);
   const publicAt = new Date(post.createdAt).toISOString();
-
   return {
-    
     title: post.title,
-    description: post.shortDescription,
+    description: post.description,
     keywords: post.tags,
     publishedTime: publicAt,
     alternates: {
@@ -37,7 +35,7 @@ export async function generateMetadata({ params }) {
     type: "article",
     openGraph: {
       title: post.title,
-      description: post.shortDescription,
+      description: post.description,
       images: [
         {
           url: post.image,
@@ -45,6 +43,15 @@ export async function generateMetadata({ params }) {
           height: "300",
         },
       ],
+      alternates: {
+        canonical: `https://www.medcode.dev/blogs/${params.id}`,
+        languages: {
+          "en-Us": `https://www.medcode.dev/en-us/blogs${params.id}`,
+        },
+        types: {
+          "application/rss+xml": "https://www.medcode.dev/rss",
+        },
+      }
     },
   };
 }

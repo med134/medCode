@@ -76,7 +76,7 @@ const Card = () => {
                       <motion.div variants={childVariants}>
                         <Link
                           href={`/blogs/${item._id}`}
-                          className="bg-gradient-to-r text-2xl font-bold from-red-400 to-green-600 bg-[length:0px_14px] dark:text-light bg-left-bottom
+                          className="bg-gradient-to-r text-3xl font-bold from-red-400 to-green-600 bg-[length:0px_14px] dark:text-light bg-left-bottom
                           bg-no-repeat
                           transition-[background-size]
                           duration-500
@@ -90,7 +90,7 @@ const Card = () => {
 
                       <motion.div variants={childVariants}>
                         <p className="text-medium text-gray-700 lg:text-sm mt-3 dark:text-light">
-                          {item.description.slice(0, 80)}...
+                          {item.description.slice(0, 100)}...
                         </p>
                         <span className="font-bold text-sm mb-5 mt-2 dark:text-light">
                           {item.tags}
