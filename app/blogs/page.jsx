@@ -118,7 +118,7 @@ const Page = async () => {
       <section className="mx-auto max-w-screen-xl py-1 mb-6 text-blue-900 sm:py-4 lg:py-4">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center py-8 lg:py-2">
-            <p className="text-xl font-bold text-red-500">MEDCODE</p>
+            <p className="text-xl font-bold text-red-500">MEDCODE KITS</p>
             <p className="mt-2 text-xl font-bold text-gray-800 sm:text-2xl xl:text-5xl xs:text-xl dark:text-light">
               Make It Easy: Free Templates & Components for development kits
             </p>
@@ -126,10 +126,15 @@ const Page = async () => {
           <MakeFree />
         </div>
       </section>
-      <span className='px-11 text-2xl font-bold py-6 text-gray-800 sm:text-sm sm:text-center'>
-        The latest in the tech industry
-        relevant to web and mobile development
-      </span>
+      <div className="mx-auto max-w-2xl text-center py-8 lg:py-2">
+        <p className="text-xl font-bold text-red-500">
+          Articles & Developments
+        </p>
+        <p className="mt-2 text-xl font-bold text-gray-800 sm:text-2xl xl:text-5xl xs:text-xl dark:text-light">
+          Languages & Developments: The latest Articles & frameworks About
+          Software Developments & engineering
+        </p>
+      </div>
       <article className="article gap-16 p-10 lg:p-10 lg:gap-8 md:flex md:flex-col md:items-center">
         <div className="art flex-col justify-start">
           {article.hits?.map((item, index) =>
