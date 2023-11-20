@@ -115,27 +115,27 @@ const Page = async () => {
         </div>
       </div>
       <CardList />
-      <section className="mx-auto max-w-screen-xl py-1 mb-6 text-blue-900 sm:py-4 lg:py-4">
+      <div className="mx-auto max-w-screen-xl py-1 mb-6 text-blue-900 sm:py-4 lg:py-4">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center py-8 lg:py-2">
             <p className="text-xl font-bold text-red-500">MEDCODE KITS</p>
-            <p className="mt-2 text-xl font-bold text-gray-800 sm:text-2xl xl:text-5xl xs:text-xl dark:text-light">
+            <h2 className="mt-2 text-xl font-bold text-gray-800 sm:text-2xl xl:text-5xl xs:text-xl dark:text-light">
               Make It Easy: Free Templates & Components for development kits
-            </p>
+            </h2>
           </div>
           <MakeFree />
         </div>
-      </section>
+      </div>
       <div className="mx-auto max-w-2xl text-center py-8 lg:py-2">
         <p className="text-xl font-bold text-red-500">
           Articles & Developments
         </p>
-        <p className="mt-2 text-xl font-bold text-gray-800 sm:text-2xl xl:text-5xl xs:text-xl dark:text-light">
+        <h3 className="mt-2 text-xl font-bold text-gray-800 sm:text-2xl xl:text-5xl xs:text-xl dark:text-light">
           Languages & Developments: The latest Articles & frameworks About
           Software Developments & engineering
-        </p>
+        </h3>
       </div>
-      <article className="article gap-16 p-10 lg:p-10 lg:gap-8 md:flex md:flex-col md:items-center">
+      <div className="article gap-16 p-10 lg:p-10 lg:gap-8 md:flex md:flex-col md:items-center">
         <div className="art flex-col justify-start">
           {article.hits?.map((item, index) =>
             index <= 2 ? (
@@ -173,9 +173,9 @@ const Page = async () => {
         </div>
         <div className="slider xs:w-full">
           <div className="max-w-md mb-8 rounded-xl border bg-white p-6 pb-10 text-gray-900 dark:bg-dark dark:text-light">
-            <p className="text-md text-blue-900 font-medium dark:text-light">
+            <h5 className="text-md text-blue-900 font-medium dark:text-light">
               Trending Languages and frameworks
-            </p>
+            </h5>
             <div className="mt-4">
               <p className="float-left mb-2">javascript</p>
               <span className="float-right mb-2">20,00</span>
@@ -207,7 +207,7 @@ const Page = async () => {
           </div>
           <Youtube />
         </div>
-      </article>
+      </div>
     </Layout>
   );
 };
