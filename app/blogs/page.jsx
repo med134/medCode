@@ -3,12 +3,12 @@ import AnimatedText from "../components/AnimatedText";
 import styles from "../components/categoryList/categoryList.module.css";
 import Layout from "../components/Layout";
 import Card from "../components/Hero";
-import CardList from "../components/CardList";
 import Youtube from "../components/Youtube";
 import Link from "next/link";
 import MakeFree from "../components/MakeFree";
 import Image from "next/image";
 import { getArticle } from "../components/FetchData";
+import { getDevTo } from "../components/FetchData";
 
 export const metadata = {
   metadataBase: new URL("https://medcode.dev"),
@@ -82,6 +82,7 @@ const getData = async () => {
 const Page = async () => {
   const data = await getData();
   const article = await getArticle();
+  const dev =await getDevTo();
   return (
     <Layout className="p-6 2xl:p-4 lg:p-4 md:p-2 xs:p-0">
       <AnimatedText
@@ -114,7 +115,53 @@ const Page = async () => {
           ))}
         </div>
       </div>
-      <CardList />
+      <section>
+        <div className="grid grid-cols-3 gap-10 mt-[-10px] lg:grid-cols-4 p-16 lg:gap-16 lg:p-10 md:block sm:flex flex-wrap sm:p-14 xs:p-12 md:p-16">
+          <div className="col-span-2 lg:col-span-2 sm:mb-7">
+            <p className="text-xl  space-x-2 font-bold text-gray-800 mb-10 dark:text-light">
+              Moore Posts...
+            </p>
+            <Card />
+          </div>
+          <div className="col-span-1 lg:col-span-2">
+            <span className="text-xl space-x-2 font-bold text-red-600">
+              Trending On{" "}
+              <span className="text-gray-900 font-bold text-2xl ml-2 dark:text-light">
+                DEV.to
+              </span>
+            </span>
+            <section>
+              {dev?.map((item, index) =>
+                index < 5 ? (
+                  <div
+                    key={item._id}
+                    className="mt-3 bg-white dark:bg-dark shadow-md p-3 border border-b-red-500 dark:border-b-light"
+                  >
+                    <p className="text-xl font-semibold text-gray-800 dark:text-light">
+                      {item.title}
+                    </p>
+                    <p className="mt-1 text-sm mb-2 text-gray-500 dark:text-light">
+                      {item.description}
+                    </p>
+
+                    <p className="mt-1 text-sm ml-2 mb-2 underline text-gray-900 font-semibold dark:text-light">
+                      #{item.tags}
+                    </p>
+
+                    <Link
+                      href={item.url}
+                      target="_blank"
+                      className="font-semibold text-rose-500 transition duration-100 hover:text-rose-600 hover:underline active:text-rose-700"
+                    >
+                      Read more...
+                    </Link>
+                  </div>
+                ) : null
+              )}
+            </section>
+          </div>
+        </div>
+      </section>
       <div className="mx-auto max-w-screen-xl py-1 mb-6 text-blue-900 sm:py-4 lg:py-4">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center py-8 lg:py-2">

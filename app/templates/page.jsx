@@ -15,7 +15,7 @@ async function getData() {
 }
 
 export const metadata = {
-  title: `10+ Free Templates & Resources Examples`,
+  title: `10+ Free Templates & Components Resources Examples`,
   description: `Browse through MedCode collection of free frontend templates and components for tailwind css and bootstrap with full free code source and developments kits`,
   keywords: [
     "Web Development",
@@ -126,13 +126,13 @@ const page = async () => {
           </div>
         </div>
         <div className="p-6 px-16 dark:text-light xs:px-8 xs:p-2">
-          <p className="text-3xl font-lexend mt-4 sm:text-2xl">
+          <h2 className="text-3xl font-lexend mt-4 sm:text-2xl">
             Latest components & projects & templates
-          </p>
-          <p className="sm:text-sm mt-2">
+          </h2>
+          <h3 className="sm:text-sm mt-2">
             The newest featured & responsive templates and full project with
             different frameworks.
-          </p>
+          </h3>
         </div>
       </div>
       <article className="grid grid-cols-3 gap-6 p-16 xl:gap-4 xl:p-8 lg:grid-cols-2 lg:gap-6 lg:p-10 sm:flex flex-wrap dark:bg-dark">

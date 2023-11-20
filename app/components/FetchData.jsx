@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-export async function getData() {
+export async function getDevTo() {
   const res = await fetch(`https://dev.to/api/articles?username=med_code`, {
     cache: "no-store",
   });
