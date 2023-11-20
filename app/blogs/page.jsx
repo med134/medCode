@@ -4,6 +4,7 @@ import styles from "../components/categoryList/categoryList.module.css";
 import Layout from "../components/Layout";
 import Card from "../components/Hero";
 import Youtube from "../components/Youtube";
+import CardX from "../components/Card";
 import Link from "next/link";
 import MakeFree from "../components/MakeFree";
 import Image from "next/image";
@@ -121,7 +122,7 @@ const Page = async () => {
             <p className="text-xl  space-x-2 font-bold text-gray-800 mb-10 dark:text-light">
               Moore Posts...
             </p>
-            <Card />
+            <CardX />
           </div>
           <div className="col-span-1 lg:col-span-2">
             <span className="text-xl space-x-2 font-bold text-red-600">
