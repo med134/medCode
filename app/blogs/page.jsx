@@ -120,7 +120,7 @@ const Page = async () => {
           <div className="mx-auto max-w-2xl text-center py-8 lg:py-2">
             <p className="text-xl font-bold text-red-500">MEDCODE</p>
             <p className="mt-2 text-xl font-bold text-gray-800 sm:text-2xl xl:text-5xl xs:text-xl dark:text-light">
-              Make It Easy: Free Templates & Components
+              Make It Easy: Free Templates & Components for development kits
             </p>
           </div>
           <MakeFree />
