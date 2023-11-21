@@ -12,8 +12,7 @@ import { getArticle } from "../components/FetchData";
 import { getDevTo } from "../components/FetchData";
 
 export const metadata = {
-  metadataBase: new URL("https://medcode.dev"),
-  title: "Insightful Articles: Software & Web Development Tips|medcode",
+  title: "Insightful Articles: Software & Web Development Tips-medcode",
   description: `Explore in-depth articles on software engineering, web and mobile development. Get expert tips and solutions for debugging errors. Your go-to source for tech insights!`,
   keywords: [
     "programming blogs",
