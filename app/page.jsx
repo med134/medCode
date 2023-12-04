@@ -13,7 +13,6 @@ import YouTubeSubscribe from "./components/YoutubeSubscribe";
 import { YoutubeImage } from "./components/Icons";
 import Crypto from "./components/Crytpo";
 
-
 export const metadata = {
   metadataBase: new URL("https://www.medcode.dev"),
   title: "medCode Web Development Company",
@@ -72,17 +71,13 @@ export default async function Home() {
   return (
     <>
       <div className="bg-light dark:bg-dark w-screen">
-        <div className="flex sticky dark:bg-dark z-30">
-          <Aside />
-          <Search />
-        </div>
-        <div className="p-4 h-auto w-full mb-1 bg-light mt-24 dark:bg-dark">
-          <CategoryList />
-          <span className="text-2xl underline dark:text-light font-bold flex justify-start items-center text-gray-800 font-slab px-12 pt-8">
-            <AiTwotoneSound className="dark:text-light" />
-            <p className="ml-2 sm:text-xl ">Recent Articles</p>
-          </span>{" "}
-        </div>
+        <Aside />
+        <Search />
+        <CategoryList />
+        <span className="text-2xl underline dark:text-light font-bold flex justify-start items-center text-gray-800 font-slab px-12 pt-8">
+          <AiTwotoneSound className="dark:text-light" />
+          <p className="ml-2 sm:text-xl ">Recent Articles</p>
+        </span>{" "}
         <div className="main-content bg-light dark:bg-dark gap-6 px-12 py-4 md:block">
           <div className="main">
             <Card />
@@ -121,7 +116,7 @@ export default async function Home() {
               </div>
               <div className="order-2 md:order-1">
                 <Image
-                  src="https://i.ibb.co/rHvLvvr/Untitled.png" 
+                  src="https://i.ibb.co/rHvLvvr/Untitled.png"
                   width={400}
                   height={400}
                   alt="photo-templates"
@@ -133,13 +128,13 @@ export default async function Home() {
         </div>
         <div className="main-content bg-light gap-6 px-12 py-4 md:block md:px-3 md:py-2 dark:bg-dark">
           <div className="md:p-10">
-          <span className="flex justify-start items-center text-2xl dark:text-light underline font-bold mb-4 text-gray-800 font-lexend rounded-lg sm:text-sm xl:text:sm">
-          <YoutubeImage />
-          <p className="ml-2 ">
-            {" "}
-            Youtube Shorts for Components with code source
-          </p>
-        </span> 
+            <span className="flex justify-start items-center text-2xl dark:text-light underline font-bold mb-4 text-gray-800 font-lexend rounded-lg sm:text-sm xl:text:sm">
+              <YoutubeImage />
+              <p className="ml-2 ">
+                {" "}
+                Youtube Shorts for Components with code source
+              </p>
+            </span>
             <Youtube />
           </div>
 
@@ -156,7 +151,7 @@ export default async function Home() {
               </Link>
               <YouTubeSubscribe />
             </div>
-            <Crypto/>
+            <Crypto />
           </div>
         </div>
       </div>
