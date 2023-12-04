@@ -72,7 +72,7 @@ export default async function Home() {
   return (
     <>
       <div className="bg-light dark:bg-dark w-screen">
-        <div className="flex fixed h-auto dark:bg-dark">
+        <div className="flex dark:bg-dark">
           <Aside />
           <Search />
         </div>
