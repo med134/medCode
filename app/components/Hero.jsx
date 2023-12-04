@@ -44,7 +44,7 @@ const Card = () => {
   };
   return (
     <>
-      <span className="text-2xl underline dark:text-light font-bold flex justify-start items-center text-gray-800 font-slab px-12 pt-8">
+      <span className="text-2xl underline dark:text-light font-bold flex justify-start items-start text-gray-800 font-slab px-12 pt-8 py-2">
         <AiTwotoneSound className="dark:text-light" />
         <p className="ml-2 sm:text-xl ">Recent Articles</p>
       </span>{" "}

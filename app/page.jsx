@@ -73,7 +73,7 @@ export default async function Home() {
       <Aside />
       <Search />
       <div className="bg-light dark:bg-dark w-screen">
-        <CategoryList />
+        <div className="bg-light pt-8"><CategoryList /></div>
         <div className="main-content bg-light dark:bg-dark gap-6 px-12 py-4 md:block">
           <div className="main">
             <Card />
