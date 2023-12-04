@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { AiTwotoneSound } from "react-icons/ai";
 import Image from "next/image";
 import Loading from "./BlogLoading";
 import { FaRegCalendarAlt } from "react-icons/fa";
@@ -43,6 +44,10 @@ const Card = () => {
   };
   return (
     <>
+      <span className="text-2xl underline dark:text-light font-bold flex justify-start items-center text-gray-800 font-slab px-12 pt-8">
+        <AiTwotoneSound className="dark:text-light" />
+        <p className="ml-2 sm:text-xl ">Recent Articles</p>
+      </span>{" "}
       {loading ? (
         <Loading />
       ) : (

@@ -70,14 +70,10 @@ export const metadata = {
 export default async function Home() {
   return (
     <>
+      <Aside />
+      <Search />
       <div className="bg-light dark:bg-dark w-screen">
-        <Aside />
-        <Search />
         <CategoryList />
-        <span className="text-2xl underline dark:text-light font-bold flex justify-start items-center text-gray-800 font-slab px-12 pt-8">
-          <AiTwotoneSound className="dark:text-light" />
-          <p className="ml-2 sm:text-xl ">Recent Articles</p>
-        </span>{" "}
         <div className="main-content bg-light dark:bg-dark gap-6 px-12 py-4 md:block">
           <div className="main">
             <Card />

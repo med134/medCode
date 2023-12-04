@@ -17,7 +17,7 @@ const getData = async () => {
 const CategoryList = async () => {
   const data = await getData();
   return (
-    <div className="grid bg-light dark:bg-dark grid-cols-6  gap-2 px-12 lg:flex lg:justify-evenly lg:flex-wrap lg:px-8 xs:flex">
+    <div className="grid bg-light dark:bg-dark grid-cols-6 mt-24 gap-2 px-12 lg:flex lg:justify-evenly lg:flex-wrap lg:px-8 xs:flex">
       {data?.map((item, index) =>
         index > 0 ? (
           <>
