@@ -17,13 +17,13 @@ const getData = async () => {
 const CategoryList = async () => {
   const data = await getData();
   return (
-    <div className="grid bg-light dark:bg-dark grid-cols-6 mt-4 gap-2 px-12 lg:flex lg:justify-evenly lg:flex-wrap lg:px-8 xs:flex">
+    <div className="grid bg-light dark:bg-dark grid-cols-6  gap-2 px-12 lg:flex lg:justify-evenly lg:flex-wrap lg:px-8 xs:flex">
       {data?.map((item, index) =>
         index > 0 ? (
           <>
             <div
               key={item._id}
-              className="relative flex justify-center items-center content-center overflow-hidden h-28 w-32 md:w-24 md:h-24 xs:h-8 bg-gradient-to-r from-indigo-900 to-indigo-950 cursor-pointer rounded-xl group hover:shadow-2xl hover:shadow-gray-600/10 xs:hover:bg-white xs:hover:text-dark"
+              className="relative z-1 flex justify-center items-center content-center overflow-hidden h-28 w-32 md:w-24 md:h-24 xs:h-8 bg-gradient-to-r from-indigo-900 to-indigo-950 cursor-pointer rounded-xl group hover:shadow-2xl hover:shadow-gray-600/10 xs:hover:bg-white xs:hover:text-dark"
             >
               <Image
                 src={item?.image}
@@ -49,7 +49,6 @@ const CategoryList = async () => {
           </>
         ) : null
       )}
-      
     </div>
   );
 };

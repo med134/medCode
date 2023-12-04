@@ -2,7 +2,7 @@ import React from 'react'
 
 const Search = () => {
   return (
-    <header className="fixed flex w-full z-20 flex-col items-center bg-white dark:bg-dark px-4 shadow sm:flex-row md:h-20">
+    <header className="fixed flex w-full z-20 flex-col items-center bg-white dark:bg-dark px-4 py-4 shadow sm:flex-row md:h-20">
           <div className="flex w-full flex-col justify-between overflow-hidden transition-all sm:max-h-full sm:flex-row sm:items-center">
             <div className="relative ml-10 flex items-center justify-between rounded-md sm:ml-10">
               <svg
