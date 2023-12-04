@@ -11,6 +11,7 @@ import hljs from "highlight.js";
 
 const AddNewArticle = () => {
   const [selectedOption, setSelectedOption] = useState("");
+  const [selectedJobs, setSelectedJobs] = useState("");
   const ex = undefined;
   const text = ex || "";
   hljs.configure({
@@ -18,7 +19,7 @@ const AddNewArticle = () => {
   });
   const theme = "snow";
   const placeholder = "write your content...";
-  
+
   const modules = {
     toolbar: [
       ["blockquote", "code-block"],
@@ -70,6 +71,9 @@ const AddNewArticle = () => {
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
+  const handleJobs = (event) => {
+    setSelectedJobs(event.target.value);
+  };
   const route = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -91,6 +95,7 @@ const AddNewArticle = () => {
           description,
           content,
           username: session.data.user.name,
+          email: session.data.user.email,
         }),
       });
       mutate();
@@ -148,6 +153,22 @@ const AddNewArticle = () => {
               <option value="solution">Solution</option>
               <option value="productivity">Productivity</option>
               <option value="tools">Tools</option>
+            </select>
+          </div>
+          <div className="">
+            <select
+              id="selectChoice"
+              value={selectedJobs}
+              onChange={handleJobs}
+              className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
+            >
+              <option value="">Select Your jobs</option>
+              <option value="Software engineer">Software engineer</option>
+              <option value="Software Developer">Software Developer</option>
+              <option value="Designer">Designer</option>
+              <option value="Front-end Developer">Front-end Developer</option>
+              <option value="Content Creator">Content Creator</option>
+              <option value="student">student</option>
             </select>
           </div>
           <input

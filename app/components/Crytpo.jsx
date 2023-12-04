@@ -34,10 +34,10 @@ const Crypto = async () => {
 
   return (
     <>
-      <span className="text-xl font-semibold mb-8 text-gray-800 font-lexend rounded-lg sm:text-sm xl:text:sm">
+      <span className="text-xl font-semibold mb-8 text-gray-800 font-lexend rounded-lg sm:text-sm xl:text:sm dark:text-light">
         Best Hardware Wallets-Crypto Prices (USD)
       </span>
-      <div className="bg-white rounded-sm mt-4 border border-b-red-500 mb-6">
+      <div className="bg-white rounded-md mt-4 border border-b-red-500 mb-6 dark:bg-dark dark:border-light">
         {loading ? (
           <Loading />
         ) : (
@@ -48,8 +48,8 @@ const Crypto = async () => {
                   key={post.uuid}
                   className={`${
                     index === 0
-                      ? "bg-yellow-400 flex justify-between items-center p-4 w-full rounded-lg sm:p-4"
-                      : "flex justify-between p-4 w-full xl:p-4 rounded-lg sm:p-4"
+                      ? "bg-yellow-400 flex justify-between items-center p-4 w-full sm:p-4"
+                      : "flex justify-between p-4 w-full xl:p-4 rounded-lg sm:p-4 dark:text-light"
                   }`}
                 >
                   <Link
@@ -57,7 +57,7 @@ const Crypto = async () => {
                     target="_blank"
                     className="inline-flex items-center justify-center"
                   >
-                    <span className="px-3 text-xl font-bold sm:text-sm xl:px-1 xl:text-xs">
+                    <span className="px-3 text-xl font-bold sm:text-sm xl:px-1 xl:text-xs dark:text-light">
                       {index + 1}
                     </span>
                     <img
@@ -65,7 +65,7 @@ const Crypto = async () => {
                       src={post.iconUrl}
                       alt="crypto_icons"
                     />
-                    <span className="text-[13px] font-semibold text-gray-900 px-8 uppercase xl:text-xs xl:px-1 xs:px-2">
+                    <span className="text-[13px] font-semibold text-gray-900 px-8 uppercase dark:text-light xl:text-xs xl:px-1 xs:px-2">
                       {post.name}
                     </span>
                   </Link>

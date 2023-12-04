@@ -40,7 +40,7 @@ export const metadata = {
     { name: "med dakir" },
     { name: "medCode", url: "https://www.medcode.dev/" },
   ],
-  category: 'technology',
+  category: "technology",
   colorScheme: "light",
   creator: "Med Dakir",
   publisher: "Med Dakir",
@@ -68,9 +68,9 @@ export const metadata = {
     google: "cFXi6ELWEfl4UY9OE5i_S5QFU3LbUvdxGgW6RQgHWw",
   },
   alternates: {
-    canonical: '/',
+    canonical: "/",
     languages: {
-      'en-US': '/en-US',
+      "en-US": "/en-US",
     },
     types: {
       "application/rss+xml": "https://medcode.dev/rss",
@@ -80,7 +80,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className} suppressHydrationWarning={true}>
+      <body className={`${inter.className} w-screen`} suppressHydrationWarning={true}>
         <AuthProvider>
           <NavBar />
           {children}

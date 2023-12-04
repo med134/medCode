@@ -1,22 +1,21 @@
-import React from 'react'
-import Image from 'next/image';
-import Link from 'next/link';
-import med from '../images/logo3.png';
+/* eslint-disable @next/next/no-img-element */
+import React from "react";
 
-const Logo = () => {
-    return (
-      <div>
-        <Link href="/" className="logo flex items-center justify-center mt-2">
-          <Image
-            src={med}
-            alt="logo"
-            className="w-16 h-16 absolute bg-dark text-light flex items-center justify-center
-          rounded-full text-xl font-bold cursor-pointer border border-solid border-transparent dark:border-light
-          "
-          />
-        </Link>
-      </div>
-    );
-  };
-  
-  export default Logo;
+async function getData() {
+  const res = await fetch(`http://localhost:3000/api/posts`, {
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+const Logo = async() => {
+  const templates = await getData();
+  console.log("templates", templates);
+  return (
+  <div></div>
+  );
+};
+
+export default Logo;

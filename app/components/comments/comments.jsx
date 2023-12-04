@@ -13,7 +13,7 @@ const Comments = ({ postSlug }) => {
   const session = useSession();
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, mutate, isLoading } = useSWR(
-    `https://www.medcode.dev/api/comments?blogId=${postSlug}`,
+    `/api/comments?blogId=${postSlug}`,
     fetcher
   );
   const [comment, setComment] = useState("");

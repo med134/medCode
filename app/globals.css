@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -86,7 +85,7 @@
 }
 .showTemp {
   display: grid;
-  grid-template-columns:repeat(5,1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-areas: "preview preview preview preview pays";
 }
 .pays {
@@ -120,8 +119,7 @@
   }
 }
 
-.animate-charcter
-{
+.animate-charcter {
   background-image: linear-gradient(
     -225deg,
     #231557 0%,
@@ -184,10 +182,9 @@
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
-.containerBlog{
-   display:grid;
-   grid-template-columns: auto 450px;
-   column-gap: 10px;
+.containerBlog {
+  display: grid;
+  grid-template-columns: auto 400px;
 }
 @media only screen and (max-width: 1115px) {
   /* place here CSS for when the screen is less than 1000px wide */
@@ -205,3 +202,10 @@
   background: red;
   transform-origin: 0%;
 }
+
+/* Main content styles */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+}
+

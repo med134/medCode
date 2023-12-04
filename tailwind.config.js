@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'packTrain': "url('/app/images/book.jpg')",
+        packTrain: "url('/app/images/book.jpg')",
 
         circularLight:
           "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 100px)",
@@ -38,11 +38,9 @@ module.exports = {
           "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 4px,#1b1b1b 40px)",
       },
       fontFamily: {
+        slab: ["var(--font-roboto-slab)"],
         dance: ["var(--dancing)", ...fontFamily.sans],
         poppins: ["var(--poppins)", ...fontFamily.sans],
-        mr: ["var(--font-mr)"],
-        in: ["var(--font-in)"],
-        outFit:["var(--Outfit)",...fontFamily.sans]
       },
       colors: {
         dark: "#1b1b1b",
@@ -74,7 +72,6 @@ module.exports = {
       animation: {
         "spin-slow": "spin 8s linear infinite",
       },
-      
     },
   },
   plugins: [],

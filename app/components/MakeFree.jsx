@@ -1,97 +1,50 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { useInView } from "react-intersection-observer";
-import useSWR from "swr";
 
-const MakeFree = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.01, // Trigger animation only once
+const getData = async () => {
+  
+  const res = await fetch("https://www.medcode.dev/api/categories", {
+    cache: "no-store",
   });
-  const animationVariants = {
-    initial: { opacity: 0, x: -100 },
-    animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 100 },
-  };
 
-  const animationTransition = {
-    duration: 1,
-    ease: "easeOut",
-  };
+  if (!res.ok) {
+    throw new Error("Failed");
+  }
 
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error, isLoading, mutate } = useSWR(
-    `https://www.medcode.dev/api/posts`,
-    fetcher
-  );
+  return res.json();
+};
+const MakeFree = async () => {
+  const data = await getData();
+  
+
   return (
-    <motion.div
-      variants={animationVariants}
-      initial="initial"
-      animate={inView ? "animate" : "initial"} // Animate when in view
-      exit="exit"
-      transition={animationTransition}
-      ref={ref} // Attach the ref to trigger when in view
-    >
-      <section className="grid grid-cols-3 gap-6 p-16 py-4 lg:grid-cols-2 lg:p-8 md:block sm:p-1 sm:py-1">
-        {data
-          ?.slice()
-          .reverse()
-          ?.map(
-            (item, index) =>
-              index < 3 && (
-                <div
-                  key={item._id}
-                  className="rounded overflow-hidden shadow-lg w-full md:mb-4 dark:shadow-white"
-                >
-                  <div className="relative">
-                    <Link href={`/templates/${item._id}`}>
-                      <Image
-                        className="w-full h-44"
-                        src={item.image}
-                        alt="template image"
-                        width={300}
-                        height={300}
-                      />
-                    </Link>
-
-                    <div className="absolute top-0 right-0 rounded-lg bg-red-500 px-4 py-2 text-light text-sm font-bold">
-                      New
-                    </div>
-                  </div>
-                  <div className="px-6 py-0">
-                    <Link
-                      href={`/templates/${item._id}`}
-                      className="font-semibold text-xl mt-4 text-dark inline-block hover:text-red-800 transition duration-500 ease-in-out"
-                    >
-                      {item.title}
-                    </Link>
-                    <p className="text-gray-500 text-sm mt-3 dark:text-light">
-                      {item.description}
-                    </p>
-                  </div>
-                  <div className="px-6 py-4 flex flex-row items-center">
-                    <Link
-                      href={`/templates/${item._id}`}
-                      className="text-red-600 hover:text-gray-800 font-semibold"
-                    >
-                      See Template...
-                    </Link>
-                  </div>
-                </div>
-              )
-          )}
-      </section>
-      <Link
-        href="/templates"
-        className="text-xl text-dark dark:text-light ml-[50%] sm:ml-[40%] sm:text-sm font-semibold hover:underline hover:font-bold hover:text-red-600"
-      >
-        See More...
-      </Link>
-    </motion.div>
+    <>
+      {cat?.map((item, index) => {
+        index < 5 ? (
+          <div className="group relative ml-1 w-52 h-44 rounded-xl border border-light bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
+            <div className="relative space-y-8 py-1 p-2">
+              <Image
+                className="h-8 w-8"
+                alt="category image"
+                width={8}
+                height={8}
+                src={item?.image}
+              />
+              <div className="space-y-2">
+                <h5 className="text-xl font-semibold text-white transition group-hover:text-secondary">
+                  {item?.label}
+                </h5>
+                <p className="text-gray-300">
+                  Once we agree on what to build, We will start working on it
+                  right away.
+                </p>
+              </div>
+            </div>
+          </div>
+        ) : null;
+      })}
+    </>
   );
 };
 

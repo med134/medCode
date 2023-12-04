@@ -23,9 +23,9 @@ const nextConfig = {
         hostname: "books.google.com/books/content",
       },
       {
-        protocol:"https",
-        hostname:"avatars.githubusercontent.com"
-      }
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
     ],
     minimumCacheTTL: 1500000,
   },

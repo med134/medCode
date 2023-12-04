@@ -12,7 +12,7 @@ import {
 import {BsInstagram } from "react-icons/bs";
 const Footer = () => {
   return (
-    <div className="p-12 bg-slate-50 font-lexend xs:p-8 dark:bg-dark dark:text-light">
+    <div className="p-12 bg-white first:font-lexend xs:p-8 dark:bg-dark dark:text-light">
       <div className="ourFooter gap-6 md:flex md:flex-wrap pb-6">
         <div className="brand sm:col-span-2">
           <div

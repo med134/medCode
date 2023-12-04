@@ -14,7 +14,7 @@ const articleSchema = new Schema(
       type: String,
       required: true,
     },
-    category:{
+    category: {
       type: String,
       required: true,
     },
@@ -29,6 +29,14 @@ const articleSchema = new Schema(
     username: {
       type: String,
       required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+    job: {
+      type: String,
+      required: false,
     },
   },
   { timestamps: true }

@@ -1,57 +1,118 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
-import React from "react";
-import Image from "next/image";
-import { AiFillYoutube } from "react-icons/ai";
+import React, { useEffect, useState } from "react";
+import { IoEyeSharp } from "react-icons/io5";
 import Link from "next/link";
-import YouTubeSubscribe from "../components/YoutubeSubscribe";
-import Profile from '../images/bg.png'
+import axios from "axios";
+import { YoutubeImage } from "./Icons";
+import Loading from "../loading";
 
-const Youtube = ({ sub, video }) => {
-  let channelid = "UC1dm-Rczjp52egzJTL__s8A";
+const Youtube = async () => {
+  const [news, setNews] = useState([]);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    const fetchSeoData = async () => {
+      setLoading(true);
+      const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC1dm-Rczjp52egzJTL__s8A&maxResults=100&key=AIzaSyAuEMjkPWP_APLS7wgW4mLQiGF3W9y7bkE`;
+      axios
+        .get(url)
+        .then((response) => {
+          if (response.data.items) {
+            const videoIds = response.data.items.map(
+              (video) => video.id.videoId
+            );
+            const videoStatsUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoIds.join(
+              ","
+            )}&key=AIzaSyAuEMjkPWP_APLS7wgW4mLQiGF3W9y7bkE`;
+
+            axios
+              .get(videoStatsUrl)
+              .then((statsResponse) => {
+                if (statsResponse.data.items) {
+                  const videoData = response.data.items.map((video, index) => {
+                    const statistics =
+                      statsResponse.data.items[index]?.statistics;
+                    return {
+                      id: video.id.videoId,
+                      channelTitle: video.snippet.channelTitle,
+                      title: video.snippet.title,
+                      channelTitle: video.snippet.channelTitle,
+                      thumbnail: video.snippet.thumbnails.high.url,
+                      publishedAt: video.snippet.publishedAt,
+                      views: statistics ? statistics.viewCount : 0,
+                    };
+                  });
+                  const sortedVideos = videoData.sort(
+                    (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+                  );
+                  setNews(sortedVideos);
+                  setLoading(false);
+                }
+              })
+              .catch((error) => {
+                console.error("Error fetching video statistics:", error);
+              });
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching videos:", error);
+        });
+    };
+    fetchSeoData();
+  }, []);
+
   return (
-    <div className="rounded-lg border min-w-full border-red-500 bg-white px-4 pt-8 pb-10 dark:bg-dark shadow-lg md:w-96 xs:w-full">
-      <div className="relative mx-auto w-36 rounded-full">
-        <span className="absolute right-0 m-3 h-3 w-3 rounded-full bg-red-500 ring-2 ring-red-300 ring-offset-2" />
-        <Image
-          className="mx-auto h-auto w-full rounded-full border border-red-500"
-          src={Profile}
-          alt="icon_youtube_channel"
-        />
+    <>
+      <div className="grid grid-cols-3 gap-3 xl:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 p-2 sm:block">
+        
+        {loading ? (
+          <Loading />
+        ) : (
+          news?.map(
+            (video, index) =>
+              index < 6 && (
+                <article
+                  key={video.id}
+                  className="flex flex-col w-full dark:bg-dark bg-white border-2 border-red-600 rounded-md sm:mb-2"
+                >
+                  <Link
+                    href={`https://www.youtube.com/shorts/${video.id}`}
+                    target="blank"
+                  >
+                    <img
+                      alt={video.title}
+                      className="object-cover w-full h-52 dark:bg-gray-500"
+                      src={video.thumbnail}
+                    />
+                  </Link>
+                  <div className="flex flex-col flex-1 p-6">
+                    <Link
+                      href="https://www.youtube.com/@VivaCode99"
+                      target="blank"
+                      className="text-xs font-semibold text-gray-700 uppercase hover:underline dark:text-emerald-400"
+                    >
+                      {video.channelTitle}
+                    </Link>
+                    <h3 className="flex-1 py-2 text-xl text-gray-800 font-bold lg:text-sm sm:text-sm sm:font-semibold dark:text-light">
+                      {video.title}
+                    </h3>
+                    <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
+                      <span className="text-sm text-gray-700 font-semibold dark:text-light">
+                        {video?.publishedAt.slice(0, 10)}
+                      </span>
+                      <span className="flex justify-end items-center">
+                        <IoEyeSharp className="w-4 h-4 text-gray-700 dark:text-light" />
+                        <p className="ml-1 text-bold dark:text-light">{video.views}</p>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              )
+          )
+        )}
       </div>
-      <p className="items-center text-center text-xl mt-2 font-lexend font-semibold text-gray-900 dark:text-white">
-        <AiFillYoutube
-          className="inline-flex items-center  text-red-500 mr-2"
-          fontSize={36}
-        />{" "}
-        Viva Code
-      </p>
-     
-      <p className="text-center text-sm leading-6 mt-3 text-gray-500 hover:text-gray-600 dark:text-white">
-        Vivacode is a YouTube channel dedicated to coding and programming,{" "}
-        <span className="text-red-500 font-semibold">Follow me</span>
-      </p>
-      <ul className="mt-3 rounded bg-gray-100 py-1 px-2 dark:bg-dark dark:border dark:border-light text-gray-600 font-lexend shadow-sm hover:text-gray-700 hover:shadow">
-        <section className="c-share md:grid">
-          <YouTubeSubscribe
-            channelid={channelid}
-            theme={"default"}
-            layout={"full"}
-            count={"default"}
-          />
-        </section>
-
-        <div className="line bg-gray-500 mb-2"></div>
-        <li className="text-center">
-          <Link
-            href="https://www.youtube.com/@VivaCode99/shorts"
-            target="_blank"
-            className="inline-flex text-white items-center rounded-lg mr-2 mb-2 px-2 py-2 bg-red-500 hover:bg-red-700"
-          >
-            <AiFillYoutube fontSize={28} className="mr-3" /> Start Watching
-          </Link>
-        </li>
-      </ul>
-    </div>
+    </>
   );
 };
 
