@@ -72,7 +72,7 @@ export default async function Home() {
   return (
     <>
       <div className="bg-light dark:bg-dark w-screen">
-        <div className="flex h-auto dark:bg-dark">
+        <div className="flex fixed h-auto dark:bg-dark">
           <Aside />
           <Search />
         </div>
@@ -113,7 +113,7 @@ export default async function Home() {
                 <div className="py-5">
                   <Link
                     href="/templates"
-                    className="text-white rounded-full py-2 px-5 text-lg font-semibold bg-purple-600 inline-block border border-purple-600 mr-3 hover:bg-light hover:text-dark"
+                    className="text-white rounded-full py-2 xs:text-sm px-5 text-lg font-semibold bg-purple-600 inline-block border border-purple-600 mr-3 hover:bg-light hover:text-dark"
                   >
                     Start with free Templates
                   </Link>

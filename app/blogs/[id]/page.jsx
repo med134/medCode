@@ -115,7 +115,7 @@ const BlogPage = async ({ params }) => {
         </div>
       </div>
       <div className="sm:w-full sm:p-6">
-        <div className="flex items-center w-full max-w-sm mx-auto gap-4 mt-24 border-2 p-3 border-red-500 rounded-md">
+        <div className="flex items-center w-full max-w-sm mx-auto gap-4 mt-24 sm:mt-4 border-2 p-3 border-red-500 rounded-md">
           <Image
             alt="author image"
             width={300}

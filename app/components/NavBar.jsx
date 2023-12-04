@@ -98,7 +98,7 @@ const NavBar = () => {
         </button>
 
         <div className="w-full flex justify-between font-semibold lg:hidden">
-          <nav className="flex items-center justify-between flex-wrap">
+          <Link href='/' className="flex items-center justify-between flex-wrap cursor-pointer">
             <Image
               src={med}
               alt="logo"
@@ -107,7 +107,7 @@ const NavBar = () => {
               height={300}
             />
             <span className={`${limelight.className} text-3xl ml-2 text-dark dark:text-light`}>medCode</span>
-          </nav>
+          </Link>
           <nav className="flex items-center justify-between flex-wrap">
             <CustomLink
               href="/projects"
