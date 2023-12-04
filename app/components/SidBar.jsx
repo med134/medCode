@@ -1,9 +1,19 @@
 import React from "react";
-import { getArticles } from "./FetchData";
 import Link from "next/link";
 import Cat from "./Cat";
-import Crypto from "./Crytpo";
-
+async function getArticles() {
+  const res = await fetch(`https://www.medcode.dev/api/articles`, {
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    throw new Error("Failed");
+  }
+  const data = await res.json();
+  const sortedPosts = data.sort(
+    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+  );
+  return sortedPosts;
+}
 const SidBar = async () => {
   const dev = await getArticles();
   return (

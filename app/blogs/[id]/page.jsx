@@ -128,12 +128,9 @@ const BlogPage = async ({ params }) => {
             <h1 className="text-gray-600 dark:text-gray-200 font-bold">
               {blog?.username}
             </h1>
-            <span className="text-gray-500 text-sm">
-              {(blog.jobs = !null ? blog.jobs : "unknown")}
-            </span>
             <a
               href={`mailto:${blog?.email}`}
-              className="text-xs text-gray-500 dark:text-light"
+              className="text-xs text-gray-500 dark:text-light hover:text-blue-600 hover:underline"
             >
               {(blog.email = !null ? blog.email : "unknown")}
             </a>

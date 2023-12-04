@@ -81,6 +81,7 @@ const AddNewArticle = () => {
     const tags = e.target[1].value;
     const image = e.target[2].value;
     const category = selectedOption;
+    const job = selectedJobs;
     const description = e.target[4].value;
     const content = quill.root.innerHTML;
 
@@ -93,6 +94,7 @@ const AddNewArticle = () => {
           image,
           category,
           description,
+          job,
           content,
           username: session.data.user.name,
           email: session.data.user.email,
