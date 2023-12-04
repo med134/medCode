@@ -44,10 +44,6 @@ const Card = () => {
   };
   return (
     <>
-      <span className="text-2xl underline dark:text-light font-bold flex justify-start items-start text-gray-800 font-slab px-12 pt-8 py-2">
-        <AiTwotoneSound className="dark:text-light" />
-        <p className="ml-2 sm:text-xl ">Recent Articles</p>
-      </span>{" "}
       {loading ? (
         <Loading />
       ) : (
@@ -55,7 +51,7 @@ const Card = () => {
           index < 4 ? (
             <section
               key={item._id}
-              className="p-2 w-full mb-3 flex justify-evenly px-8 bg-white items-start border border-gray-500 rounded-xl dark:bg-dark dark:border-light lg:flex-wrap-reverse lg:justify-start lg:items-start lg:px-3"
+              className="p-2 w-full mb-3 flex justify-evenly px-8 bg-white items-start border border-gray-500 rounded-xl dark:bg-dark dark:border-light lg:flex-wrap-reverse lg:justify-start lg:items-start lg:px-3 xs:px-4"
             >
               <div className="text-start w-1/2 lg:w-full">
                 <span className="flex justify-start items-center py-2 dark:text-light">
