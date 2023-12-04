@@ -35,7 +35,7 @@ const CategoryList = async () => {
                 alt={`${item.label} category`}
                 width={300}
                 height={300}
-                className='w-10 h-10 rounded-full'
+                className='w-8 h-8 rounded-full'
               />
             )}
             {item.label}

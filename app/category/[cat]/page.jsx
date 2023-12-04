@@ -2,6 +2,7 @@ import React from "react";
 import styles from "@/app/components/categoryList/categoryList.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { FaRegCalendarAlt } from "react-icons/fa";
 import Layout from "@/app/components/Layout";
 const getData = async () => {
   const res = await fetch("https://www.medcode.dev/api/categories", {
@@ -86,7 +87,14 @@ export async function generateMetadata({ params }) {
 const Card = async ({ params }) => {
   const sortedPosts = await getPosts(params.cat);
   const category = await getData();
-
+  const FormatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const formattedDate = new Date(dateString).toLocaleDateString(
+      "en-US",
+      options
+    );
+    return formattedDate;
+  };
   const myTitle =
     params.cat === "all"
       ? `All Blogs & Articles`
@@ -153,9 +161,12 @@ const Card = async ({ params }) => {
                 >
                   {item.title}
                 </span>
-                <p className="text-xs dark:text-gray-400">
-                  {item?.createdAt.slice(0, 10)}
-                </p>
+                <span className="flex justify-start items-center py-2 dark:text-light">
+                  <FaRegCalendarAlt className="w-5 h-5 text-gray-800 dark:text-light" />
+                  <span className="ml-2 font-semibold dark:text-light">
+                    {FormatDate(item?.createdAt.slice(0, 10))}
+                  </span>
+                </span>
                 <p className="text-gray-500 text-sm">{item.description}</p>
               </div>
             </Link>
