@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import SidBar from "@/app/components/SidBar";
+import { FaRegCalendarAlt } from "react-icons/fa";
 import "highlight.js/styles/a11y-dark.min.css";
 import "react-quill/dist/quill.snow.css";
 import Comments from "@/app/components/comments/comments";
@@ -72,23 +73,10 @@ const BlogPage = async ({ params }) => {
 
   return (
     <section className="containerBlog  gap-6 p-16 mx-auto mt-2 lg:block sm:p-2 dark:bg-dark">
-      <div className="flex flex-wrap justify-around">
-        <div className="w-full px-4 mb-1 sm:text-sm sm:mb-2 dark:text-light">
-          <div className="flex justify-start items-center">
-            <svg
-              width="24px"
-              height="24px"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M3 9H21M7 3V5M17 3V5M6 12H8M11 12H13M16 12H18M6 15H8M11 15H13M16 15H18M6 18H8M11 18H13M16 18H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z"
-                stroke="#000000"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            </svg>
+      <div className="flex flex-wrap justify-around dark:bg-dark">
+        <div className="w-full px-4 mb-1 sm:text-sm sm:mb-2 dark:text-light dark:bg-dark">
+          <div className="flex justify-start items-center dark:bg-dark">
+          <FaRegCalendarAlt className="w-5 h-5 text-gray-800 dark:text-light" />
             <span className="ml-2 font-semibold">
               {FormatDate(blog?.createdAt.slice(0, 10))}
             </span>
@@ -115,7 +103,7 @@ const BlogPage = async ({ params }) => {
         </div>
       </div>
       <div className="sm:w-full sm:p-6">
-        <div className="flex items-center w-full max-w-sm mx-auto gap-4 mt-24 sm:mt-4 border-2 p-3 border-red-500 rounded-md">
+        <div className="flex items-center w-full max-w-sm mx-auto gap-4 mt-24 sm:mt-4 border-2 p-3 border-red-500 dark:border-light rounded-md">
           <Image
             alt="author image"
             width={300}
@@ -124,10 +112,15 @@ const BlogPage = async ({ params }) => {
             className="w-24 h-24  object-cover rounded-full"
           />
           <div className="w-fit transition-all transform duration-500">
-            <span className="text-sm text-gray-700">Author</span>
+            <span className="text-sm text-gray-700 dark:text-light">
+              Author
+            </span>
             <h1 className="text-gray-600 dark:text-gray-200 font-bold">
               {blog?.username}
             </h1>
+            <span className="text-sm font-semibold text-dark dark:text-light">
+              {blog?.job}
+            </span>
             <a
               href={`mailto:${blog?.email}`}
               className="text-xs text-gray-500 dark:text-light hover:text-blue-600 hover:underline"

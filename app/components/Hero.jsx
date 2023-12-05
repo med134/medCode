@@ -15,7 +15,7 @@ const Card = () => {
     FaRegCalendarAlt;
     const getPosts = async () => {
       try {
-        const response = await fetch(`https://www.medcode.dev/api/articles`);
+        const response = await fetch(`/api/articles`);
         const data = await response.json();
 
         // Sort the posts by date in descending order (newest first)

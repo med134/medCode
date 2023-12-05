@@ -18,7 +18,7 @@ const SidBar = async () => {
   const dev = await getArticles();
   return (
     <div className="mt-3">
-      <aside className="w-full rounded-lg border-2 py-2 border-red-600 mb-6 p-2 mt-4 max-w-sm mx-auto">
+      <aside className="w-full rounded-lg border-2 py-2 border-red-600 mb-6 p-2 mt-4 max-w-sm mx-auto dark:border-light">
         <Cat />
       </aside>
       <span className="text-xl text-gray-800 font-semibold mt-7 sm:w-full sm:mb-4 sm:text-xl sm:mt-1 dark:text-light">

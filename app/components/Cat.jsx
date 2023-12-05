@@ -9,7 +9,9 @@ const Cat = () => {
 
   return (
     <>
-      <h2 className="font-os text-lg font-bold py-3">Categories</h2>
+      <h2 className="font-os text-lg font-bold py-3 dark:text-light">
+        Categories
+      </h2>
       {isLoading ? (
         <Skeleton />
       ) : (
@@ -17,7 +19,7 @@ const Cat = () => {
           <ul key={item._id} className="inline-flex items-start">
             <li className="flex mx-1">
               <Link
-                className="p-2 px-3 border-red-500 mb-1 rounded font-medium hover:bg-transparent hover:border-red-600 border bg-red-400/25 dark:bg-purple text-red-800"
+                className="p-2 px-3 border-red-500 mb-1 rounded font-medium hover:bg-transparent hover:border-red-600 border bg-red-400/25 dark:bg-purple text-red-800 dark:text-light"
                 href={`/category/${item.value}`}
               >
                 {item?.label}

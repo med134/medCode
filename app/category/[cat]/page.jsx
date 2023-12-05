@@ -101,17 +101,17 @@ const Card = async ({ params }) => {
       : `All Blogs About ${params.cat}`;
   return (
     <Layout className="py-4 px-16 p-8 xl:px-8 xl:p-6">
-      <h1 className="px-10 text-red-600 sm:text-sm sm:px-2 text-3xl font-outFit font-bold uppercase mt-4">
+      <h1 className="px-10 text-red-600 sm:text-sm sm:px-2 text-3xl font-outFit font-bold uppercase mt-4 md:px-4">
         {myTitle}
       </h1>
-      <div className="px-2 mt-6">
-        <h2 className="px-10 py-8 mt-4 text-red-600 font-bold text-xl sm:text-sm">
+      <div className="px-2 xs:px-1">
+        <h2 className="px-10 py-8 mt-2 text-red-500 font-bold text-xl sm:text-sm xs:py-2 xs:mt-0 xs:px-1">
           Popular Categories
         </h2>
-        <div className="grid grid-cols-7 mt-4 gap-2 px-16 lg:flex lg:justify-evenly lg:flex-wrap lg:px-8 xs:flex">
+        <div className="grid grid-cols-7 mt-4 gap-2 px-16 lg:flex lg:justify-start lg:items-start md:px-4 lg:flex-wrap lg:px-8 xs:flex xs:px-1 xs:justify-start">
           {category?.map((item) => (
             <Link
-              className={`${styles.category} xs:shrink w-8 h-8 dark:text-light`}
+              className={`${styles.category} xs:shrink w-8 h-8 dark:text-light xs:bg-red-800 xs:text-light `}
               key={item._id}
               href={`/category/${item.value}`}
             >
@@ -121,7 +121,7 @@ const Card = async ({ params }) => {
                   alt=""
                   width={32}
                   height={32}
-                  className={styles.image}
+                  className={"w-8 h-8 rounded-full xs:hidden"}
                 />
               )}
               {item.label}
@@ -129,7 +129,7 @@ const Card = async ({ params }) => {
           ))}
         </div>
       </div>
-      <div className="grid justify-center grid-cols-3 gap-6 mt-8 md:block">
+      <div className="grid justify-center grid-cols-3 gap-6 mt-8 md:p-8 md:block">
         {sortedPosts?.map((item) => (
           <div
             key={item._id}
@@ -157,7 +157,7 @@ const Card = async ({ params }) => {
       duration-500
       hover:bg-[length:100%_3px]
       group-hover:bg-[length:100%_10px]
-      dark:from-red-800 dark:to-purple-900"
+      dark:from-red-800 dark:to-purple-900 dark:text-light"
                 >
                   {item.title}
                 </span>

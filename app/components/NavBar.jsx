@@ -202,12 +202,6 @@ const NavBar = () => {
                 className="projects"
                 toggle={handleClick}
               />
-              <CustomMobileLink
-                href="/blogs"
-                title="Blogs"
-                className="blogs"
-                toggle={handleClick}
-              />
 
               <CustomMobileLink
                 href="/templates"
@@ -292,16 +286,7 @@ const NavBar = () => {
           </motion.div>
         ) : null}
       </header>
-      {/* <div className=" w-full h-7 text-center text-white font-semibold sm:text-xs bg-gradient-to-br from-red-400 to-purple-500 opacity-75 animate-gradient">
-        please support as on Youtube Channel for more content...{" "}
-        <Link
-          href="https://www.youtube.com/@VivaCode99/videos"
-          target="blank"
-          className="text-bold underline hover:text-purple-600"
-        >
-          Follow as
-        </Link>
-      </div> */}
+      
     </>
   );
 };

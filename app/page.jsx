@@ -73,7 +73,7 @@ export default async function Home() {
       <Aside />
       <Search />
       <div className="bg-light dark:bg-dark w-screen">
-        <div className="bg-light pt-8">
+        <div className="bg-light pt-8 dark:bg-dark">
           <CategoryList />
         </div>
         <span className="text-2xl underline dark:text-light font-bold flex justify-start items-start text-gray-800 font-slab px-12 pt-8 py-2">
