@@ -129,7 +129,7 @@ const Card = async ({ params }) => {
           ))}
         </div>
       </div>
-      <div className="grid justify-center grid-cols-3 gap-6 mt-8 md:p-8 sm:p-1 md:block">
+      <div className="grid justify-center grid-cols-3 gap-6 mt-8 md:block">
         {sortedPosts?.map((item) => (
           <div
             key={item._id}

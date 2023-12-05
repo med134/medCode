@@ -6,7 +6,7 @@ export const ThemeProvider = ({ children }) => {
   const [mode, setMode] = useState("dark");
 
   const toggle = () => {
-    setMode((prev) => (prev === "dark" ? "light" : "dark"));
+    setMode((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   return (
