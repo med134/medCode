@@ -9,20 +9,16 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 const Card = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     setLoading(true);
     FaRegCalendarAlt;
     const getPosts = async () => {
       try {
-        const response = await fetch(`/api/articles`);
+        const response = await fetch(`http://localhost:3000/api/articles`);
         const data = await response.json();
-
-        // Sort the posts by date in descending order (newest first)
         const sortedPosts = data.sort(
           (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
         );
-
         setPosts(sortedPosts);
         setLoading(false);
       } catch (error) {
@@ -30,10 +26,8 @@ const Card = () => {
         setLoading(false);
       }
     };
-
     getPosts();
   }, []);
-
   const FormatDate = (dateString) => {
     const options = { year: "numeric", month: "long", day: "numeric" };
     const formattedDate = new Date(dateString).toLocaleDateString(
@@ -51,7 +45,7 @@ const Card = () => {
           index < 4 ? (
             <section
               key={item._id}
-              className="p-2 w-full mb-3 flex justify-evenly px-8 bg-white items-start border border-gray-500 rounded-xl dark:bg-dark dark:border-light lg:flex-wrap-reverse lg:justify-start lg:items-start lg:px-3 xs:px-4"
+              className="p-2 w-full mb-3 flex justify-evenly px-8 bg-white items-start border border-gray-500 rounded-xl dark:bg-dark dark:border-light lg:flex-wrap-reverse lg:justify-start lg:items-start lg:px-3 xs:px-1 xs:p-1"
             >
               <div className="text-start w-1/2 lg:w-full">
                 <span className="flex justify-start items-center py-2 dark:text-light">

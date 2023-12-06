@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import AuthProvider from "./components/authProvider/AuthProvider";
+import { ThemeProvider } from "./context/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
@@ -79,14 +80,19 @@ export const metadata = {
 };
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} w-screen`} suppressHydrationWarning={true}>
-        <AuthProvider>
-          <NavBar />
-          {children}
-          <Footer />
-        </AuthProvider>
-      </body>
+    <html lang="en" className="light">
+      <ThemeProvider>
+        <body
+          className={`${inter.className} w-screen`}
+          suppressHydrationWarning={true}
+        >
+          <AuthProvider>
+            <NavBar />
+            {children}
+            <Footer />
+          </AuthProvider>
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

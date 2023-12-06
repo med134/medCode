@@ -108,7 +108,7 @@ const Card = async ({ params }) => {
         <h2 className="px-10 py-8 mt-2 text-red-500 font-bold text-xl sm:text-sm xs:py-2 xs:mt-0 xs:px-1">
           Popular Categories
         </h2>
-        <div className="grid grid-cols-7 mt-4 gap-2 px-16 lg:flex lg:justify-start lg:items-start md:px-4 lg:flex-wrap lg:px-8 xs:flex xs:px-1 xs:justify-start">
+        <div className="grid grid-cols-7 mt-4 gap-2 px-16 lg:flex lg:justify-start lg:items-start md:px-4 lg:flex-wrap lg:px-8 xs:flex xs:px-2 xs:justify-start">
           {category?.map((item) => (
             <Link
               className={`${styles.category} xs:shrink w-8 h-8 dark:text-light xs:bg-red-800 xs:text-light `}
