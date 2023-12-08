@@ -80,7 +80,7 @@ export default async function Home() {
           <AiTwotoneSound className="dark:text-light" />
           <p className="ml-2 sm:text-xl ">Recent Articles</p>
         </span>{" "}
-        <div className="main-content bg-light dark:bg-dark gap-6 px-12 py-4 md:block">
+        <div className="main-content bg-light dark:bg-dark gap-6 px-12 py-4 md:block xs:px-5 xs:gap-1">
           <div className="main">
             <Card />
           </div>

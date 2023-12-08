@@ -34,12 +34,12 @@ const Card = async () => {
         index < 4 ? (
           <section
             key={item._id}
-            className="p-2 w-full mb-3 flex justify-evenly px-8 bg-white items-start border border-gray-500 rounded-xl dark:bg-dark dark:border-light lg:flex-wrap-reverse lg:justify-start lg:items-start lg:px-3 xs:px-1 xs:p-1"
+            className="p-2 w-full mb-3 flex justify-evenly px-8 bg-white items-start border border-gray-500 rounded-xl dark:bg-dark dark:border-light lg:flex-wrap-reverse lg:justify-start lg:items-start lg:px-3 xs:px-1"
           >
-            <div className="text-start w-1/2 lg:w-full">
+            <div className="text-start w-1/2 lg:w-full xs:p-2">
               <span className="flex justify-start items-center py-2 dark:text-light">
                 <FaRegCalendarAlt className="w-5 h-5 text-gray-800 dark:text-light" />
-                <span className="ml-2 font-semibold dark:text-light">
+                <span className="ml-2 font-semibold dark:text-light xs:text-sm">
                   {FormatDate(item?.createdAt.slice(0, 10))}
                 </span>
               </span>
@@ -51,7 +51,7 @@ const Card = async () => {
       duration-500
       hover:bg-[length:100%_3px]
       group-hover:bg-[length:100%_10px]
-      dark:from-red-800 dark:to-purple-900 dark:text-light"
+      dark:from-red-800 dark:to-purple-900 dark:text-light xs:text-xl"
                 >
                   {item.title}
                 </span>
@@ -85,7 +85,7 @@ const Card = async () => {
                 alt="blog image"
                 width={400}
                 height={400}
-                className="object-cover rounded-xl w-96 h-52 border border-gray-500 lg:w-[460px]"
+                className="object-cover rounded-xl w-96 h-52 border border-gray-500 lg:w-[460px] xs:w-full"
               />
             </div>
           </section>
