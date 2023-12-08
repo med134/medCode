@@ -94,10 +94,10 @@ const AddNewArticle = () => {
           image,
           category,
           description,
-          job,
           content,
           username: session.data.user.name,
           email: session.data.user.email,
+          job,
         }),
       });
       mutate();

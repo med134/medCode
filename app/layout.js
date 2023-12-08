@@ -81,18 +81,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="light">
-      <ThemeProvider>
-        <body
-          className={`${inter.className} w-screen`}
-          suppressHydrationWarning={true}
-        >
+      <body
+        className={`${inter.className} w-screen`}
+        suppressHydrationWarning={true}
+      >
+        <ThemeProvider>
           <AuthProvider>
             <NavBar />
             {children}
             <Footer />
           </AuthProvider>
-        </body>
-      </ThemeProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

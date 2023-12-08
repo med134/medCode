@@ -76,7 +76,7 @@ const BlogPage = async ({ params }) => {
       <div className="flex flex-wrap justify-around dark:bg-dark">
         <div className="w-full px-4 mb-1 sm:text-sm sm:mb-2 dark:text-light dark:bg-dark">
           <div className="flex justify-start items-center dark:bg-dark">
-          <FaRegCalendarAlt className="w-5 h-5 text-gray-800 dark:text-light" />
+            <FaRegCalendarAlt className="w-5 h-5 text-gray-800 dark:text-light" />
             <span className="ml-2 font-semibold">
               {FormatDate(blog?.createdAt.slice(0, 10))}
             </span>
@@ -111,16 +111,16 @@ const BlogPage = async ({ params }) => {
             src="https://i.ibb.co/WVDZRxF/bussiness-man.png"
             className="w-24 h-24  object-cover rounded-full"
           />
-          <div className="w-fit transition-all transform duration-500">
+          <div className="w-fit block transition-all transform duration-500">
             <span className="text-sm text-gray-700 dark:text-light">
               Author
             </span>
             <h1 className="text-gray-600 dark:text-gray-200 font-bold">
               {blog?.username}
             </h1>
-            <span className="text-sm font-semibold text-dark dark:text-light">
-              {blog?.job}
-            </span>
+              <span className="text-xs font-semibold text-dark dark:text-light">
+                {blog?.job}
+              </span>
             <a
               href={`mailto:${blog?.email}`}
               className="text-xs text-gray-500 dark:text-light hover:text-blue-600 hover:underline"
