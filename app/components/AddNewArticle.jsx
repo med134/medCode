@@ -15,7 +15,17 @@ const AddNewArticle = () => {
   const ex = undefined;
   const text = ex || "";
   hljs.configure({
-    languages: ["javascript", "ruby", "python", "rust"],
+    languages: [
+      "javascript",
+      "ruby",
+      "python",
+      "rust",
+      "java",
+      "html",
+      "css",
+      "C",
+      "C#",
+    ],
   });
   const theme = "snow";
   const placeholder = "write your content...";
@@ -141,7 +151,7 @@ const AddNewArticle = () => {
             placeholder="Image link"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
-            <input
+          <input
             type="text"
             placeholder="description"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
@@ -178,7 +188,7 @@ const AddNewArticle = () => {
               <option value="student">student</option>
             </select>
           </div>
-        
+
           <div ref={quillRef} style={{ height: 400, marginLeft: 4 }} />
           <button className="rounded-md font-semibold py-2 w-full bg-violet-600 text-light ml-4 mt-5 hover:bg-purple-400">
             Post Now

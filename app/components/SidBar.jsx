@@ -35,7 +35,6 @@ const SidBar = async () => {
               {item.title}
             </h3>
             <p className="mt-1 text-sm mb-2 text-gray-500">
-              {/* {item.shortDescription.slice(0, 50)}... */}
               <p className="mt-1 text-sm underline text-gray-900 font-semibold dark:text-light">
                 {item.tags}
               </p>

@@ -68,7 +68,7 @@ const Card = async () => {
                   height={300}
                 />
                 <p className="text-sm text-gray-500 ml-2 dark:text-light">
-                  MOHAMMED DAKIR
+                  {item?.username}
                 </p>
               </div>
               <div>
