@@ -60,9 +60,7 @@ const Books = () => {
           Recent Books That Every Programmer Must Read Once:
         </p>
         <div className="grid grid-cols-4 p-16 gap-6 py-4 xl:grid-cols-3 xl:p-16 lg:p-4 md:p-10 md:gap-4 sm:block dark:bg-dark">
-          <Suspense fallback={<Loading />}>
-            <MyBooks />
-          </Suspense>
+          <MyBooks />
         </div>
       </div>
     </section>
