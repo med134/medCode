@@ -67,12 +67,12 @@ const Card = async () => {
                   width={300}
                   height={300}
                 />
-                <p className="text-sm text-gray-500 ml-2 dark:text-light">
+                <p className="text-sm text-gray-500 ml-2 dark:text-light uppercase">
                   {item?.username}
                 </p>
               </div>
               <div>
-                <Link href="/" className="flex justify-start items-center">
+                <Link href={`/category/${item.category}`} className="flex justify-start items-center">
                   <span className="bg-light p-1 uppercase ml-2 px-1 text-gray-800 rounded-md font-semibold hover:bg-slate-800 hover:text-white transition-transform duration-75 ease-out">
                     {item.category}
                   </span>

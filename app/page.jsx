@@ -88,10 +88,10 @@ export default async function Home() {
             <SideBar />
           </div>
         </div>
-        <div className="p-10 bg-gradient-to-r from-rose-50 to-slate-300 mt-16 dark:bg-gradient-to-r dark:from-[#1b1b1b] dark:to-[#1b1b1b]">
-          <div className="container m-auto px-6 dark:bg-dark">
+        <div className="p-10 bg-gradient-to-r from-rose-50 to-slate-300 mt-16 dark:bg-gradient-to-r dark:from-[#1b1b1b] dark:to-[#1b1b1b] xs:p-3">
+          <div className="container m-auto px-6 dark:bg-dark xs:px-2">
             <div className="flex justify-between items-center dark:bg-dark md:flex-col-reverse md:items-start">
-              <div className="w-1/2 lg:p-0 p-7 dark:bg-dark md:w-full">
+              <div className="w-1/2 lg:p-0 p-7 dark:bg-dark md:w-full xs:p-2">
                 <span className="text-2xl font-bold flex justify-start items-center text-gray-800 dark:text-light sm:text-xl">
                   <AiTwotoneSound />
                   <p className="ml-2 ">Templates & Components</p>

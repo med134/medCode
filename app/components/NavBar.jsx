@@ -129,7 +129,7 @@ const NavBar = () => {
             />
             <CustomLink
               href="/about"
-              title="About"
+              title="Portfolio"
               className="mx-4 uppercase"
               target="_blank"
             />
@@ -192,7 +192,7 @@ const NavBar = () => {
               />
               <CustomMobileLink
                 href="/about"
-                title="About"
+                title="Portfolio"
                 className="books"
                 toggle={handleClick}
               />

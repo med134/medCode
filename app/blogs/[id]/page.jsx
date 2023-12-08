@@ -115,7 +115,7 @@ const BlogPage = async ({ params }) => {
             <span className="text-sm text-gray-700 dark:text-light">
               Author
             </span>
-            <span className="text-gray-600 dark:text-gray-200 font-bold">
+            <span className="text-gray-600 dark:text-gray-200 font-bold uppercase">
               {blog?.username}
             </span>
               <span className="text-xs text-gray-600 dark:text-light">
