@@ -12,6 +12,7 @@ import Youtube from "./components/Youtube";
 import YouTubeSubscribe from "./components/YoutubeSubscribe";
 import { YoutubeImage } from "./components/Icons";
 import Crypto from "./components/Crytpo";
+import TransitionEffect from "./components/TransitionEffect";
 
 export const metadata = {
   metadataBase: new URL("https://www.medcode.dev"),
@@ -69,7 +70,8 @@ export const metadata = {
 
 export default async function Home() {
   return (
-    <>
+    <div>
+      <TransitionEffect />
       <Aside />
       <Search />
       <div className="bg-light dark:bg-dark w-screen">
@@ -122,7 +124,7 @@ export default async function Home() {
                   width={400}
                   height={400}
                   alt="photo-templates"
-                  className="w-full rounded transform scale-100 perspective-[1040px] rotate-y-[-11deg] rotate-x-[2deg] rotate-[2deg] md:transform-none md:mb-3 md:w-full"
+                  className="w-full rounded transform scale-100 perspective-[1040px] rotate-y-[-11deg] rotate-x-[2deg] rotate-[2deg] md:transform-none md:mb-3 md:w-full object-cover"
                 />
               </div>
             </div>
@@ -157,6 +159,6 @@ export default async function Home() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

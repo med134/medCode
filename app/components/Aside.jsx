@@ -6,7 +6,6 @@ import { IoMenu } from "react-icons/io5";
 const Aside = () => {
   return (
     <aside className="fixed z-30 rounded-xl">
-      {/* Sidebar */}
       <input
         type="checkbox"
         className="peer hidden px-6 dark:text-light"
