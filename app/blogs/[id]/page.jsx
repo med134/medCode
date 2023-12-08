@@ -111,14 +111,14 @@ const BlogPage = async ({ params }) => {
             src="https://i.ibb.co/WVDZRxF/bussiness-man.png"
             className="w-24 h-24  object-cover rounded-full"
           />
-          <div className="w-fit block transition-all transform duration-500">
+          <div className="flex flex-col">
             <span className="text-sm text-gray-700 dark:text-light">
               Author
             </span>
             <h1 className="text-gray-600 dark:text-gray-200 font-bold">
               {blog?.username}
             </h1>
-              <span className="text-xs font-semibold text-dark dark:text-light">
+              <span className="text-xs text-gray-600 dark:text-light">
                 {blog?.job}
               </span>
             <a

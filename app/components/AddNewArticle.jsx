@@ -80,9 +80,9 @@ const AddNewArticle = () => {
     const title = e.target[0].value;
     const tags = e.target[1].value;
     const image = e.target[2].value;
+    const description = e.target[3].value;
     const category = selectedOption;
     const job = selectedJobs;
-    const description = e.target[4].value;
     const content = quill.root.innerHTML;
 
     try {
@@ -141,6 +141,11 @@ const AddNewArticle = () => {
             placeholder="Image link"
             className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
           />
+            <input
+            type="text"
+            placeholder="description"
+            className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
+          />
           <div className="">
             <select
               id="selectChoice"
@@ -173,11 +178,7 @@ const AddNewArticle = () => {
               <option value="student">student</option>
             </select>
           </div>
-          <input
-            type="text"
-            placeholder="description"
-            className="h-12 w-full max-w-full rounded-md border m-4 bg-white px-5 text-sm outline-none focus:ring"
-          />
+        
           <div ref={quillRef} style={{ height: 400, marginLeft: 4 }} />
           <button className="rounded-md font-semibold py-2 w-full bg-violet-600 text-light ml-4 mt-5 hover:bg-purple-400">
             Post Now

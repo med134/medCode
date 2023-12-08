@@ -14,11 +14,11 @@ const articleSchema = new Schema(
       type: String,
       required: true,
     },
-    category: {
+    description: {
       type: String,
       required: true,
     },
-    description: {
+    category: {
       type: String,
       required: true,
     },
