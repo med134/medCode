@@ -12,7 +12,6 @@ import Youtube from "./components/Youtube";
 import YouTubeSubscribe from "./components/YoutubeSubscribe";
 import { YoutubeImage } from "./components/Icons";
 import Crypto from "./components/Crytpo";
-import TransitionEffect from "./components/TransitionEffect";
 
 export const metadata = {
   metadataBase: new URL("https://www.medcode.dev"),
@@ -71,7 +70,6 @@ export const metadata = {
 export default async function Home() {
   return (
     <div>
-      <TransitionEffect />
       <Aside />
       <Search />
       <div className="bg-light dark:bg-dark w-screen">

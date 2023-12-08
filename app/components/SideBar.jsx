@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -7,15 +7,27 @@ import useSWR from "swr";
 import BlogLoading from "./BlogLoading";
 
 const SideBar = () => {
+  const [post, setPost] = useState([]);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    const getAdvice = () => {
+      setLoading(true);
+      fetch(`https://dev.to/api/articles?username=med_code`)
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          setPost(data);
+        });
+      setLoading(false);
+    };
+    getAdvice();
+  });
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.01,
   });
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error, isLoading, mutate } = useSWR(
-    `https://dev.to/api/articles?username=med_code`,
-    fetcher
-  );
+
   const childVariants = {
     hidden: { opacity: 0, x: -30 },
     visible: { opacity: 1, x: 0 },
@@ -31,10 +43,10 @@ const SideBar = () => {
   };
   return (
     <section ref={ref}>
-      {isLoading ? (
+      {loading ? (
         <BlogLoading />
       ) : (
-        data?.map((item, index) =>
+        post?.map((item, index) =>
           index < 5 ? (
             <motion.div
               initial="hidden"

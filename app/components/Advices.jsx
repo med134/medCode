@@ -13,7 +13,7 @@ const Advices = () => {
       .then((data) => {
         setAdd(data.slip.advice);
       });
-    const random = Math.floor(Math.random() * 30) + 1; // Generates a random number between 1 and 100
+    const random = Math.floor(Math.random() * 30) + 1; // https://dev.to/api/articles?username=med_code
     setRandomNumber(random);
   };
 
