@@ -8,7 +8,6 @@ import Search from "./components/Search";
 import Link from "next/link";
 import Aside from "./components/Aside";
 import Image from "next/image";
-import TransitionEffect from "./components/TransitionEffect";
 import Youtube from "./components/Youtube";
 import YouTubeSubscribe from "./components/YoutubeSubscribe";
 import { YoutubeImage } from "./components/Icons";
@@ -71,7 +70,6 @@ export const metadata = {
 export default async function Home() {
   return (
     <div>
-      <TransitionEffect/>
       <Aside />
       <Search />
       <div className="bg-light pt-8 dark:bg-dark">
