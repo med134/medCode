@@ -8,6 +8,7 @@ import Skills from "../components/Skills";
 import Education from "../components/Education";
 import React from "react";
 import profilePic from "../images/med.jpg";
+import HomeComponent from "../components/HomeComponent";
 
 export const metadata = {
   title: "medCode | About us & Resume & Experience",
@@ -27,6 +28,7 @@ const Page = () => {
     <>
       <TransitionEffect />
       <main className="flex w-full flex-col items-center justify-center dark:text-light">
+        <HomeComponent/>
         <Layout className="pt-16 xs:p-10">
           <AnimatedText
             text="Passion Fuels Purpose!"
