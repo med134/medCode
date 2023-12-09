@@ -31,7 +31,7 @@ const Card = async () => {
   return (
     <>
       {posts?.map((item, index) =>
-        index < 4 ? (
+        index < 5 ? (
           <section
             key={item._id}
             className="p-2 w-full mb-3 flex justify-evenly px-8 bg-white items-start border border-gray-500 rounded-xl dark:bg-dark dark:border-light lg:flex-wrap-reverse lg:justify-start lg:items-start lg:px-3 xs:px-1"

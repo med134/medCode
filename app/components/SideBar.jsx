@@ -1,28 +1,12 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import BlogLoading from "./BlogLoading";
+import { getDevTo } from "./FetchData";
 
-const SideBar = () => {
-  const [post, setPost] = useState([]);
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    const getAdvice = () => {
-      setLoading(true);
-      fetch(`https://dev.to/api/articles?username=med_code`)
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          setPost(data);
-        });
-      setLoading(false);
-    };
-    getAdvice();
-  });
-  const { ref, inView } = useInView({
+const SideBar = async () => {
+  const post = await getDevTo();
+
+  /* const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.01,
   });
@@ -39,48 +23,35 @@ const SideBar = () => {
         delay: 2, // Delay between each child
       },
     },
-  };
+  }; */
   return (
-    <section ref={ref}>
-      {loading ? (
-        <BlogLoading />
-      ) : (
-        post?.map((item, index) =>
-          index < 5 ? (
-            <motion.div
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={parentVariants}
-              key={item.id}
+    <section>
+      {post?.map((item, index) =>
+        index < 6 ? (
+          <div
+            key={item.id}
+            className="mt-3 bg-white dark:bg-dark shadow-md p-3 border border-b-gray-500 dark:border-b-light"
+          >
+            <p className="text-xl font-semibold text-gray-800 dark:text-light">
+              {item.title}
+            </p>
+            <p className="mt-1 text-sm mb-2 text-gray-500 dark:text-light">
+              {item.description}
+            </p>
+
+            <p className="mt-1 text-sm ml-2 mb-2 underline text-gray-900 font-semibold dark:text-light">
+              #{item.tags}
+            </p>
+
+            <Link
+              href={item.url}
+              target="_blank"
+              className="font-semibold text-rose-500 transition duration-100 hover:text-rose-600 hover:underline active:text-rose-700"
             >
-              <motion.div
-                variants={childVariants}
-                transition={{ delay: index * 1 }}
-              >
-                <div className="mt-3 bg-white dark:bg-dark shadow-md p-3 border border-b-gray-500 dark:border-b-light">
-                  <p className="text-xl font-semibold text-gray-800 dark:text-light">
-                    {item.title}
-                  </p>
-                  <p className="mt-1 text-sm mb-2 text-gray-500 dark:text-light">
-                    {item.description}
-                  </p>
-
-                  <p className="mt-1 text-sm ml-2 mb-2 underline text-gray-900 font-semibold dark:text-light">
-                    #{item.tags}
-                  </p>
-
-                  <Link
-                    href={item.url}
-                    target="_blank"
-                    className="font-semibold text-rose-500 transition duration-100 hover:text-rose-600 hover:underline active:text-rose-700"
-                  >
-                    Read more...
-                  </Link>
-                </div>
-              </motion.div>
-            </motion.div>
-          ) : null
-        )
+              Read more...
+            </Link>
+          </div>
+        ) : null
       )}
     </section>
   );
