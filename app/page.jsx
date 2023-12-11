@@ -70,7 +70,7 @@ export const metadata = {
 };
 async function getPosts(searchQuery) {
   const res = await fetch(
-    `/api/articles?title=${searchQuery}`,
+    `https://www.medcode.dev/api/articles?title=${searchQuery}`,
     {
       cache: "no-store",
     }
