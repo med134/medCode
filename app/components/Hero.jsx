@@ -4,22 +4,8 @@ import { AiTwotoneSound } from "react-icons/ai";
 import Image from "next/image";
 import Loading from "./BlogLoading";
 import { FaRegCalendarAlt } from "react-icons/fa";
-async function getPosts() {
-  const res = await fetch(`https://www.medcode.dev/api/articles`, {
-    cache: "no-store",
-  });
-  if (!res.ok) {
-    return <Loading />;
-  }
-  const posts = await res.json();
-  const sortedPosts = posts?.sort(
-    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-  );
 
-  return sortedPosts;
-}
-const Card = async () => {
-  const posts = await getPosts();
+const Card = async ({ posts }) => {
   const FormatDate = (dateString) => {
     const options = { year: "numeric", month: "long", day: "numeric" };
     const formattedDate = new Date(dateString).toLocaleDateString(
@@ -72,7 +58,10 @@ const Card = async () => {
                 </p>
               </div>
               <div>
-                <Link href={`/category/${item.category}`} className="flex justify-start items-center">
+                <Link
+                  href={`/category/${item.category}`}
+                  className="flex justify-start items-center"
+                >
                   <span className="bg-light p-1 uppercase ml-2 px-1 text-gray-800 rounded-md font-semibold hover:bg-slate-800 hover:text-white transition-transform duration-75 ease-out">
                     {item.category}
                   </span>

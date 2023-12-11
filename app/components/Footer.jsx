@@ -139,7 +139,7 @@ const Footer = () => {
         <p className="text-sm text-gray-600">
           © Copyright 2023{" "}
           <Link
-            href="https://www.medcode.dev/"
+            href="https://www.medcode.dev/about"
             target="_blank"
             className="font-bold text-borderColor"
           >

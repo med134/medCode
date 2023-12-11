@@ -11,7 +11,9 @@ import Image from "next/image";
 import Youtube from "./components/Youtube";
 import YouTubeSubscribe from "./components/YoutubeSubscribe";
 import { YoutubeImage } from "./components/Icons";
+import Loading from "./loading";
 import Crypto from "./components/Crytpo";
+import queryString from "query-string";
 
 export const metadata = {
   metadataBase: new URL("https://www.medcode.dev"),
@@ -66,8 +68,25 @@ export const metadata = {
     },
   },
 };
-
-export default async function Home() {
+async function getPosts(searchQuery) {
+  const res = await fetch(
+    `/api/articles?title=${searchQuery}`,
+    {
+      cache: "no-store",
+    }
+  );
+  if (!res.ok) {
+    return <Loading />;
+  }
+  const posts = await res.json();
+  const sortedPosts = posts?.sort(
+    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+  );
+  return sortedPosts;
+}
+export default async function Home({searchParams}) {
+  const posts = await getPosts(searchParams);
+  console.log(posts)
   return (
     <div>
       <Aside />
@@ -81,7 +100,7 @@ export default async function Home() {
       </span>{" "}
       <div className="main-content bg-light dark:bg-dark gap-6 px-12 py-4 md:block xs:px-5 xs:gap-1">
         <div className="main">
-          <Card />
+          <Card posts={posts} />
         </div>
         <div className="side">
           <SideBar />

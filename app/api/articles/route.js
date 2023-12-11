@@ -6,6 +6,7 @@ export const GET = async (request) => {
   const url = new URL(request.url);
   const username = url.searchParams.get("username");
   const category = url.searchParams.get("category");
+  const title = url.searchParams.get("title");
 
   try {
     await connectArticles();
@@ -13,6 +14,9 @@ export const GET = async (request) => {
 
     if (username) {
       query.username = username;
+    }
+    if (title) {
+      query.title = { $regex: title, $options: 'i' };
     }
 
     if (category && category.toLowerCase() !== "all") {
