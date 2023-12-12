@@ -9,9 +9,9 @@ const Cat = () => {
 
   return (
     <>
-      <h2 className="font-os text-lg font-bold py-3 dark:text-light">
+      <span className="font-os text-lg font-bold py-3 dark:text-light">
         Categories
-      </h2>
+      </span>
       {isLoading ? (
         <Skeleton />
       ) : (

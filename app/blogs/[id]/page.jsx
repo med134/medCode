@@ -81,7 +81,7 @@ const BlogPage = async ({ params }) => {
               {FormatDate(blog?.createdAt.slice(0, 10))}
             </span>
           </div>
-          <h2 className="text-4xl font-bold py-2 sm:text-xl">{blog.title}</h2>
+          <h1 className="text-4xl font-bold py-2 sm:text-xl">{blog.title}</h1>
           <span className="text-xl text-gray-600 py-3">{blog.description}</span>
           <Image
             src={blog.image}

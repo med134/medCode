@@ -167,7 +167,7 @@ const NavBar = () => {
     bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-8
     "
           >
-            <nav className="flex items-center flex-col justify-center">
+            <nav className="flex items-center flex-col justify-center z-50">
               <div className="flex items-center justify-center xs:w-full mb-1">
                 <Image
                   src={logo}

@@ -62,11 +62,11 @@ const HomeComponent = () => {
             <div className="container xs:mb-4">
               <div className="row">
                 <div className="col-md-12 text-left lg:text-center">
-                  <h1
+                  <span
                     className={`${dance.className} animate-charcter font-dance text-4xl md:text-center font-bold lg:text-center`}
                   >
                     Hi My Name is Med, Im a Software Developer 
-                  </h1>
+                  </span>
                 </div>
               </div>
             </div>

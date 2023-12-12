@@ -6,7 +6,7 @@ const Search = ({ getSearchResult }) => {
   const handleSearch = async (e) => {
     e.preventDefault();
     const res = await fetch(
-      `https://www.medcode.dev/api/articles/search?query=${query}`,
+      `https://www.medcode.dev/articles/search?query=${query}`,
       {
         cache: "no-store",
       }
@@ -33,7 +33,7 @@ const Search = ({ getSearchResult }) => {
           />
           <button
             type="submit"
-            className="absolute inset-y-0 right-0 hover:text-dark bg-dark flex items-center px-4 text-gray-700 border border-gray-100 rounded-r-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900"
+            className="absolute inset-y-0 right-0 hover:text-dark bg-dark flex items-center px-4 text-gray-700 border border-gray-100 rounded-r-md hover:bg-gray-200 focus:outline-none"
           >
             <svg
               className="h-5 w-5 text-light hover:text-dark"

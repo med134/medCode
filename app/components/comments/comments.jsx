@@ -39,7 +39,7 @@ const Comments = ({ postSlug }) => {
 
   return (
     <div className="w-full bg-white rounded-lg border p-2 dark:bg-dark">
-      <h3 className="font-bold text-xl py-2 dark:text-light">Comments</h3>
+      <span className="font-bold text-xl py-2 dark:text-light">Comments</span>
       {status === "authenticated" ? (
         <form
           className={`${styles.write} dark:bg-dark dark:text-light`}
