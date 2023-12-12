@@ -46,9 +46,9 @@ const MyBooks = () => {
                 <span className="mb-2 flex items-center text-sm font-semibold">
                   {item.volumeInfo.authors}
                 </span>
-                <h3 className="mt-4 mb-3 text-xl font-semibold xl:text-xl lg:text-sm md:text-sm md:font-lexendj text-borderColor">
+                <h1 className="mt-4 mb-3 text-xl font-semibold xl:text-xl lg:text-sm md:text-sm md:font-lexendj text-borderColor">
                   {item.volumeInfo.title}
-                </h3>
+                </h1>
                 <p className="mb-4 font-light text-sm dark:text-dark">
                   {item.volumeInfo.subtitle}
                 </p>

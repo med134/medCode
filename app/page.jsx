@@ -20,7 +20,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchSeoData = async () => {
-      const url = "https://www.medcode/api/articles";
+      const url = "https://www.medcode.dev/api/articles";
       try {
         setLoading(true);
         const response = await fetch(url);
@@ -66,12 +66,11 @@ export default function Home() {
               </span>{" "}
               <h1 className="text-4xl text-gray-900 font-bold leading-tight mb-5 sm:text-sm capitalize dark:text-light lg:text-xl">
                 {" "}
-                Professional Free Tailwind Components & Templates & for
-                developers
+                Software Mastery:Professional Free Tailwind Components & Templates
               </h1>
               <p className="text-xl dark:text-light lg:text-sm">
                 {" "}
-                With MedCode Templates Tailwind you can optimized the
+                With MedCode blogs Templates Tailwind you can optimized the
                 customization process to save your team time when building
                 websites.{" "}
               </p>
