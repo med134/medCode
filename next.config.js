@@ -8,6 +8,8 @@ const nextConfig = {
   },
   poweredByHeader: false,
   unstable_runtimeJS: false,
+  compress: false,
+
   images: {
     remotePatterns: [
       {

@@ -6,7 +6,7 @@ const Search = ({ getSearchResult }) => {
   const handleSearch = async (e) => {
     e.preventDefault();
     const res = await fetch(
-      `https://www.medcode.dev/api/articles/search?query=${query}`,
+      `/articles/search?query=${query}`,
       {
         cache: "no-store",
       }

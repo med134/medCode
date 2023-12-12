@@ -6,19 +6,6 @@ import Loading from "./BlogLoading";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import BlogLoading from "./BlogLoading";
 
-/* async function getPosts() {
-  const res = await fetch(`http://localhost:3000/api/articles`, {
-    cache: "no-store",
-  });
-  if (!res.ok) {
-    return <Loading />;
-  }
-  const posts = await res.json();
-  const sortedPosts = posts?.sort(
-    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-  );
-  return sortedPosts;
-} */
 const Card = async ({ posts, loading }) => {
   const FormatDate = (dateString) => {
     const options = { year: "numeric", month: "long", day: "numeric" };
@@ -32,7 +19,7 @@ const Card = async ({ posts, loading }) => {
     <div>
       {loading ? (
         <BlogLoading />
-       ) : (
+      ) : posts.length > 0 ? (
         posts?.map((item, index) =>
           index < 5 ? (
             <section
@@ -97,12 +84,26 @@ const Card = async ({ posts, loading }) => {
             </section>
           ) : null
         )
+      ) : (
+        <div className="relative m-4">
+          <button className="absolute py-1 px-3 -left-8 -top-2 -rotate-[10deg] border border-black black_border bg-[#7e22ce] text-white font-bold">
+            Opps!
+          </button>
+          <div className="purple_border p-8 border border-black dark:border-light">
+            <span className="font-mono text-purple-700 font-bold text-xl">
+              Your keywords not match please enter another keywords and try
+              again...!
+            </span>
+          </div>
+        </div>
       )}
-      <Link href="/category/all" className="flex justify-center items-center">
-        <span className="text-center text-xl sm:text-sm text-gray-700 dark:text-light hover:bg-blue-950 rounded-md hover:text-light border border-gray-600 px-20 py-1 w-full dark:border-light">
-          show moore...
-        </span>
-      </Link>
+      {posts.length > 0 && (
+        <Link href="/category/all" className="flex justify-center items-center">
+          <span className="text-center text-xl sm:text-sm text-gray-700 dark:text-light hover:bg-blue-950 rounded-md hover:text-light border border-gray-600 px-20 py-1 w-full dark:border-light">
+            show moore...
+          </span>
+        </Link>
+      )}
     </div>
   );
 };
