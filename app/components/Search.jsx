@@ -6,7 +6,7 @@ const Search = ({ getSearchResult }) => {
   const handleSearch = async (e) => {
     e.preventDefault();
     const res = await fetch(
-      `http://localhost:3000/api/articles/search?query=${query}`,
+      `https://www.medcode.dev/api/articles/search?query=${query}`,
       {
         cache: "no-store",
       }
@@ -31,7 +31,10 @@ const Search = ({ getSearchResult }) => {
             className="h-12 w-full rounded-md border border-gray-100 bg-gray-100 dark:border-light dark:bg-dark dark:text-light py-4 pr-4 pl-12 shadow-sm outline-none focus:border-blue-950"
             placeholder="Search for anything"
           />
-          <button type='submit' className="absolute inset-y-0 right-0 hover:text-dark bg-dark flex items-center px-4 text-gray-700 border border-gray-100 rounded-r-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900">
+          <button
+            type="submit"
+            className="absolute inset-y-0 right-0 hover:text-dark bg-dark flex items-center px-4 text-gray-700 border border-gray-100 rounded-r-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900"
+          >
             <svg
               className="h-5 w-5 text-light hover:text-dark"
               fill="currentColor"

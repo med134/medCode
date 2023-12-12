@@ -8,7 +8,7 @@ import { ThemeProvider } from "./context/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   metadataBase: new URL("https://www.medcode.dev"),
-  title: "medCode Web Developer Blogs",
+  title: "Software Mastery-Insider Dev Guides-Blogs | medCode",
   description: `Learning programming is accessible for beginners through free software programming
   courses These courses introduce essential best programming languages`,
   generator: "Next.js",
