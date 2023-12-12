@@ -55,7 +55,7 @@ const Aside = () => {
             </button>
           </li>
           <li className="relative">
-            <button className="focus:bg-slate-600 flex justify-start text-gray-800 hover:text-light items-center hover:bg-slate-600 w-full space-x-2 rounded-md px-10 py-4 focus:outline-none">
+            <button className="focus:bg-slate-600 flex justify-start text-gray-800 hover:text-light items-center hover:bg-slate-600 w-full space-x-2 rounded-md px-10 py-3 focus:outline-none">
               <span>
                 <FaReact className="w-6 h-6" />
               </span>
@@ -117,7 +117,7 @@ const Aside = () => {
             </button>
           </li>
           <li className="relative">
-            <button className="focus:bg-slate-600 hover:bg-slate-600 hover:text-light flex w-full space-x-2 rounded-md px-10 py-4 text-gray-800 focus:outline-none">
+            <button className="focus:bg-slate-600 hover:bg-slate-600 hover:text-light flex w-full space-x-2 rounded-md px-10 py-3 text-gray-800 focus:outline-none">
               <span className="text-2xl">
                 <svg
                   fill="#1A1919"
@@ -142,7 +142,7 @@ const Aside = () => {
             </button>
           </li>
           <li className="relative">
-            <button className="focus:bg-slate-600 hover:bg-slate-600 hover:text-light flex w-full space-x-2 rounded-md px-10 py-4 text-gray-800 focus:outline-none">
+            <button className="focus:bg-slate-600 hover:bg-slate-600 hover:text-light flex w-full space-x-2 rounded-md px-10 py-3 text-gray-800 focus:outline-none">
               <span>
                 <svg
                   width="24px"
@@ -164,7 +164,7 @@ const Aside = () => {
             </button>
           </li>
           <li className="relative">
-            <button className="focus:bg-slate-600 hover:bg-slate-600 hover:text-light flex w-full space-x-2 rounded-md px-10 py-4 text-gray-800 focus:outline-none">
+            <button className="focus:bg-slate-600 hover:bg-slate-600 hover:text-light flex w-full space-x-2 rounded-md px-10 py-3 text-gray-800 focus:outline-none">
               <span>
                 <svg
                   fill="#1A1919"
@@ -205,7 +205,7 @@ const Aside = () => {
             </button>
           </li>
           <li className="relative">
-            <button className="focus:bg-slate-600 hover:bg-slate-600 hover:text-light flex w-full space-x-2 rounded-md px-10 py-4 text-gray-800 focus:outline-none">
+            <button className="focus:bg-slate-600 hover:bg-slate-600 hover:text-light flex w-full space-x-2 rounded-md px-10 py-3 text-gray-800 focus:outline-none">
               <span>
                 <svg
                   fill="#1A1919"

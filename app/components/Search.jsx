@@ -1,12 +1,12 @@
 "use client";
-import React, {useState } from "react";
+import React, { useState } from "react";
 const Search = ({ getSearchResult }) => {
   const [query, setQuery] = useState("");
   console.log(query);
   const handleSearch = async (e) => {
     e.preventDefault();
     const res = await fetch(
-      `https://www.medcode.dev/api/articles/search?query=${query}`,
+      `http://localhost:3000/api/articles/search?query=${query}`,
       {
         cache: "no-store",
       }
@@ -28,24 +28,21 @@ const Search = ({ getSearchResult }) => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             name="search"
-            className="h-12 w-full rounded-md border border-gray-100 bg-gray-100 dark:border-light dark:bg-dark dark:text-light py-4 pr-4 pl-12 shadow-sm outline-none focus:border-blue-500"
+            className="h-12 w-full rounded-md border border-gray-100 bg-gray-100 dark:border-light dark:bg-dark dark:text-light py-4 pr-4 pl-12 shadow-sm outline-none focus:border-blue-950"
             placeholder="Search for anything"
           />
-          <button type="submit">
+          <button type='submit' className="absolute inset-y-0 right-0 hover:text-dark bg-dark flex items-center px-4 text-gray-700 border border-gray-100 rounded-r-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900">
             <svg
-              className="absolute left-2 block h-5 w-5 text-gray-400 cursor-pointer"
+              className="h-5 w-5 text-light hover:text-dark"
+              fill="currentColor"
+              viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
             >
-              <circle cx={11} cy={11} r={8} className="" />
-              <line x1={21} y1={21} x2="16.65" y2="16.65" className="" />
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M14.795 13.408l5.204 5.204a1 1 0 01-1.414 1.414l-5.204-5.204a7.5 7.5 0 111.414-1.414zM8.5 14A5.5 5.5 0 103 8.5 5.506 5.506 0 008.5 14z"
+              />
             </svg>
           </button>
         </form>
