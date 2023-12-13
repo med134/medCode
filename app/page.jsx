@@ -12,7 +12,6 @@ import Image from "next/image";
 import Youtube from "./components/Youtube";
 import YouTubeSubscribe from "./components/YoutubeSubscribe";
 import { YoutubeImage } from "./components/Icons";
-import Loading from "./loading";
 import Crypto from "./components/Crytpo";
 
 export default function Home() {
@@ -20,7 +19,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchSeoData = async () => {
-      const url = "https://www.medcode.dev/api/articles";
+      const url = 'https://www.medcode.dev/api/articles';
       try {
         setLoading(true);
         const response = await fetch(url);

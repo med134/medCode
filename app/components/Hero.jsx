@@ -1,8 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { AiTwotoneSound } from "react-icons/ai";
 import Image from "next/image";
-import Loading from "./BlogLoading";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import BlogLoading from "./BlogLoading";
 

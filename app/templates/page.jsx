@@ -46,7 +46,6 @@ export const metadata = {
   ],
   authors: [
     { name: "med dakir" },
-    { name: "medCode", url: "https://www.medcode.dev/templates" },
   ],
   colorScheme: "light",
   creator: "Med Dakir",
@@ -55,9 +54,9 @@ export const metadata = {
   applicationName: "MedCode",
   referrer: "origin-when-cross-origin",
   alternates: {
-    canonical: `https://www.medcode.dev/templates`,hrefflag:'en',
+    canonical: `/templates`,
     languages: {
-      "en-us": `https://www.medcode.dev/en-us/templates`,
+      "en-Us":`/en-us/templates`,
     },
     types: {
       "application/rss+xml": "https://www.medcode.dev/rss",

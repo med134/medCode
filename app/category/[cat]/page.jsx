@@ -53,15 +53,11 @@ export async function generateMetadata({ params }) {
     ],
     authors: [
       { name: "med dakir" },
-      {
-        name: "medCode",
-        url: `https://www.medcode.dev/category/${params.cat}`,
-      },
     ],
     alternates: {
-      canonical: `https://www.medcode.dev/category/${params.cat}`,
+      canonical: `/category/${params.cat}`,
       languages: {
-        "en-us": `https://www.medcode.dev/en-us/category/${params.cat}`,
+        "en-Us": `/en-us/category/${params.cat}`,
       },
       types: {
         "application/rss+xml": "https://www.medcode.dev/rss",

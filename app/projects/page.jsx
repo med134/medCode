@@ -37,9 +37,9 @@ export const metadata = {
     "Code Snippets",
   ],
   alternates: {
-    canonical: `https://www.medcode.dev/projects`,
+    canonical: `/projects`,
     languages: {
-      "en-us": `https://www.medcode.dev/en-us/projects`,
+      "en-Us":`/en-us/projects`,
     },
     types: {
       "application/rss+xml": "https://www.medcode.dev/rss",

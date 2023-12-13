@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 const Search = ({ getSearchResult }) => {
   const [query, setQuery] = useState("");
+  const router = useRouter();
   console.log(query);
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -15,7 +17,6 @@ const Search = ({ getSearchResult }) => {
     console.log(posts);
     getSearchResult(posts);
   };
-
   return (
     <header className="fixed flex w-full z-20 flex-col items-center bg-white dark:bg-dark px-4 py-4 shadow sm:flex-row md:h-20">
       <div className="flex w-full flex-col justify-between overflow-hidden transition-all sm:max-h-full sm:flex-row sm:items-center">

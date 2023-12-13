@@ -25,9 +25,9 @@ export async function generateMetadata({ params }) {
     keywords: post?.tags,
     publishedTime: publicAt,
     alternates: {
-      canonical: `https://www.medcode.dev/blogs/${params.id}`,
+      canonical: `/blogs/${params.id}`,
       languages: {
-        "en-Us": `https://www.medcode.dev/en-us/blogs${params.id}`,
+        "en-Us": `/en-us/blogs${params.id}`,
       },
       types: {
         "application/rss+xml": "https://www.medcode.dev/rss",
@@ -45,15 +45,6 @@ export async function generateMetadata({ params }) {
           height: "300",
         },
       ],
-      alternates: {
-        canonical: `https://www.medcode.dev/blogs/${params.id}`,
-        languages: {
-          "en-Us": `https://www.medcode.dev/en-us/blogs${params.id}`,
-        },
-        types: {
-          "application/rss+xml": "https://www.medcode.dev/rss",
-        },
-      },
     },
   };
 }

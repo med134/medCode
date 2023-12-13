@@ -23,9 +23,9 @@ export const metadata = {
   ],
 
   alternates: {
-    canonical: `https://www.medcode.dev/books`,
+    canonical: `/books`,
     languages: {
-      "en-us": `https://www.medcode.dev/en-us/books`,
+      "en-Us": `/en-us/books`,
     },
     types: {
       "application/rss+xml": "https://www.medcode.dev/rss",

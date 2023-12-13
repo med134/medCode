@@ -11,7 +11,10 @@ export const GET = async (request) => {
     const articles = await Article.find();
 
     const filterArticles = articles.filter((item) => {
-      return item.title.toLowerCase().includes(query.toLowerCase());
+      return (
+        item.title.toLowerCase().includes(query.toLowerCase()) ||
+        item.symbol.toLowerCase().includes(query.toLowerCase())
+      );
     });
 
     return new NextResponse(JSON.stringify(filterArticles), { status: 200 });

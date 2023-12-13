@@ -6,6 +6,9 @@ import AuthProvider from "./components/authProvider/AuthProvider";
 import { ThemeProvider } from "./context/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
+export const viewport = {
+  themeColor: 'light',
+}
 export const metadata = {
   metadataBase: new URL("https://www.medcode.dev"),
   title: "Software Mastery-Insider Dev Guides-Blogs | medCode",
@@ -62,7 +65,6 @@ export const metadata = {
         height: "300",
       },
     ],
-    locale: "en_US",
     type: "website",
   },
   verification: {
@@ -71,7 +73,8 @@ export const metadata = {
   alternates: {
     canonical: "/",
     languages: {
-      "en-US": "/en-US",
+      'en-US': '/en-US',
+      'de-DE': '/de-DE',
     },
     types: {
       "application/rss+xml": "https://medcode.dev/rss",

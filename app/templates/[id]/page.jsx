@@ -28,9 +28,9 @@ export async function generateMetadata({ params }) {
     title: post.title,
     description: post.description,
     alternates: {
-      canonical: `https://www.medcode.dev/templates/${params.id}`,
+      canonical: `/templates/${params.id}`,
       languages: {
-        "en-us": `https://www.medcode.dev/en-us/templates${params.id}`,
+        "en-Us":`/en-us/templates${params.id}`,
       },
       types: {
         "application/rss+xml": "https://www.medcode.dev/rss",
