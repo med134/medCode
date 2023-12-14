@@ -6,9 +6,6 @@ import AuthProvider from "./components/authProvider/AuthProvider";
 import { ThemeProvider } from "./context/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
-export const viewport = {
-  themeColor: 'light',
-}
 export const metadata = {
   metadataBase: new URL("https://www.medcode.dev"),
   title: "Software Mastery-Insider Dev Guides-Blogs | medCode",

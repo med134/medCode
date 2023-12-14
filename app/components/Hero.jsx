@@ -76,6 +76,7 @@ const Card = async ({ posts, loading }) => {
                   alt="blog image"
                   width={400}
                   height={400}
+                  priority
                   className="object-cover rounded-xl w-96 h-52 border border-gray-500 lg:w-[460px] xs:w-full"
                 />
               </div>

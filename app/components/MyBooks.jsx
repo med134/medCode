@@ -27,7 +27,7 @@ const MyBooks = () => {
     fetchBooks();
   }, []);
   return (
-    <>
+    <div>
       {loading ? (
         <Loading />
       ) : (
@@ -64,7 +64,7 @@ const MyBooks = () => {
           </article>
         ))
       )}
-    </>
+    </div>
   );
 };
 

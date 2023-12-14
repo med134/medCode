@@ -8,13 +8,12 @@ import Skills from "../components/Skills";
 import Education from "../components/Education";
 import React from "react";
 import profilePic from "../images/med.jpg";
-import HomeComponent from "../components/HomeComponent";
-
+/* import HomeComponent from "../components/HomeComponent";
+ */
 export const metadata = {
   title: "medCode | About us & Resume & Experience",
-  description:
-    `Welcome to My Web Developer Portfolio UX Designer Here, you'll find a showcase of my career and educational as a web developer also some of my skills`,
-    keywords:["resume","Experience","learning"],
+  description: `Welcome to My Web Developer Portfolio UX Designer Here, you'll find a showcase of my career and educational as a web developer also some of my skills`,
+  keywords: ["resume", "Experience", "learning"],
   alternates: {
     canonical: `/about`,
     languages: {
@@ -27,8 +26,8 @@ const Page = () => {
   return (
     <>
       <TransitionEffect />
+      {/* <HomeComponent /> */}
       <main className="flex w-full flex-col items-center justify-center dark:text-light">
-        <HomeComponent/>
         <Layout className="pt-16 xs:p-10">
           <AnimatedText
             text="Passion Fuels Purpose!"
@@ -64,7 +63,8 @@ const Page = () => {
 
             <div
               className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark
-              bg-light p-8 dark:bg-dark dark:border-light xl:col-span-4 md:order-1 md:col-span-8" >
+              bg-light p-8 dark:bg-dark dark:border-light xl:col-span-4 md:order-1 md:col-span-8"
+            >
               <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light" />
               <Image
                 src={profilePic}

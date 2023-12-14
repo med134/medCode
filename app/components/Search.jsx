@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 const Search = ({ getSearchResult }) => {
   const [query, setQuery] = useState("");
-  console.log(query);
   const handleSearch = async (e) => {
     e.preventDefault();
     const res = await fetch(
@@ -12,7 +11,6 @@ const Search = ({ getSearchResult }) => {
       }
     );
     const posts = await res.json();
-    console.log(posts);
     getSearchResult(posts);
   };
   return (

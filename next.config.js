@@ -2,22 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   optimizeFonts: true,
-  distDir: 'build',
   swcMinify: true,
-  generateEtags: false,
-  output: 'standalone',
-  poweredByHeader: false,
-  productionBrowserSourceMaps: true,
-  experimental: {
-    mdxRs: true,
-    typedRoutes: true,
-    serverActions: true,
-    serverActions: {
-      allowedOrigins: ['medcode.dev', '*.medcode.dev'],
-    },
-  },
-  poweredByHeader: false,
-  compress: false,
   images: {
     remotePatterns: [
       {

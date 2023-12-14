@@ -1,10 +1,10 @@
 export default function robots() {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: '/private/',
+      userAgent: "*",
+      allow: "/",
+      disallow: "/private/"
     },
-    sitemap: 'https://www.medcode.dev/sitemap.xml',
-  }
+    sitemap: "https://www.medcode.dev/sitemap.xml",
+  };
 }

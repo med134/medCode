@@ -7,7 +7,7 @@ import Layout from "./Layout";
 import { useEffect } from "react";
 
 
-const NavigationBar = async () => {
+const NavigationBar = () => {
   const session = useSession();
   const router = useRouter();
   useEffect(() => {

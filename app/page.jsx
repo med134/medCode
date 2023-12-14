@@ -19,7 +19,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchSeoData = async () => {
-      const url = 'https://www.medcode.dev/api/articles';
+      const url = '/api/articles';
       try {
         setLoading(true);
         const response = await fetch(url);
