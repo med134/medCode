@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Loading from "../loading";
 
-const Crypto = async () => {
+const Crypto = () => {
   const [news, setNews] = useState();
   const [loading, setLoading] = useState(false);
   useEffect(() => {

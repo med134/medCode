@@ -7,7 +7,7 @@ import axios from "axios";
 import { YoutubeImage } from "./Icons";
 import Loading from "../loading";
 
-const Youtube = async () => {
+const Youtube =  () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {

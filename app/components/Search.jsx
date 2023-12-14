@@ -1,9 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
 const Search = ({ getSearchResult }) => {
   const [query, setQuery] = useState("");
-  const router = useRouter();
   console.log(query);
   const handleSearch = async (e) => {
     e.preventDefault();

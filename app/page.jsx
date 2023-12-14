@@ -49,7 +49,7 @@ export default function Home() {
       </span>{" "}
       <div className="main-content bg-light dark:bg-dark gap-6 px-12 py-4 md:block xs:px-5 xs:gap-1">
         <div className="main">
-          <Card posts={posts} loading={loading} />
+          <Card posts={posts} loading={loading}/>
         </div>
         <div className="side">
           <SideBar />
