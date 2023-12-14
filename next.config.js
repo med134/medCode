@@ -7,12 +7,7 @@ const nextConfig = {
   poweredByHeader: false,
   productionBrowserSourceMaps: true,
   experimental: {
-    mdxRs: true,
-    typedRoutes: true,
-    serverActions: true,
-    serverActions: {
-      allowedOrigins: ['medcode.dev', '*.medcode.dev'],
-    },
+    appDir: true,
   },
   compress: false,
   images: {
