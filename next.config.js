@@ -3,13 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   optimizeFonts: true,
   swcMinify: true,
-  output: 'standalone',
-  poweredByHeader: false,
-  productionBrowserSourceMaps: true,
   experimental: {
     appDir: true,
   },
-  compress: false,
   images: {
     remotePatterns: [
       {
